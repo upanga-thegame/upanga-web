@@ -50,6 +50,7 @@ async function loadDevTracker() {
 
         renderDevTrackerSummary(data.summary, summaryContainer);
         renderDevTracker(data, listContainer);
+        addCollapsibleListeners();
 
     } catch (error) {
         console.error("Failed to load Dev Tracker data:", error);
@@ -75,7 +76,7 @@ function renderDevTracker(data, container) {
     if (groups && groups.length > 0) {
         html += '<div class="open-tracker-section">';
         html += '<h3 class="tracker-section-heading">Open Tasks</h3>';
-        html += renderGroups(groups);
+        html += renderGroups(groups, false);
         html += '</div>';
     }
 
@@ -83,7 +84,7 @@ function renderDevTracker(data, container) {
     if (completedGroups && completedGroups.length > 0) {
         html += '<div class="completed-tracker-section">';
         html += '<h3 class="tracker-section-heading">Completed</h3>';
-        html += renderGroups(completedGroups);
+        html += renderGroups(completedGroups, true);
         html += '</div>';
     } else {
         html += '<div class="completed-tracker-section"><p>No completed tasks yet.</p></div>';
@@ -92,13 +93,13 @@ function renderDevTracker(data, container) {
     container.innerHTML = html;
 }
 
-function renderGroups(groups) {
+function renderGroups(groups, isCollapsible) {
     return `
         <div class="tracker-groups">
             ${groups.map(group => `
-                <div class="tracker-group">
-                    <h4 class="tracker-group-title">${escapeHtml(group.title)}</h4>
-                    <div class="dev-grid">
+                <div class="tracker-group ${isCollapsible ? 'collapsible' : ''}">
+                    <h4 class="tracker-group-title ${isCollapsible ? 'collapsible-header' : ''}">${escapeHtml(group.title)}</h4>
+                    <div class="dev-grid ${isCollapsible ? 'collapsible-content' : ''}">
                         ${group.items.map(item => `
                             <div class="tracker-card">
                                 <span class="status-badge ${getStatusClass(item.status)}">${escapeHtml(item.status)}</span>
@@ -110,6 +111,21 @@ function renderGroups(groups) {
             `).join('')}
         </div>
     `;
+}
+
+function addCollapsibleListeners() {
+    const collapsibles = document.querySelectorAll('.collapsible-header');
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
 }
 
 function getStatusClass(status) {

@@ -595,6 +595,48 @@ h2 {
     color: var(--bg-darker) !important;
 }
 
+.collapsible-header {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible-header:hover {
+    background-color: #2a2a2a;
+}
+
+.collapsible > .collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.collapsible > .collapsible-header::after {
+    content: '+';
+    font-size: 2rem;
+    color: var(--primary-accent);
+    transition: transform 0.3s ease;
+}
+
+.collapsible.active > .collapsible-header::after {
+    transform: rotate(45deg);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: rgba(0,0,0,0.2);
+    padding: 0 1rem; /* Add padding for the content inside */
+}
+
+.collapsible-content .dev-grid {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
 /* Collapsible Dev Tracker Category */
 .collapsible-header {
     cursor: pointer;
