@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --bg-color: #1a1a1a; /* Near black */
+    --card-color: #2c2c2c; /* Dark stone gray */
+    --border-color: #444;
+    --primary-accent: #d4af37; /* Gold */
+    --secondary-accent: #f2f2f2; /* Bone white */
+    --ember-accent: #ff4500; /* Ember orange */
+    --success-color: #50c878; /* Muted green */
+    --font-main: 'VT323', monospace;
+    --text-color: #f2f2f2;
+}
+
+/* --- General Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--primary-accent);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-accent);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    border-color: var(--secondary-accent);
+    color: var(--secondary-accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-accent);
+    color: var(--bg-color);
+}
+
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: var(--card-color);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-accent);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: var(--secondary-accent);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-accent);
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--secondary-accent);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    /* Placeholder for background image */
+    background: var(--bg-color) url('https://via.placeholder.com/1920x1080/1a1a1a/1a1a1a') no-repeat center center/cover;
+}
+
+.hero-title {
+    font-size: 4rem;
+    color: var(--primary-accent);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-accent);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-cta .btn {
+    margin: 0 10px;
+}
+
+.android-badge {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 5px 15px;
+    background-color: var(--success-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* --- Content Sections --- */
+.content-section, .features-section, .dev-tracker-section, .screenshots-section, .contact-section {
+    padding: 4rem 0;
+}
+
+/* --- Features Section --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--card-color);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.feature-card h3 {
+    color: var(--primary-accent);
+    margin-bottom: 1rem;
+}
+
+/* --- Dev Tracker Section --- */
+.dev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.dev-card {
+    background-color: var(--card-color);
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.status-badge {
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    color: var(--bg-color);
+}
+
+.status-badge.complete {
+    background-color: var(--success-color);
+}
+
+.status-badge.in-progress {
+    background-color: var(--ember-accent);
+}
+
+.status-badge.planned {
+    background-color: var(--secondary-accent);
+}
+
+/* --- Screenshots Section --- */
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.screenshot-card {
+    height: 200px;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Contact Section --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--card-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-links a {
+    margin: 0 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--card-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
