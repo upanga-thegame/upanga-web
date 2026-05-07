@@ -497,6 +497,74 @@ h2 {
 .status-badge.complete { background-color: var(--success-color); }
 .status-badge.in-progress { background-color: var(--secondary-accent); }
 .status-badge.planned { background-color: #555; }
+.status-complete { background-color: var(--success-color); color: var(--bg-darker); }
+.status-in-progress { background-color: var(--primary-accent); color: var(--bg-darker); }
+.status-blocked { background-color: var(--danger-color); }
+
+.tracker-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tracker-summary-card {
+    background-color: var(--card-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    border-bottom: 3px solid var(--border-color);
+}
+
+.tracker-summary-card span {
+    font-weight: bold;
+    color: var(--text-light);
+    margin-left: 0.5rem;
+}
+
+.tracker-group {
+    margin-bottom: 3rem;
+}
+
+.tracker-group-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: var(--primary-accent);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.tracker-card {
+    background-color: var(--card-color);
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tracker-card:hover {
+    background-color: #2a2a2a;
+    border-color: var(--primary-accent);
+}
+
+.tracker-card-title {
+    flex-grow: 1;
+}
+
+.tracker-loading, .tracker-error {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2rem;
+    color: #888;
+}
+
+.tracker-error {
+    color: var(--danger-color);
+}
 
 /* Collapsible Dev Tracker Category */
 .collapsible-header {
