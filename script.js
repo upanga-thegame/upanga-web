@@ -15,24 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
     }
 
-    // Contact Form Placeholder
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-
-    if (contactForm && formMessage) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            formMessage.style.display = 'block';
-            formMessage.style.opacity = '1';
-            setTimeout(() => {
-                formMessage.style.opacity = '0';
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 500);
-            }, 4000);
-        });
-    }
-
     // Dev Tracker
     loadDevTracker();
 

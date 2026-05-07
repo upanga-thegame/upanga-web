@@ -793,54 +793,12 @@ h2 {
 
 /* Contact Section */
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-    align-items: flex-start;
+    text-align: center;
 }
 
 .contact-info p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.contact-form-container input,
-.contact-form-container textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 1rem;
-    background-color: var(--bg-darker);
-    border: 1px solid var(--border-color);
-    color: var(--text-light);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form-container input:focus,
-.contact-form-container textarea:focus {
-    outline: none;
-    border-color: var(--primary-accent);
-}
-
-#form-message {
-    padding: 12px;
-    margin-top: 1rem;
-    background-color: var(--secondary-accent);
-    color: var(--text-light);
-    text-align: center;
-    border-radius: 4px;
-    transition: opacity 0.5s ease;
-    opacity: 0;
-}
-
-#form-message:not(.hidden) {
-    opacity: 1;
-}
-
-.hidden {
-    display: none;
+    font-size: 1.2rem;
 }
 
 
