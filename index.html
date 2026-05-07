@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header and Navigation -->
+
+    <!-- =================================================== -->
+    <!-- ============== HEADER & NAVIGATION ============== -->
+    <!-- =================================================== -->
     <header class="header">
         <nav class="navbar">
             <a href="#home" class="nav-logo">Upanga: The Soul-Blade</a>
@@ -19,7 +22,6 @@
                 <li class="nav-item"><a href="#dev-tracker" class="nav-link">Dev Tracker</a></li>
                 <li class="nav-item"><a href="#screenshots" class="nav-link">Screenshots</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact Us</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">GitHub</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -30,9 +32,15 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- =================================================== -->
+        <!-- ================== HERO SECTION =================== -->
+        <!-- =================================================== -->
         <section id="home" class="hero-section">
-            <!-- Background image can be added here -->
+            <!-- 
+            BACKGROUND IMAGE: 
+            Replace the background property in .hero-section in styles.css 
+            with your own cinematic background image.
+            -->
             <div class="hero-content">
                 <h1 class="hero-title">Upanga: The Soul-Blade</h1>
                 <p class="hero-subtitle">A tactical turn-based RPG of shattered spirits, ancient magic, and skeletal armies.</p>
@@ -42,19 +50,32 @@
                     <a href="#screenshots" class="btn btn-secondary">See Screenshots</a>
                 </div>
                 <span class="android-badge">Coming to Android</span>
-                 <!-- Character art can be placed here -->
             </div>
         </section>
 
-        <!-- Story Section -->
-        <section id="story" class="content-section">
+        <div class="section-divider"></div>
+
+        <!-- =================================================== -->
+        <!-- ================== STORY SECTION ================== -->
+        <!-- =================================================== -->
+        <section id="story" class="content-section bg-dark">
             <div class="container">
-                <h2>Story</h2>
-                <p>The Soul-Blade is shattered, and the spirits of the ancient heroes are trapped. Bokor, a powerful necromancer, raises skeletal armies to conquer the land. You must gather the scattered fragments of the Soul-Blade, awaken the heroes, and restore balance to the world.</p>
+                <h2>The Shattered Soul-Blade</h2>
+                <p class="section-intro">The Soul-Blade, once a beacon of hope, has been shattered by the necromancer Bokor. Its essence has been split into four spirit-fragments, corrupting the land and its guardians. You must gather these fragments to reforge the blade and restore balance.</p>
+                <div class="story-fragments">
+                    <div class="fragment-card"><h3>Osa: Blade of Courage</h3><p>The core of the blade's strength, now a raging spirit that incites blind aggression.</p></div>
+                    <div class="fragment-card"><h3>Kishi: Blade of Hunger</h3><p>A parasitic fragment that drains life, turning the once-noble guardians into ravenous beasts.</p></div>
+                    <div class="fragment-card"><h3>Aziza: Blade of Secrets</h3><p>This fragment twists reality, hiding secrets and creating illusions to deceive the pure of heart.</p></div>
+                    <div class="fragment-card"><h3>Nganga: Blade of Breath</h3><p>The fragment of life-giving essence, now used to animate Bokor's skeletal armies.</p></div>
+                </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <div class="section-divider"></div>
+
+        <!-- =================================================== -->
+        <!-- ================ FEATURES SECTION ================= -->
+        <!-- =================================================== -->
         <section id="features" class="features-section">
             <div class="container">
                 <h2>Features</h2>
@@ -68,8 +89,8 @@
                         <p>Control a party of four unique heroes, each with their own abilities and playstyle.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Retro Stone-and-Pixel Style</h3>
-                        <p>A lovingly crafted retro aesthetic that harks back to the golden age of tactical RPGs.</p>
+                        <h3>Modern Tribal Fantasy Style</h3>
+                        <p>A cinematic aesthetic inspired by African tribal fantasy design, polished for a modern audience.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Skeleton Enemies & Boss Battles</h3>
@@ -79,65 +100,104 @@
             </div>
         </section>
 
-        <!-- Heroes Section -->
-        <section id="heroes" class="content-section">
+        <div class="section-divider"></div>
+
+        <!-- =================================================== -->
+        <!-- ================== HEROES SECTION ================= -->
+        <!-- =================================================== -->
+        <section id="heroes" class="content-section bg-dark">
             <div class="container">
-                <h2>Heroes</h2>
-                <p>Meet the heroes who will stand against the darkness. (Placeholder for character introductions)</p>
+                <h2>The Four Heroes</h2>
+                <p class="section-intro">Four heroes, bound by fate, are all that stand against Bokor's corruption.</p>
+                <div class="heroes-grid">
+                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
+                    <div class="hero-card"><h3>Osa the Warrior</h3><div class="hero-placeholder"></div><p>A stalwart defender whose duty is to protect the innocent.</p></div>
+                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
+                    <div class="hero-card"><h3>Kishi the Shapeshifter</h3><div class="hero-placeholder"></div><p>A mysterious being who can take on the forms of defeated foes.</p></div>
+                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
+                    <div class="hero-card"><h3>Aziza the Scout</h3><div class="hero-placeholder"></div><p>A nimble rogue who moves through shadows to strike at the heart of the enemy.</p></div>
+                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
+                    <div class="hero-card"><h3>Nganga the Shaman</h3><div class="hero-placeholder"></div><p>A powerful mystic who communes with spirits to heal allies and curse enemies.</p></div>
+                </div>
             </div>
         </section>
 
-        <!-- Dev Tracker Section -->
+        <div class="section-divider"></div>
+
+        <!-- =================================================== -->
+        <!-- =============== DEV TRACKER SECTION =============== -->
+        <!-- =================================================== -->
         <section id="dev-tracker" class="dev-tracker-section">
             <div class="container">
                 <h2>Dev Tracker</h2>
                 <div class="dev-grid">
-                    <div class="dev-card"><span class="status-badge complete">Complete</span> Movement System</div>
-                    <div class="dev-card"><span class="status-badge in-progress">In Progress</span> Turn Order System</div>
+                    <div class="dev-card"><span class="status-badge in-progress">In Progress</span> Movement System</div>
+                    <div class="dev-card"><span class="status-badge planned">Planned</span> Speed-Based Turn Order</div>
                     <div class="dev-card"><span class="status-badge in-progress">In Progress</span> Combat & AP System</div>
-                    <div class="dev-card"><span class="status-badge planned">Planned</span> Attack Animations</div>
+                    <div class="dev-card"><span class="status-badge in-progress">In Progress</span> Attack Animations</div>
                     <div class="dev-card"><span class="status-badge planned">Planned</span> Sound Effects</div>
+                    <div class="dev-card"><span class="status-badge planned">Planned</span> Android Export</div>
                 </div>
             </div>
         </section>
 
-        <!-- Screenshots Section -->
-        <section id="screenshots" class="screenshots-section">
+        <div class="section-divider"></div>
+
+        <!-- =================================================== -->
+        <!-- =============== SCREENSHOTS SECTION =============== -->
+        <!-- =================================================== -->
+        <section id="screenshots" class="screenshots-section bg-dark">
             <div class="container">
                 <h2>Screenshots</h2>
                 <div class="screenshot-grid">
-                    <div class="screenshot-card"><!-- Battle Map Screenshot Placeholder --><div>Battle Map</div></div>
-                    <div class="screenshot-card"><!-- Hero HUD Screenshot Placeholder --><div>Hero HUD</div></div>
-                    <div class="screenshot-card"><!-- Skeleton Encounter Screenshot Placeholder --><div>Skeleton Encounter</div></div>
-                    <div class="screenshot-card"><!-- Attack Animation Screenshot Placeholder --><div>Attack Animation</div></div>
+                    <!-- SCREENSHOT: Replace div with your img tag -->
+                    <div class="screenshot-card"><div>Battle Map</div></div>
+                    <!-- SCREENSHOT: Replace div with your img tag -->
+                    <div class="screenshot-card"><div>Hero HUD</div></div>
+                    <!-- SCREENSHOT: Replace div with your img tag -->
+                    <div class="screenshot-card"><div>Skeleton Encounter</div></div>
+                    <!-- SCREENSHOT: Replace div with your img tag -->
+                    <div class="screenshot-card"><div>Attack Animation</div></div>
+                    <!-- SCREENSHOT: Replace div with your img tag -->
+                    <div class="screenshot-card"><div>Turn Order Bar</div></div>
+                    <!-- SCREENSHOT: Replace div with your img tag -->
+                    <div class="screenshot-card"><div>Crypt Environment</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <div class="section-divider"></div>
+
+        <!-- =================================================== -->
+        <!-- ================= CONTACT SECTION ================= -->
+        <!-- =================================================== -->
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2>Contact Us</h2>
                 <div class="contact-grid">
                     <div class="contact-info">
+                        <p>Follow the development, join the community, or get in touch.</p>
                         <p><strong>Email:</strong> <a href="mailto:contact@upanga.dev">contact@upanga.dev</a></p>
-                        <p><strong>Discord:</strong> <a href="#">Join our Discord</a></p>
-                        <p><strong>GitHub:</strong> <a href="#">Follow the development</a></p>
+                        <p><strong>Discord:</strong> <a href="#" target="_blank">Join our Discord</a></p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/phazecrypto/upanga-web" target="_blank">Follow on GitHub</a></p>
                     </div>
-                    <div class="contact-form">
-                        <form>
+                    <div class="contact-form-container">
+                        <form id="contact-form">
                             <input type="text" name="name" placeholder="Name" required>
                             <input type="email" name="email" placeholder="Email" required>
-                            <textarea name="message" placeholder="Message" required></textarea>
+                            <textarea name="message" placeholder="Message" rows="5" required></textarea>
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
+                        <div id="form-message" class="hidden">Contact form is a placeholder.</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- =================================================== -->
+    <!-- ===================== FOOTER ====================== -->
+    <!-- =================================================== -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Upanga: The Soul-Blade</p>
