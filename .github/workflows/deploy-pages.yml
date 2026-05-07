@@ -13,6 +13,8 @@ on:
       - "assets/**"
       - "images/**"
       - "privacy.html"
+      - "terms.html"
+      - "data-deletion.html"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -28,8 +30,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version: "20"
 
       - name: Generate Dev Tracker Data
         run: node scripts/generate-dev-tracker.mjs
@@ -48,10 +48,9 @@ jobs:
       - name: Prepare Deployment Artifact
         run: |
           mkdir -p dist
-          cp index.html dist/
+          cp *.html dist/
           cp styles.css dist/
           cp script.js dist/
-          cp privacy.html dist/
           if [ -d "data" ]; then cp -r data dist/data; fi
           if [ -d "assets" ]; then cp -r assets dist/assets; fi
           if [ -d "images" ]; then cp -r images dist/images; fi

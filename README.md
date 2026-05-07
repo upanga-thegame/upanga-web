@@ -10,3 +10,11 @@ The core files for the website are:
 - `styles.css`: The stylesheet that defines the appearance and layout, including all colors, fonts, and responsive design.
 - `script.js`: The JavaScript file that handles interactive elements.
 - `privacy.html`: The privacy policy for the game and website.
+
+## Legal Pages
+The site includes:
+- `privacy.html`
+- `terms.html`
+- `data-deletion.html`
+
+These pages provide generic policy information for the Upanga: The Soul-Blade Android game and should be reviewed before the game is published on Google Play.

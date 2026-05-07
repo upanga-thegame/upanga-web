@@ -46,7 +46,6 @@ body {
     color: var(--text-color);
     line-height: 1.7;
     font-size: 16px;
-    /* Subtle tribal background pattern */
     background-image: linear-gradient(rgba(18,18,18,0.95), rgba(18,18,18,0.95)),
                       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231a1a1a' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
@@ -100,11 +99,10 @@ h2 {
 .btn {
     display: inline-block;
     padding: 14px 28px;
-    border: 2px solid var(--primary-accent);
     background: var(--primary-accent);
     color: var(--bg-darker);
     text-transform: uppercase;
-    font-family: var(--font-title); /* Use the more readable title font */
+    font-family: var(--font-title);
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
@@ -183,7 +181,7 @@ h2 {
 }
 
 .nav-item {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .nav-link {
@@ -240,11 +238,6 @@ h2 {
     align-items: flex-start; /* Align content to the top */
     text-align: center;
     padding: 6rem 2rem; /* Reduced top padding */
-    /* 
-    BACKGROUND IMAGE PLACEHOLDER:
-    Replace this background with your key art. 
-    A cinematic 1920x1080px image is recommended.
-    */
     background: linear-gradient(rgba(18,18,18, 0.8), rgba(18,18,18, 0.8)), url('images/background_top.png') no-repeat center center/cover;
     position: relative;
     overflow: hidden;
@@ -493,12 +486,6 @@ h2 {
     line-height: 1.8;
 }
 
-.hero-card:hover .hero-placeholder {
-    color: var(--primary-accent);
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                repeating-linear-gradient(45deg, #181818, #181818 5px, #1a1a1a 5px, #1a1a1a 10px);
-}
-
 .hero-card h3 {
     font-family: var(--font-title);
     color: var(--primary-accent);
@@ -512,79 +499,6 @@ h2 {
 
 
 /* Dev Tracker Section */
-.dev-summary {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    background-color: var(--card-color);
-    padding: 1rem;
-    border-left: 4px solid var(--primary-accent);
-    border-right: 4px solid var(--primary-accent);
-}
-
-.dev-summary > div {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.dev-summary span {
-    color: var(--text-light);
-    font-weight: bold;
-}
-
-.dev-category {
-    margin-bottom: 3rem;
-}
-
-.dev-category-title {
-    font-family: var(--font-title);
-    font-size: 1.8rem;
-    color: var(--primary-accent);
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-}
-
-.dev-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.dev-card {
-    background-color: var(--card-color);
-    padding: 1.2rem 1.5rem;
-    border-left: 4px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.dev-card:hover {
-    background-color: #2a2a2a;
-    border-color: var(--primary-accent);
-}
-
-.status-badge {
-    padding: 5px 12px;
-    border-radius: 15px;
-    margin-right: 1rem;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: var(--text-light);
-}
-
-.status-badge.complete { background-color: var(--success-color); }
-.status-badge.in-progress { background-color: var(--secondary-accent); }
-.status-badge.planned { background-color: #555; }
-.status-complete { background-color: var(--success-color); color: var(--bg-darker); }
-.status-in-progress { background-color: var(--primary-accent); color: var(--bg-darker); }
-.status-blocked { background-color: var(--danger-color); }
-
 .dev-tracker-section .last-updated {
     text-align: center;
     font-size: 0.9rem;
@@ -626,6 +540,12 @@ h2 {
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
+}
+
+.dev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .tracker-card {
@@ -724,63 +644,25 @@ h2 {
     padding: 0 1rem; /* Add padding for the content inside */
 }
 
-.legal-note {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background-color: var(--bg-darker);
-    border-left: 4px solid var(--danger-color);
-    font-size: 0.9rem;
+.collapsible-content .dev-grid {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
-.privacy-content {
-    max-width: 800px;
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-light);
 }
 
-.privacy-content h3 {
-    font-family: var(--font-title);
-    color: var(--primary-accent);
-    font-size: 1.6rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-}
-
-.privacy-content ul {
-    list-style-position: inside;
-    padding-left: 1rem;
-}
-
-.privacy-content ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Collapsible Dev Tracker Category */
-.collapsible-header {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.collapsible-header::after {
-    content: '+'; /* Show more */
-    font-size: 2rem;
-    color: var(--primary-accent);
-    transition: transform 0.3s ease;
-}
-
-.collapsible.active .collapsible-header::after {
-    transform: rotate(45deg); /* Becomes a 'x' */
-}
-
-.collapsible-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    background-color: transparent; /* Content is already in a grid */
-}
-
+.status-planned { background-color: #555; }
+.status-complete { background-color: var(--success-color); color: var(--bg-darker); }
+.status-in-progress { background-color: var(--primary-accent); color: var(--bg-darker); }
+.status-blocked { background-color: var(--danger-color); }
 
 /* Screenshots Section */
 .screenshot-grid {
@@ -831,7 +713,6 @@ h2 {
     font-size: 40px;
 }
 
-
 /* Contact Section */
 .contact-grid {
     text-align: center;
@@ -842,25 +723,102 @@ h2 {
     font-size: 1.2rem;
 }
 
-
 /*
 ===================================================
 ====================== FOOTER =====================
 ===================================================
 */
-.footer {
+.site-footer {
     text-align: center;
     padding: 3rem;
     background-color: var(--bg-darker);
     border-top: 1px solid var(--border-color);
 }
 
+.footer-links {
+    margin-bottom: 1.5rem;
+}
+
 .footer-links a {
-    margin: 0 15px;
+    margin: 0 10px;
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+.footer-contact {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-copyright p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
+/*
+===================================================
+=================== LEGAL PAGES ===================
+===================================================
+*/
+.legal-page .legal-hero {
+    padding: 4rem 2rem;
+    background-color: var(--bg-darker);
+    text-align: center;
+}
+
+.legal-page .legal-hero h1 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--primary-accent);
+    margin-bottom: 0.5rem;
+}
+
+.legal-page .last-updated {
+    color: #888;
+}
+
+.legal-content {
+    padding: 4rem 0;
+}
+
+.legal-content .container {
+    max-width: 800px;
+}
+
+.legal-section {
+    margin-bottom: 2.5rem;
+}
+
+.legal-section h2, .legal-section h3 {
+    font-family: var(--font-title);
+    color: var(--primary-accent);
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.legal-section ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.legal-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: var(--card-color);
+    border-left: 4px solid var(--danger-color);
+    font-size: 0.9rem;
+}
+
 
 /*
 ===================================================
@@ -869,6 +827,7 @@ h2 {
 */
 @media (max-width: 992px) {
     .hero-title { font-size: 3.5rem; }
+    .nav-logo { font-size: 1.2rem; }
 }
 
 @media (max-width: 768px) {
@@ -892,7 +851,7 @@ h2 {
     }
 
     .nav-item {
-        margin: 1.8rem 0;
+        margin: 1.2rem 0; /* Reduced margin for more links */
     }
 
     .hamburger {
@@ -904,13 +863,13 @@ h2 {
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
     .hero-title { font-size: 2.5rem; }
+    .hero-title-sub { font-size: 1.8rem; }
     .hero-subtitle { font-size: 1.2rem; }
     .hero-cta .btn { margin: 10px; padding: 12px 24px; font-size: 0.9rem; }
 
     h2 { font-size: 2rem; }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    .legal-page .legal-hero h1 {
+        font-size: 2.5rem;
     }
 }
