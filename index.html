@@ -131,115 +131,11 @@
             <div class="container">
                 <h2>Dev Tracker</h2>
                 <!-- Dev Tracker Summary -->
-                <div class="dev-summary">
-                    <div>Total Tasks: <span id="total-tasks">46</span></div>
-                    <div>Completed: <span id="completed-tasks">35</span></div>
-                    <div>In Progress: <span id="in-progress-tasks">0</span></div>
-                    <div>Planned: <span id="planned-tasks">11</span></div>
-                </div>
+                <div id="dev-tracker-summary"></div>
 
                 <!-- DEV TRACKER CONTENT: Generated from /docs/TODO.MD -->
-                <div class="dev-tracker-content">
-                    
-                    <!-- Priorities -->
-                    <div class="dev-category">
-                        <h3 class="dev-category-title">Priorities</h3>
-                        <div class="dev-grid">
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Features -->
-                    <div class="dev-category">
-                        <h3 class="dev-category-title">Features</h3>
-                        <div class="dev-grid">
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Fixes -->
-                    <div class="dev-category">
-                        <h3 class="dev-category-title">Fixes</h3>
-                        <div class="dev-grid">
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                        </div>
-                    </div>
-
-                     <!-- Polish -->
-                     <div class="dev-category">
-                        <h3 class="dev-category-title">Polish</h3>
-                        <div class="dev-grid">
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Testing -->
-                    <div class="dev-category">
-                        <h3 class="dev-category-title">Testing</h3>
-                        <div class="dev-grid">
-                            <div class="dev-card"><span class="status-badge planned">Planned</span> Test core gameplay loop.</div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span> Test scene transitions.</div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span> Test save/load or persistence behavior, if applicable.</div>
-                            <div class="dev-card"><span class="status-badge planned">Planned</span> Test export/build flow.</div>
-                        </div>
-                    </div>
-
-                    <!-- Completed Tasks (Collapsible) -->
-                    <div class="dev-category collapsible">
-                        <h3 class="dev-category-title collapsible-header">Completed Tasks</h3>
-                        <div class="dev-grid collapsible-content">
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create turn based system no manual selection of heroes</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Balance out attack, hp, damage, scales</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create Victory Scenario + place holder for cutscene cinematic..</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create trap animation for Aziza and update code.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create shield bash animation for Osa and update code.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add skill button for Nganga.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add skill button for Kishi.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create animation for Nganga skill effects: disease and heal.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Implement Kishi shapeshifting skill.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create animations for Kishi shapeshifting skill.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Implement idle animation system mixed with current breathing system.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create attack animation for skeleton warrior.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create attack animation for skeleton archer.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create attack animation for skeleton mage.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create projectile sprite and animation for skeleton archer.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create background music for battle scene.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add idle effect for Kishi in werehyena form, maybe breathing only</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create sound effects for damage taken</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add Defeat Scene</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Update the buttons at the end of the Victory/Defeat Scenes.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Create cut scenes of dialog from each character.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Finished addding new attack/skill button features</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add new portrait image in player status for kishi in wolf form</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: Nganga cannot cast disease twice on same target</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: Nganga Disease and Heal skill cost 2 AP </div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: When npc dies with disease effect, the cloud is green sprite and very large</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: when npc dies w/o disease effect, cloud effect is red from targeting shader</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: Disease green spell effect does not wear off after 2 turns</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: Out of bounds right side needs to be extended.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Fix bug: Apply to breathing to characters not selected. Only Nganga works.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Death animation cloud still too big</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Victory sequence doesn't trigger</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add not in range targeting messages in window.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Skeletonwarrior 2 name shows up, should just be displayed in target box as Skeleton Warrior</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Check Skip button mechanic</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Add shadow effects under all character sprites.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Update character status field with a graphic or texture map.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Update the character profile pictures to match their new sprites.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Review all characters AP,HP, skill cost values</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Adjust output box frame not even.</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Rework healthbar meters replace red with green. change color based on %</div>
-                            <div class="dev-card"><span class="status-badge complete">Complete</span> Skeleton Archer scale needs to be increased</div>
-                        </div>
-                    </div>
+                <div id="dev-tracker-list">
+                    <p class="fallback">Loading Dev Tracker data... If this message persists, the data file may be missing or there may be a network issue.</p>
                 </div>
             </div>
         </section>
