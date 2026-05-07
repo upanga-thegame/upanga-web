@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hero Modal
     initializeHeroModal();
+
+    // Screenshot Modal
+    initializeScreenshotModal();
 });
 
 async function loadDevTracker() {
@@ -185,6 +188,36 @@ function initializeHeroModal() {
     });
     document.addEventListener('keydown', (e) => {
         if (e.key === "Escape" && modal.classList.contains('active')) {
+            close();
+        }
+    });
+}
+
+function initializeScreenshotModal() {
+    const modal = document.getElementById('screenshot-modal');
+    const modalImg = document.getElementById('screenshot-modal-img');
+    const screenshotCards = document.querySelectorAll('.screenshot-card img');
+    const closeModal = document.querySelector('#screenshot-modal .screenshot-close');
+
+    if (!modal || !modalImg || !closeModal || screenshotCards.length === 0) return;
+
+    screenshotCards.forEach(card => {
+        card.addEventListener('click', () => {
+            modal.style.display = "block";
+            modalImg.src = card.src;
+        });
+    });
+
+    const close = () => modal.style.display = "none";
+
+    closeModal.addEventListener('click', close);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            close();
+        }
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") {
             close();
         }
     });
