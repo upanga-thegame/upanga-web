@@ -237,9 +237,9 @@ h2 {
     min-height: 95vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align content to the top */
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 8rem 2rem; /* Add more top padding */
     /* 
     BACKGROUND IMAGE PLACEHOLDER:
     Replace this background with your key art. 
