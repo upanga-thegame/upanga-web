@@ -1,1 +1,159 @@
-import { readFileSync, writeFileSync, mkdirSync } from \'fs\';\nimport { dirname, join } from \'path\';\nimport { fileURLToPath } from \'url\';\n\nconst __dirname = dirname(fileURLToPath(import.meta.url));\n\nconst todoFilePath = join(__dirname, \'..\/..\/docs\/TODO.MD\');\nconst outputFilePath = join(__dirname, \'..\/..\/data\/dev-tracker.json\');\n\nfunction parseTodo() {\n    const fileContent = readFileSync(todoFilePath, \'utf-8\');\n    const lines = fileContent.split(\'\\n\');\n\n    const devTracker = {\n        generatedAt: new Date().toISOString(),\n        summary: {\n            total: 0,\n            complete: 0,\n            inProgress: 0,\n            planned: 0,\n            blocked: 0,\n        },\n        groups: [],\n    };\n\n    let currentGroup = null;\n\n    for (const line of lines) {\n        const trimmedLine = line.trim();\n\n        // Check for a group heading (e.g., ## Features)\n        if (trimmedLine.startsWith(\'## \')) {\n            const title = trimmedLine.substring(3).trim();\n             if (title.toLowerCase().includes(\'completed\')) continue;\n\n            currentGroup = {\n                title: title,\n                items: [],\n            };\n            devTracker.groups.push(currentGroup);\n        } \n        // Check for a task item\n        else if (trimmedLine.startsWith(\'- \') || trimmedLine.startsWith(\'* \')) {\n            if (!currentGroup) continue; // Skip tasks before any group\n\n            let task = {};\n            let taskTitle = trimmedLine.substring(2).trim();\n\n            // Check for checkbox syntax\n            if (taskTitle.startsWith(\'[ \') || taskTitle.startsWith(\'[x]\') || taskTitle.startsWith(\'[X]\')) {\n                const statusMarker = taskTitle.substring(1, 2);\n                taskTitle = taskTitle.substring(4).trim();\n\n                if (statusMarker.toLowerCase() === \'x\') {\n                    task.status = \'Complete\';\n                } else {\n                    task.status = \'Planned\';\n                }\n            } else {\n                // Non-checkbox items are Planned by default\n                task.status = \'Planned\';\n            }\n            \n            // Check for status keywords\n            const lowerCaseLine = line.toLowerCase();\n            if (lowerCaseLine.includes(\'in progress\') || lowerCaseLine.includes(\'wip\') || lowerCaseLine.includes(\'working on\')) {\n                task.status = \'In Progress\';\n            } else if (lowerCaseLine.includes(\'blocked\')) {\n                task.status = \'Blocked\';\n            }\n\n            task.title = taskTitle;\n            task.notes = \'\'; // Placeholder for future notes parsing\n            currentGroup.items.push(task);\n\n            // Update summary\n            devTracker.summary.total++;\n            if (task.status === \'Complete\') devTracker.summary.complete++;\n            else if (task.status === \'In Progress\') devTracker.summary.inProgress++;\n            else if (task.status === \'Planned\') devTracker.summary.planned++;\n            else if (task.status === \'Blocked\') devTracker.summary.blocked++;\n        }\n    }\n\n    // Ensure the output directory exists\n    mkdirSync(dirname(outputFilePath), { recursive: true });\n    // Write the JSON file\n    writeFileSync(outputFilePath, JSON.stringify(devTracker, null, 2));\n\n    console.log(`Successfully generated ${outputFilePath}`);\n}\n\nparseTodo();\n
+import fs from "node:fs";
+import path from "node:path";
+
+const TODO_PATH = path.join(process.cwd(), "docs", "TODO.MD");
+const OUTPUT_DIR = path.join(process.cwd(), "data");
+const OUTPUT_PATH = path.join(OUTPUT_DIR, "dev-tracker.json");
+
+function normalizeStatus(text, checked) {
+    const lower = text.toLowerCase();
+
+    if (lower.includes("blocked")) {
+        return "Blocked";
+    }
+
+    if (
+        lower.includes("in progress") ||
+        lower.includes("wip") ||
+        lower.includes("working on")
+    ) {
+        return "In Progress";
+    }
+
+    if (checked) {
+        return "Complete";
+    }
+
+    return "Planned";
+}
+
+function cleanTaskText(text) {
+    return text
+        .replace(/\*/g, "")
+        .replace(/__/g, "")
+        .replace(/`/g, "")
+        .trim();
+}
+
+function ensureGroup(groups, currentGroupTitle) {
+    let group = groups.find((entry) => entry.title === currentGroupTitle);
+
+    if (!group) {
+        group = {
+            title: currentGroupTitle,
+            items: [],
+        };
+        groups.push(group);
+    }
+
+    return group;
+}
+
+function parseTodoMarkdown(markdown) {
+    const lines = markdown.split(/\r?\n/);
+    const groups = [];
+    let currentGroupTitle = "General";
+
+    for (const rawLine of lines) {
+        const line = rawLine.trim();
+
+        if (!line) {
+            continue;
+        }
+
+        const headingMatch = line.match(/^(#{1,6})\s+(.+)$/);
+        if (headingMatch) {
+            currentGroupTitle = cleanTaskText(headingMatch[2]);
+            ensureGroup(groups, currentGroupTitle);
+            continue;
+        }
+
+        const checkboxMatch = line.match(/^[-*]\s+\[( |x|X)\]\s+(.+)$/);
+        if (checkboxMatch) {
+            const checked = checkboxMatch[1].toLowerCase() === "x";
+            const title = cleanTaskText(checkboxMatch[2]);
+            const status = normalizeStatus(title, checked);
+            const group = ensureGroup(groups, currentGroupTitle);
+
+            group.items.push({
+                title,
+                status,
+                notes: "",
+            });
+
+            continue;
+        }
+
+        const bulletMatch = line.match(/^[-*]\s+(.+)$/);
+        if (bulletMatch) {
+            const title = cleanTaskText(bulletMatch[1]);
+            const status = normalizeStatus(title, false);
+            const group = ensureGroup(groups, currentGroupTitle);
+
+            group.items.push({
+                title,
+                status,
+                notes: "",
+            });
+        }
+
+    }
+
+    return groups.filter((group) => group.items.length > 0);
+}
+
+function buildSummary(groups) {
+    const summary = {
+        total: 0,
+        complete: 0,
+        inProgress: 0,
+        planned: 0,
+        blocked: 0,
+    };
+
+    for (const group of groups) {
+        for (const item of group.items) {
+            summary.total += 1;
+
+            if (item.status === "Complete") {
+                summary.complete += 1;
+            } else if (item.status === "In Progress") {
+                summary.inProgress += 1;
+            } else if (item.status === "Blocked") {
+                summary.blocked += 1;
+            } else {
+                summary.planned += 1;
+            }
+        }
+
+    }
+
+    return summary;
+}
+
+function main() {
+    if (!fs.existsSync(TODO_PATH)) {
+        console.error(`Missing TODO file: ${TODO_PATH}`);
+        process.exit(1);
+    }
+
+    const markdown = fs.readFileSync(TODO_PATH, "utf8");
+    const groups = parseTodoMarkdown(markdown);
+    const summary = buildSummary(groups);
+
+    const output = {
+        generatedAt: new Date().toISOString(),
+        summary,
+        groups,
+    };
+
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2), "utf8");
+
+    console.log(`Generated ${OUTPUT_PATH}`);
+    console.log(
+        `Tasks: ${summary.total}, Complete: ${summary.complete}, In Progress: ${summary.inProgress}, Planned: ${summary.planned}, Blocked: ${summary.blocked}`
+    );
+}
+
+main();
