@@ -566,6 +566,35 @@ h2 {
     color: var(--danger-color);
 }
 
+.tracker-section-heading {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    color: var(--primary-accent);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.completed-tracker-section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.completed-tracker-section .tracker-card {
+    background-color: #1a1d1a; /* Slightly different green-tinted dark color */
+}
+
+.completed-tracker-section .tracker-card:hover {
+    border-color: var(--success-color);
+}
+
+.completed-tracker-section .status-badge {
+    background-color: var(--success-color) !important;
+    color: var(--bg-darker) !important;
+}
+
 /* Collapsible Dev Tracker Category */
 .collapsible-header {
     cursor: pointer;

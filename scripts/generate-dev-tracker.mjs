@@ -17,10 +17,10 @@ function cleanTaskText(text) {
     return text.replace(/\*\*/g, "").replace(/__/g, "").replace(/`/g, "").trim();
 }
 
-function ensureGroup(groups, currentGroupTitle) {
-    let group = groups.find((entry) => entry.title === currentGroupTitle);
+function ensureGroup(groups, title) {
+    let group = groups.find((entry) => entry.title === title);
     if (!group) {
-        group = { title: currentGroupTitle, items: [] };
+        group = { title, items: [] };
         groups.push(group);
     }
     return group;
@@ -28,7 +28,9 @@ function ensureGroup(groups, currentGroupTitle) {
 
 function parseTodoMarkdown(markdown) {
     const lines = markdown.split(/\r?\n/);
-    const groups = [];
+    const openGroups = [];
+    const completedGroups = [];
+    const allItems = [];
     let currentGroupTitle = "General";
 
     for (const rawLine of lines) {
@@ -40,53 +42,56 @@ function parseTodoMarkdown(markdown) {
             const title = cleanTaskText(headingMatch[2]);
             if (!title.toLowerCase().includes("completed")) {
                 currentGroupTitle = title;
-                ensureGroup(groups, currentGroupTitle);
             }
             continue;
         }
+        if (line.startsWith("## #")) continue; // Skip separator
 
-        if (line.startsWith("## #")) { // Skip the large completed separator
-             currentGroupTitle = "Completed"; // Set a temporary group for completed items
-             ensureGroup(groups, currentGroupTitle);
-             continue;
-        }
+        const itemMatch = line.match(/^[-*]\s+(.+)$/);
+        if (itemMatch) {
+            let title = itemMatch[1].trim();
+            let status = "Planned";
+            
+            const checkboxMatch = title.match(/^\s*\[( |x|X)\]\s+(.+)/);
+            if (checkboxMatch) {
+                const checked = checkboxMatch[1].trim().toLowerCase() === 'x';
+                title = cleanTaskText(checkboxMatch[2]);
+                status = normalizeStatus(title, checked);
+            } else {
+                title = cleanTaskText(title);
+                status = normalizeStatus(title, false);
+            }
+            
+            if (!title) continue;
 
-        const checkboxMatch = line.match(/^[-*]\s+\[( |x|X)\]\s+(.+)$/);
-        if (checkboxMatch) {
-            const checked = checkboxMatch[1].toLowerCase() === "x";
-            const title = cleanTaskText(checkboxMatch[2]);
-            if (!title) continue; // Skip empty tasks
-
-            const status = normalizeStatus(title, checked);
-            const group = ensureGroup(groups, currentGroupTitle);
-            group.items.push({ title, status, notes: "" });
-            continue;
-        }
-
-        const bulletMatch = line.match(/^[-*]\s+(.+)$/);
-        if (bulletMatch) {
-            const title = cleanTaskText(bulletMatch[1]);
-            if (!title || title.startsWith('[') ) continue; // Skip empty or malformed items
-            const status = normalizeStatus(title, false);
-            const group = ensureGroup(groups, currentGroupTitle);
-            group.items.push({ title, status, notes: "" });
+            allItems.push({ title, status, group: currentGroupTitle });
         }
     }
 
-    return groups.filter((group) => group.items.length > 0);
+    // Segregate items into open and completed groups
+    for (const item of allItems) {
+        if (item.status === 'Complete') {
+            const group = ensureGroup(completedGroups, item.group);
+            group.items.push(item);
+        } else {
+            const group = ensureGroup(openGroups, item.group);
+            group.items.push(item);
+        }
+    }
+
+    return { openGroups, completedGroups, allItems };
 }
 
-function buildSummary(groups) {
-    const summary = { total: 0, complete: 0, inProgress: 0, planned: 0, blocked: 0 };
-    for (const group of groups) {
-        for (const item of group.items) {
-            summary.total++;
-            if (item.status === "Complete") summary.complete++;
-            else if (item.status === "In Progress") summary.inProgress++;
-            else if (item.status === "Blocked") summary.blocked++;
-            else summary.planned++;
-        }
+function buildSummary(allItems) {
+    const summary = { total: 0, complete: 0, inProgress: 0, planned: 0, blocked: 0, open: 0 };
+    for (const item of allItems) {
+        summary.total++;
+        if (item.status === "Complete") summary.complete++;
+        else if (item.status === "In Progress") summary.inProgress++;
+        else if (item.status === "Blocked") summary.blocked++;
+        else summary.planned++;
     }
+    summary.open = summary.inProgress + summary.planned + summary.blocked;
     return summary;
 }
 
@@ -97,26 +102,21 @@ function main() {
     }
 
     const markdown = fs.readFileSync(TODO_PATH, "utf8");
-    const groups = parseTodoMarkdown(markdown);
-    
-    // Separate completed tasks into their own group for easier handling later if needed
-    const activeGroups = groups.filter(g => g.title !== 'Completed');
-    const completedGroup = groups.find(g => g.title === 'Completed');
-    if(completedGroup) activeGroups.push(completedGroup); // Add completed to the end
-
-    const summary = buildSummary(groups);
+    const { openGroups, completedGroups, allItems } = parseTodoMarkdown(markdown);
+    const summary = buildSummary(allItems);
 
     const output = { 
         generatedAt: new Date().toISOString(), 
         summary, 
-        groups: activeGroups
+        groups: openGroups.filter(g => g.items.length > 0),
+        completedGroups: completedGroups.filter(g => g.items.length > 0),
     };
 
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2), "utf8");
 
     console.log(`Generated ${OUTPUT_PATH}`);
-    console.log(`Tasks: ${summary.total}, Complete: ${summary.complete}, In Progress: ${summary.inProgress}, Planned: ${summary.planned}, Blocked: ${summary.blocked}`);
+    console.log(`Tasks: ${summary.total}, Open: ${summary.open}, Complete: ${summary.complete}`);
 }
 
 main();
