@@ -724,9 +724,35 @@ h2 {
     padding: 0 1rem; /* Add padding for the content inside */
 }
 
-.collapsible-content .dev-grid {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+.legal-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: var(--bg-darker);
+    border-left: 4px solid var(--danger-color);
+    font-size: 0.9rem;
+}
+
+.privacy-content {
+    max-width: 800px;
+}
+
+.privacy-content h3 {
+    font-family: var(--font-title);
+    color: var(--primary-accent);
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.privacy-content ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.privacy-content ul li {
+    margin-bottom: 0.5rem;
 }
 
 /* Collapsible Dev Tracker Category */

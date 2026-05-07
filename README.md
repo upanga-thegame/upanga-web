@@ -8,4 +8,5 @@ The core files for the website are:
 
 - `index.html`: The main HTML file containing the structure of the webpage.
 - `styles.css`: The stylesheet that defines the appearance and layout, including all colors, fonts, and responsive design.
-- `script.js`: The JavaScript file that handles interactive elements like the mobile menu and contact form.
+- `script.js`: The JavaScript file that handles interactive elements.
+- `privacy.html`: The privacy policy for the game and website.
