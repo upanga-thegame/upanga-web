@@ -428,9 +428,43 @@ h2 {
 
 
 /* Dev Tracker Section */
+.dev-summary {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background-color: var(--card-color);
+    padding: 1rem;
+    border-left: 4px solid var(--primary-accent);
+    border-right: 4px solid var(--primary-accent);
+}
+
+.dev-summary > div {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.dev-summary span {
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.dev-category {
+    margin-bottom: 3rem;
+}
+
+.dev-category-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: var(--primary-accent);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
 .dev-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
@@ -463,6 +497,33 @@ h2 {
 .status-badge.complete { background-color: var(--success-color); }
 .status-badge.in-progress { background-color: var(--secondary-accent); }
 .status-badge.planned { background-color: #555; }
+
+/* Collapsible Dev Tracker Category */
+.collapsible-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible-header::after {
+    content: '+'; /* Show more */
+    font-size: 2rem;
+    color: var(--primary-accent);
+    transition: transform 0.3s ease;
+}
+
+.collapsible.active .collapsible-header::after {
+    transform: rotate(45deg); /* Becomes a 'x' */
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: transparent; /* Content is already in a grid */
+}
+
 
 /* Screenshots Section */
 .screenshot-grid {

@@ -34,3 +34,20 @@ contactForm.addEventListener('submit', function(e) {
         }, 500); // This should match the transition duration
     }, 4000); // Message will be visible for 4 seconds
 });
+
+// Dev Tracker Collapsible Section
+document.addEventListener('DOMContentLoaded', function () {
+    const collapsibles = document.querySelectorAll('.collapsible-header');
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+});
+
