@@ -234,12 +234,12 @@ h2 {
 ===================================================
 */
 .hero-section {
-    min-height: 95vh;
+    min-height: 80vh; /* Reduced section height */
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align content to the top */
     text-align: center;
-    padding: 8rem 2rem; /* Add more top padding */
+    padding: 6rem 2rem; /* Reduced top padding */
     /* 
     BACKGROUND IMAGE PLACEHOLDER:
     Replace this background with your key art. 
