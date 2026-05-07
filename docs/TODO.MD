@@ -3,6 +3,7 @@
 Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Priorities
+- [ ] Improve NPC logic during battle
 
 ## Features
 
