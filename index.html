@@ -36,11 +36,6 @@
         <!-- ================== HERO SECTION =================== -->
         <!-- =================================================== -->
         <section id="home" class="hero-section">
-            <!-- 
-            BACKGROUND IMAGE: 
-            Replace the background property in .hero-section in styles.css 
-            with your own cinematic background image.
-            -->
             <div class="hero-content">
                 <h1 class="hero-title">Upanga: The Soul-Blade</h1>
                 <p class="hero-subtitle">A tactical turn-based RPG of shattered spirits, ancient magic, and skeletal armies.</p>
@@ -110,14 +105,26 @@
                 <h2>The Four Heroes</h2>
                 <p class="section-intro">Four heroes, bound by fate, are all that stand against Bokor's corruption.</p>
                 <div class="heroes-grid">
-                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
-                    <div class="hero-card"><h3>Osa the Warrior</h3><div class="hero-placeholder"><img src="images/osa.png" alt="Osa the Warrior"></div><p>A stalwart defender whose duty is to protect the innocent.</p></div>
-                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
-                    <div class="hero-card"><h3>Kishi the Shapeshifter</h3><div class="hero-placeholder"><img src="images/kishi.png" alt="Kishi the Shapeshifter"></div><p>A mysterious being who can take on the forms of defeated foes.</p></div>
-                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
-                    <div class="hero-card"><h3>Aziza the Scout</h3><div class="hero-placeholder"><img src="images/aziza.png" alt="Aziza the Scout"></div><p>A nimble rogue who moves through shadows to strike at the heart of the enemy.</p></div>
-                    <!-- HERO CARD: Replace placeholder div with an img tag for character art -->
-                    <div class="hero-card"><h3>Nganga the Shaman</h3><div class="hero-placeholder"><img src="images/nganga.png" alt="Nganga the Shaman"></div><p>A powerful mystic who communes with spirits to heal allies and curse enemies.</p></div>
+                    <div class="hero-card" data-bio="Osa is the last of the royal guard, a warrior whose spirit is as unbreakable as his shield. He seeks to restore his honor by reforging the Soul-Blade.">
+                        <h3>Osa the Warrior</h3>
+                        <div class="hero-placeholder"><img src="images/osa.png" alt="Osa the Warrior"></div>
+                        <p>A stalwart defender whose duty is to protect the innocent.</p>
+                    </div>
+                    <div class="hero-card" data-bio="Cursed with an insatiable hunger, Kishi is an outcast who has learned to control his shapeshifting abilities. He sees the Soul-Blade as his only path to redemption.">
+                        <h3>Kishi the Shapeshifter</h3>
+                        <div class="hero-placeholder"><img src="images/kishi.png" alt="Kishi the Shapeshifter"></div>
+                        <p>A mysterious being who can take on the forms of defeated foes.</p>
+                    </div>
+                    <div class="hero-card" data-bio="Aziza moves like a shadow, a master of traps and secrets. She believes the shattered Soul-Blade holds the key to a truth that was stolen from her people.">
+                        <h3>Aziza the Scout</h3>
+                        <div class="hero-placeholder"><img src="images/aziza.png" alt="Aziza the Scout"></div>
+                        <p>A nimble rogue who moves through shadows to strike at the heart of the enemy.</p>
+                    </div>
+                    <div class="hero-card" data-bio="Nganga is a wise shaman who communes with the ancestral spirits. He joins the quest to prevent Bokor from corrupting the spirit world permanently.">
+                        <h3>Nganga the Shaman</h3>
+                        <div class="hero-placeholder"><img src="images/nganga.png" alt="Nganga the Shaman"></div>
+                        <p>A powerful mystic who communes with spirits to heal allies and curse enemies.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -130,7 +137,6 @@
         <section id="dev-tracker" class="dev-tracker-section">
             <div class="container">
                 <h2>Dev Tracker</h2>
-                <!-- Dev Tracker Summary -->
                 <div id="dev-tracker-summary"></div>
                 <div id="dev-tracker-list">
                     <p class="tracker-loading">Loading Dev Tracker Data...</p>
@@ -147,17 +153,11 @@
             <div class="container">
                 <h2>Screenshots</h2>
                 <div class="screenshot-grid">
-                    <!-- SCREENSHOT: Replace div with your img tag -->
                     <div class="screenshot-card"><div>Battle Map</div></div>
-                    <!-- SCREENSHOT: Replace div with your img tag -->
                     <div class="screenshot-card"><div>Hero HUD</div></div>
-                    <!-- SCREENSHOT: Replace div with your img tag -->
                     <div class="screenshot-card"><div>Skeleton Encounter</div></div>
-                    <!-- SCREENSHOT: Replace div with your img tag -->
                     <div class="screenshot-card"><div>Attack Animation</div></div>
-                    <!-- SCREENSHOT: Replace div with your img tag -->
                     <div class="screenshot-card"><div>Turn Order Bar</div></div>
-                    <!-- SCREENSHOT: Replace div with your img tag -->
                     <div class="screenshot-card"><div>Crypt Environment</div></div>
                 </div>
             </div>
@@ -205,6 +205,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- =================================================== -->
+    <!-- =================== HERO MODAL ==================== -->
+    <!-- =================================================== -->
+    <div id="hero-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 id="modal-hero-name"></h3>
+            <p id="modal-hero-bio"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

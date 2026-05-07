@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dev Tracker
     loadDevTracker();
+
+    // Hero Modal
+    initializeHeroModal();
 });
 
 async function loadDevTracker() {
@@ -148,5 +151,41 @@ function escapeHtml(value) {
             '\`': '&#x60;'
         };
         return escape[match];
+    });
+}
+
+function initializeHeroModal() {
+    const modal = document.getElementById('hero-modal');
+    const modalName = document.getElementById('modal-hero-name');
+    const modalBio = document.getElementById('modal-hero-bio');
+    const closeModal = document.querySelector('.modal-close');
+    const heroCards = document.querySelectorAll('.hero-card');
+
+    if (!modal || !closeModal || heroCards.length === 0) return;
+
+    heroCards.forEach(card => {
+        const imagePlaceholder = card.querySelector('.hero-placeholder');
+        imagePlaceholder.addEventListener('click', () => {
+            const heroName = card.querySelector('h3').textContent;
+            const heroBio = card.dataset.bio;
+
+            modalName.textContent = heroName;
+            modalBio.textContent = heroBio;
+            modal.classList.add('active');
+        });
+    });
+
+    const close = () => modal.classList.remove('active');
+
+    closeModal.addEventListener('click', close);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            close();
+        }
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && modal.classList.contains('active')) {
+            close();
+        }
     });
 }
