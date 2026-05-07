@@ -512,6 +512,14 @@ h2 {
     margin-bottom: 2rem;
 }
 
+.dev-build-version {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--primary-accent);
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
 .tracker-summary {
     display: flex;
     flex-wrap: wrap;
