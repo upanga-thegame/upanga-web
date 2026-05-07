@@ -46,14 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadDevTracker() {
     const summaryContainer = document.getElementById('dev-tracker-summary');
     const listContainer = document.getElementById('dev-tracker-list');
+    const lastUpdatedContainer = document.getElementById('dev-tracker-last-updated');
 
-    if (!summaryContainer || !listContainer) return;
+    if (!summaryContainer || !listContainer || !lastUpdatedContainer) return;
 
     try {
         const response = await fetch('./data/dev-tracker.json');
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
 
+        renderLastUpdated(data.generatedAt, lastUpdatedContainer);
         renderDevTrackerSummary(data.summary, summaryContainer);
         renderDevTracker(data, listContainer);
         addCollapsibleListeners();
@@ -62,6 +64,12 @@ async function loadDevTracker() {
         console.error("Failed to load Dev Tracker data:", error);
         listContainer.innerHTML = `<p class="tracker-error">Failed to load Dev Tracker. The data file might be missing or corrupted.</p>`;
     }
+}
+
+function renderLastUpdated(generatedAt, container) {
+    const date = new Date(generatedAt);
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    container.textContent = `Last Updated: ${date.toLocaleDateString(undefined, options)}`;
 }
 
 function renderDevTrackerSummary(summary, container) {

@@ -570,6 +570,14 @@ h2 {
 .status-in-progress { background-color: var(--primary-accent); color: var(--bg-darker); }
 .status-blocked { background-color: var(--danger-color); }
 
+.dev-tracker-section .last-updated {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+
 .tracker-summary {
     display: flex;
     flex-wrap: wrap;
