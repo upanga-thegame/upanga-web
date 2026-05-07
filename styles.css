@@ -259,6 +259,7 @@ h2 {
     letter-spacing: 1px;
     color: var(--primary-accent);
     text-shadow: none;
+    margin-top: 1rem;
 }
 
 .hero-subtitle {
