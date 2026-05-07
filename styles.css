@@ -486,18 +486,7 @@ h2 {
     line-height: 1.8;
 }
 
-.hero-card h3 {
-    font-family: var(--font-title);
-    color: var(--primary-accent);
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-}
-
-.hero-card p {
-    padding: 0 1.5rem 1.5rem;
-}
-
-.hero-abilities {
+.modal-hero-abilities {
     font-weight: bold;
     color: var(--success-color);
 }

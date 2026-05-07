@@ -160,10 +160,19 @@ function initializeHeroModal() {
         const imagePlaceholder = card.querySelector('.hero-placeholder');
         imagePlaceholder.addEventListener('click', () => {
             const heroName = card.querySelector('h3').textContent;
-            const heroBio = card.dataset.bio;
+            let heroBio = card.dataset.bio;
+            const abilitiesIndex = heroBio.indexOf('Abilities:');
 
             modalName.textContent = heroName;
-            modalBio.textContent = heroBio;
+
+            if (abilitiesIndex !== -1) {
+                const mainBio = heroBio.substring(0, abilitiesIndex);
+                const abilities = heroBio.substring(abilitiesIndex);
+                modalBio.innerHTML = `${mainBio}<br><br><span class="modal-hero-abilities">${abilities}</span>`;
+            } else {
+                modalBio.textContent = heroBio;
+            }
+
             modal.classList.add('active');
         });
     });
