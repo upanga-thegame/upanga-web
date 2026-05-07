@@ -76,7 +76,7 @@ function renderDevTracker(data, container) {
     if (groups && groups.length > 0) {
         html += '<div class="open-tracker-section">';
         html += '<h3 class="tracker-section-heading">Open Tasks</h3>';
-        html += renderGroups(groups, false);
+        html += renderGroups(groups, true);
         html += '</div>';
     }
 
