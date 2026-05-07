@@ -101,37 +101,34 @@ h2 {
     display: inline-block;
     padding: 14px 28px;
     border: 2px solid var(--primary-accent);
-    background: linear-gradient(to right, transparent 50%, var(--primary-accent) 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    color: var(--primary-accent);
+    background: var(--primary-accent);
+    color: var(--bg-darker);
     text-transform: uppercase;
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 1rem;
+    font-family: var(--font-title); /* Use the more readable title font */
+    font-weight: 700;
+    font-size: 1.1rem;
     letter-spacing: 1px;
-    transition: all 0.4s ease-out;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .btn:hover {
-    background-position: left bottom;
-    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    filter: brightness(1.1);
     text-decoration: none;
-    box-shadow: var(--glow-primary);
 }
 
 .btn-secondary {
-    border-color: var(--secondary-accent);
+    background: transparent;
+    border: 2px solid var(--secondary-accent);
     color: var(--secondary-accent);
-    background: linear-gradient(to right, transparent 50%, var(--secondary-accent) 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
 }
 
 .btn-secondary:hover {
-    background-position: left bottom;
-    color: var(--bg-color);
-    box-shadow: var(--glow-secondary);
+    background: var(--secondary-accent);
+    color: var(--bg-darker);
 }
 
 .android-badge {
