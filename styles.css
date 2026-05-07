@@ -497,6 +497,11 @@ h2 {
     padding: 0 1.5rem 1.5rem;
 }
 
+.hero-abilities {
+    font-weight: bold;
+    color: var(--success-color);
+}
+
 
 /* Dev Tracker Section */
 .dev-tracker-section .last-updated {
