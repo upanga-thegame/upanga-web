@@ -1,8 +1,6 @@
 # Upanga: The Soul-Blade - Splash Webpage
 
-This repository contains the source code for the official splash and landing page for the mobile game **Upanga: The Soul-Blade**.
-
-This is a simple, clean, and responsive static website built with plain HTML, CSS, and JavaScript. It is designed to be hosted for free on GitHub Pages.
+Repository for the official splash and landing page for the mobile game **Upanga: The Soul-Blade**.
 
 ## Project Structure
 
@@ -11,25 +9,3 @@ The core files for the website are:
 - `index.html`: The main HTML file containing the structure of the webpage.
 - `styles.css`: The stylesheet that defines the appearance and layout, including all colors, fonts, and responsive design.
 - `script.js`: The JavaScript file that handles interactive elements like the mobile menu and contact form.
-
-## Deployment on GitHub Pages
-
-This site is ready to be deployed on GitHub Pages directly from this repository.
-
-To deploy the site, follow these steps:
-
-1.  Navigate to your repository on GitHub.
-2.  Go to **Settings** > **Pages**.
-3.  Under the "Build and deployment" section, select **Deploy from a branch**.
-4.  Under "Branch", select `main` and `/ (root)` folder.
-5.  Click **Save**.
-
-GitHub will automatically build and deploy the site from the `main` branch. It may take a few minutes for the site to become live. Once it is, the URL will be displayed at the top of the GitHub Pages settings page.
-
-## Customization
-
-The code includes comments to make it easy to update content:
-
--   **Artwork & Images**: The HTML and CSS files have placeholder sections and comments indicating where to add your own background images, hero art, and screenshots.
--   **Colors & Fonts**: The primary colors and fonts can be easily changed by editing the CSS variables at the top of the `styles.css` file.
--   **Content**: All text can be edited directly in the `index.html` file.
