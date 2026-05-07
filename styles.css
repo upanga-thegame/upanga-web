@@ -131,15 +131,19 @@ h2 {
     color: var(--bg-darker);
 }
 
-.android-badge {
+.release-badge {
     display: inline-block;
-    margin-top: 2rem;
-    padding: 8px 18px;
-    background-color: var(--success-color);
-    color: var(--text-light);
+    margin-top: 3rem; /* Increased top margin */
+    margin-bottom: 1rem; /* Added bottom margin */
+    padding: 10px 25px;
+    color: var(--primary-accent);
+    border: 2px solid var(--border-color);
     border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    background: rgba(10,10,10, 0.5);
 }
 
 
