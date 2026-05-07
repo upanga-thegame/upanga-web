@@ -248,7 +248,12 @@ h2 {
     font-size: 6rem; /* Make the main title larger */
     color: var(--text-light);
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-    line-height: 1;
+}
+
+.details-text {
+    font-size: 0.8rem;
+    font-style: italic;
+}    line-height: 1;
 }
 
 .hero-title-sub {
