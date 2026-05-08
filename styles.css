@@ -742,6 +742,21 @@ h2 {
     font-size: 1.2rem;
 }
 
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
 /*
 ===================================================
 ====================== FOOTER =====================
