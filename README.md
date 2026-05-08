@@ -16,3 +16,11 @@ The site includes:
 - `privacy.html`
 - `terms.html`
 - `data-deletion.html`
+
+## FAQ Automation
+- FAQ content is stored in `docs/FAQ.MD`.
+- Categories use `##` headings.
+- Questions use `###` headings.
+- Answers are normal markdown text under each question.
+- GitHub Actions generates `data/faq.json` during deployment.
+- The homepage loads `data/faq.json` and renders collapsible FAQ sections.

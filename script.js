@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Screenshot Modal
     initializeScreenshotModal();
+
+    // FAQ
+    loadFaq();
 });
 
 async function loadDevTracker() {
@@ -119,6 +122,65 @@ function addCollapsibleListeners() {
                 content.style.maxHeight = null;
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+}
+
+async function loadFaq() {
+    const faqContainer = document.getElementById('faq-list');
+    if (!faqContainer) return;
+
+    try {
+        const response = await fetch('./data/faq.json');
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        const data = await response.json();
+
+        renderFaq(data.categories, faqContainer);
+        addFaqListeners();
+
+    } catch (error) {
+        console.error("Failed to load FAQ data:", error);
+        faqContainer.innerHTML = `<p class="faq-error">FAQ data could not be loaded. Please check back later.</p>`;
+    }
+}
+
+function renderFaq(categories, container) {
+    let html = '';
+    categories.forEach(category => {
+        html += `
+            <div class="faq-category">
+                <h3 class="faq-category-title">${escapeHtml(category.title)}</h3>
+                ${category.items.map((item, index) => `
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-${category.title.replace(/\s+/g, '-')}-${index}">
+                            ${escapeHtml(item.question)}
+                        </button>
+                        <div id="faq-answer-${category.title.replace(/\s+/g, '-')}-${index}" class="faq-answer">
+                            <p>${escapeHtml(item.answer).replace(/\n/g, '<br>')}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
+function addFaqListeners() {
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+            question.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('open');
+
+            if (answer.classList.contains('open')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+                answer.style.maxHeight = null;
             }
         });
     });

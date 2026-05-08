@@ -9,6 +9,7 @@ on:
       - "styles.css"
       - "script.js"
       - "docs/TODO.MD"
+      - "docs/FAQ.MD"
       - "scripts/**"
       - "assets/**"
       - "images/**"
@@ -42,8 +43,10 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Generate Dev Tracker Data
-        run: node scripts/generate-dev-tracker.mjs
+      - name: Generate static data
+        run: |
+          node scripts/generate-dev-tracker.mjs
+          node scripts/generate-faq.mjs
 
       - name: Prepare Deployment Artifact
         run: |
