@@ -157,7 +157,9 @@ function renderFaq(categories, container) {
                             ${escapeHtml(item.question)}
                         </button>
                         <div id="faq-answer-${category.title.replace(/\s+/g, '-')}-${index}" class="faq-answer">
-                            <p>${escapeHtml(item.answer).replace(/\n/g, '<br>')}</p>
+                            <div class="faq-answer-wrapper">
+                                <p>${escapeHtml(item.answer).replace(/\n/g, '<br>')}</p>
+                            </div>
                         </div>
                     </div>
                 `).join('')}

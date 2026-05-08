@@ -818,14 +818,17 @@ h2 {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0 1.5rem;
-    color: var(--text-color);
-    line-height: 1.8;
+    transition: max-height 0.5s ease-out;
 }
 
 .faq-answer.open {
-    padding: 1rem 1.5rem 2rem;
+    /* This class is now just a state-tracker for JS and the wrapper */
+}
+
+.faq-answer-wrapper {
+    padding: 1.5rem 1.5rem 2rem;
+    color: var(--text-color);
+    line-height: 1.8;
 }
 
 .faq-loading,
