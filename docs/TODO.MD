@@ -4,7 +4,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 
 ## Priorities
-- [-] Begin work on main menu framework. Continue, New Game, Settings, Credits 
+- [ ] Begin work on main menu framework. Continue, New Game, Settings, Credits 
 
 ## Features
 
@@ -20,6 +20,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Polish
 
+- [ ] Re-do graphic animations in main menu, flames look unrealistic
 
 ## Testing
 
