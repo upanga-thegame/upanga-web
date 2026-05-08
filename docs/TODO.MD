@@ -9,13 +9,13 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Features
 
 - [ ] Add music to cutscene dialogues.
-- [ ] Add music to main menu.
+- [X] Add music to main menu.
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
 
 ## Fixes
 
-- [!] Aziza AP missing # for Trap skill
+- [ ] Aziza AP missing # for Trap skill
 - [ ] Turn before Kishi starts before his attack is finished
 
 ## Polish
@@ -24,16 +24,15 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Testing
 
-- [ ] Test core gameplay loop.
-- [ ] Test scene transitions.
-- [ ] Test save/load or persistence behavior, if applicable.
+- [~] Test core gameplay loop.
+- [~] Test scene transitions.
+- [~] Test save/load or persistence behavior, if applicable.
 - [ ] Test export/build flow.
 
 ## Ideas
 
 - [ ] Idea: Create leg animation frames for movement. Left/Right easy to implement, Up/Down difficult without entire sprite rework.
 - [ ] Idea: Add effects based on target conditions like disease, arrow does more dmg
-- [ ] Idea:
 
 ## Notes
  
