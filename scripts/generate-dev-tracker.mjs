@@ -5,12 +5,29 @@ const TODO_PATH = path.join(process.cwd(), "docs", "TODO.MD");
 const OUTPUT_DIR = path.join(process.cwd(), "data");
 const OUTPUT_PATH = path.join(OUTPUT_DIR, "dev-tracker.json");
 
-function normalizeStatus(text, checked) {
+function normalizeStatus(text) {
     const lower = text.toLowerCase();
     if (lower.includes("blocked")) return "Blocked";
     if (lower.includes("in progress") || lower.includes("wip") || lower.includes("working on")) return "In Progress";
-    if (checked) return "Complete";
-    return "Planned";
+    return null;
+}
+
+function determineStatus(marker, text) {
+    const backwardStatus = normalizeStatus(text);
+    if (backwardStatus) return backwardStatus;
+
+    switch (marker) {
+        case 'x':
+        case 'X':
+            return 'Complete';
+        case '~':
+            return 'In Progress';
+        case '!':
+            return 'Blocked';
+        case ' ':
+        default:
+            return 'Planned';
+    }
 }
 
 function cleanTaskText(text) {
@@ -52,11 +69,11 @@ function parseTodoMarkdown(markdown) {
             let title = itemMatch[1].trim();
             let status = "Planned";
             
-            const checkboxMatch = title.match(/^\s*\[( |x|X)\]\s+(.+)/);
+            const checkboxMatch = title.match(/^\s*\[([ |x|X|~|!])\]\s+(.+)/);
             if (checkboxMatch) {
-                const checked = checkboxMatch[1].trim().toLowerCase() === 'x';
+                const marker = checkboxMatch[1].trim();
                 title = cleanTaskText(checkboxMatch[2]);
-                status = normalizeStatus(title, checked);
+                status = determineStatus(marker, title);
             } else {
                 title = cleanTaskText(title);
                 status = normalizeStatus(title, false);

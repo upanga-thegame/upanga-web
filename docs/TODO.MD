@@ -4,7 +4,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 
 ## Priorities
-- [ ] Begin work on main menu framework. Continue, New Game, Settings, Credits 
+- [~] Begin work on main menu framework. Continue, New Game, Settings, Credits 
 
 ## Features
 
@@ -15,7 +15,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Fixes
 
-- [ ] Aziza AP missing # for Trap skill
+- [!] Aziza AP missing # for Trap skill
 - [ ] Turn before Kishi starts before his attack is finished
 
 ## Polish
