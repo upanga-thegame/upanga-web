@@ -16,5 +16,3 @@ The site includes:
 - `privacy.html`
 - `terms.html`
 - `data-deletion.html`
-
-These pages provide generic policy information for the Upanga: The Soul-Blade Android game and should be reviewed before the game is published on Google Play.
