@@ -5,26 +5,18 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Priorities
 - [ ] Begin work on main menu framework. Continue, New Game, Settings, Credits
-- [ ]
-- [ ]
 
 ## Features
 
-- [ ] Add music to cutscenes
-- [ ]
-- [ ]
+- [ ] Add music to cutscene dialogues.
 
 ## Fixes
 
 - [ ] Aziza AP missing # for Trap skill
 - [ ] Turn before Kishi starts before his attack is finished
-- [ ]
 
 ## Polish
 
-- [ ]
-- [ ]
-- [ ]
 
 ## Testing
 
@@ -40,8 +32,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Idea:
 
 ## Notes
-
-- 
+ 
 
 ## ############################# COMPLETED #############################
 
