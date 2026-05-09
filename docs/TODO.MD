@@ -6,12 +6,13 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Priorities
 - [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
 - [ ] Work on the main travel map. Design, create party member travel logo  
-- [ ] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
+- [X] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
 
 ## Features
 
 - [X] Add music to cutscene dialogues.
 - [X] Add music to main menu.
+- [ ] Create Skeleton Mage dmg effects animation on target
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
 - [ ] Design JungleBattleMap. New NPCs: Bokors Zombies (melee cause disease), Cursed Soul 
@@ -31,12 +32,18 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [ ] Aziza AP missing # for Trap skill
 - [ ] Turn before Kishi starts before his attack is finished
+- [ ] Text on bottom of message display is truncated
 
 ## Polish
 
 - [ ] Re-do graphic animations in main menu, flames look unrealistic
 - [ ] Add eye glow animation to Main Menu background when player clicks Begin
 - [ ] Speed up Aziza projectile
+- [ ] Change Osa Shield bash sound
+- [~] Refactor select animation for Aziza
+- [ ] Refactor select animation for Osa
+- [ ] Refactor select animation for Kishi
+- [ ] Refactor select animation for Nganga
 
 ## Testing
 
