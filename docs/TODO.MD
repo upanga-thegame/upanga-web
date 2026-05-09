@@ -35,6 +35,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Polish
 
 - [ ] Re-do graphic animations in main menu, flames look unrealistic
+- [ ] Add eye glow animation to Main Menu background when player clicks Begin
 - [ ] Speed up Aziza projectile
 
 ## Testing
