@@ -12,7 +12,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [X] Add music to cutscene dialogues.
 - [X] Add music to main menu.
-- [ ] Add idle animation sound effects for all characters.
+- [ ] Add character turn sound effects for all characters(Completed: Aziza)
 - [ ] Create Skeleton Mage dmg effects animation on target
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
@@ -34,17 +34,20 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Aziza AP missing # for Trap skill
 - [ ] Turn before Kishi starts before his attack is finished
 - [ ] Text on bottom of message display is truncated
+- [ ] Fix Aziza healthbar after sprite rescale for animation
 
 ## Polish
 
-- [ ] Re-do graphic animations in main menu, flames look unrealistic
-- [ ] Add eye glow animation to Main Menu background when player clicks Begin
+- [X] Re-do graphic animations in main menu, flames look unrealistic
+- [X] Add eye glow animation to Main Menu background when player clicks Begin
 - [ ] Speed up Aziza projectile
 - [ ] Change Osa Shield bash sound
-- [~] Refactor select animation for Aziza
-- [ ] Refactor select animation for Osa
+- [X] Refactor select animation for Aziza
+- [~] Refactor select animation for Osa
 - [ ] Refactor select animation for Kishi
 - [ ] Refactor select animation for Nganga
+- [ ] When character takes dmg also put red or white flash over their portrait
+- [ ] Create graphic for End button placeholder
 
 ## Testing
 
@@ -56,7 +59,6 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Ideas
 
 - [ ] Create leg animation frames for movement. Left/Right easy to implement, Up/Down difficult without entire sprite rework.
-- [ ] Add effects based on target conditions like disease, arrow does more dmg
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
 
 ## Notes
