@@ -4,11 +4,12 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 
 ## Priorities
-- [~] Begin work on main menu framework. Continue, New Game, Settings, Credits 
+- [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
+- [ ] Work on the main travel map. Design, create party member travel logo  
 
 ## Features
 
-- [ ] Add music to cutscene dialogues.
+- [X] Add music to cutscene dialogues.
 - [X] Add music to main menu.
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
