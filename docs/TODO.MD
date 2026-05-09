@@ -6,6 +6,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Priorities
 - [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
 - [ ] Work on the main travel map. Design, create party member travel logo  
+- [ ] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
 
 ## Features
 
@@ -13,6 +14,18 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Add music to main menu.
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
+- [ ] Design JungleBattleMap. New NPCs: Bokors Zombies (melee cause disease), Cursed Soul 
+- [ ] Design RuinsBattleMap. New NPCs: Wraith (ability: turns invis 1 turn, teleports melee)
+- [ ] Design PyramidBattleMap. New NPCs: Mummies
+- [ ] Design Final Boss LaplassBattleMap. Boss: The Laplass (melee + special ability) 
+- [ ] Create cinematic cutscene: Game launch
+- [ ] Create cinematic cutscene: New game
+- [ ] Create cinematic cutscene: New game
+- [ ] Create cinematic cutscene: After JungleBattleMap
+- [ ] Create cinematic cutscene: After RuinsBattleMap
+- [ ] Create cinematic cutscene: After PyramidBattleMap
+- [ ] Create cinematic cutscene: After LaplassBattleMap
+
 
 ## Fixes
 
@@ -22,6 +35,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Polish
 
 - [ ] Re-do graphic animations in main menu, flames look unrealistic
+- [ ] Speed up Aziza projectile
 
 ## Testing
 
@@ -32,8 +46,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Ideas
 
-- [ ] Idea: Create leg animation frames for movement. Left/Right easy to implement, Up/Down difficult without entire sprite rework.
-- [ ] Idea: Add effects based on target conditions like disease, arrow does more dmg
+- [ ] Create leg animation frames for movement. Left/Right easy to implement, Up/Down difficult without entire sprite rework.
+- [ ] Add effects based on target conditions like disease, arrow does more dmg
 
 ## Notes
  
