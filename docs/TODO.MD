@@ -48,6 +48,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [ ] Create leg animation frames for movement. Left/Right easy to implement, Up/Down difficult without entire sprite rework.
 - [ ] Add effects based on target conditions like disease, arrow does more dmg
+- [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
 
 ## Notes
  
