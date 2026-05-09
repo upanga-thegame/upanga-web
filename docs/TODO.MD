@@ -12,6 +12,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [X] Add music to cutscene dialogues.
 - [X] Add music to main menu.
+- [ ] Add idle animation sound effects for all characters.
 - [ ] Create Skeleton Mage dmg effects animation on target
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
