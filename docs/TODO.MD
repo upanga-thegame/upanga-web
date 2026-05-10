@@ -26,7 +26,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After RuinsBattleMap
 - [ ] Create cinematic cutscene: After PyramidBattleMap
 - [ ] Create cinematic cutscene: After LaplassBattleMap
-
+- [~] Create leg animation frames for movement.
 
 ## Fixes
 
@@ -58,7 +58,6 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Ideas
 
-- [ ] Create leg animation frames for movement. Left/Right easy to implement, Up/Down difficult without entire sprite rework.
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
 
 ## Notes
