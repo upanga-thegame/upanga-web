@@ -27,6 +27,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After PyramidBattleMap
 - [ ] Create cinematic cutscene: After LaplassBattleMap
 - [~] Create leg animation frames for movement.
+- [ ] Create audio dialogue for characters action like: I can't go that way, no target available etc
 
 ## Fixes
 
@@ -40,11 +41,12 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [X] Re-do graphic animations in main menu, flames look unrealistic
 - [X] Add eye glow animation to Main Menu background when player clicks Begin
-- [ ] Speed up Aziza projectile
+- [X] Speed up Aziza projectile
 - [X] Change Osa Shield bash sound
 - [X] Refactor select animation for Aziza
 - [X] Refactor select animation for Osa
 - [ ] Refactor select animation for Kishi
+- [ ] Refactor select animation for Kishi W form
 - [ ] Refactor select animation for Nganga
 - [ ] When character takes dmg also put red or white flash over their portrait
 - [ ] Create graphic for End button placeholder
