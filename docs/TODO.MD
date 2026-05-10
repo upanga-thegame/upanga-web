@@ -12,8 +12,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [X] Add music to cutscene dialogues.
 - [X] Add music to main menu.
-- [ ] Add character turn sound effects for all characters(Completed: Aziza)
-- [ ] Create Skeleton Mage dmg effects animation on target
+- [X] Add character turn sound effects for all characters
+- [X] Create Skeleton Mage dmg effects animation on target
 - [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
 - [ ] Design JungleBattleMap. New NPCs: Bokors Zombies (melee cause disease), Cursed Soul 
@@ -21,7 +21,6 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Design PyramidBattleMap. New NPCs: Mummies
 - [ ] Design Final Boss LaplassBattleMap. Boss: The Laplass (melee + special ability) 
 - [ ] Create cinematic cutscene: Game launch
-- [ ] Create cinematic cutscene: New game
 - [ ] Create cinematic cutscene: New game
 - [ ] Create cinematic cutscene: After JungleBattleMap
 - [ ] Create cinematic cutscene: After RuinsBattleMap
@@ -31,19 +30,20 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Fixes
 
-- [ ] Aziza AP missing # for Trap skill
-- [ ] Turn before Kishi starts before his attack is finished
-- [ ] Text on bottom of message display is truncated
-- [ ] Fix Aziza healthbar after sprite rescale for animation
+- [~] Aziza AP missing # for Trap skill
+- [~] Turn before Kishi starts before his attack is finished
+- [~] Text on bottom of message display is truncated
+- [~] Fix Aziza healthbar after sprite rescale for animation
+- [X] Fix sprite shadow effect not showing again
 
 ## Polish
 
 - [X] Re-do graphic animations in main menu, flames look unrealistic
 - [X] Add eye glow animation to Main Menu background when player clicks Begin
 - [ ] Speed up Aziza projectile
-- [ ] Change Osa Shield bash sound
+- [X] Change Osa Shield bash sound
 - [X] Refactor select animation for Aziza
-- [~] Refactor select animation for Osa
+- [X] Refactor select animation for Osa
 - [ ] Refactor select animation for Kishi
 - [ ] Refactor select animation for Nganga
 - [ ] When character takes dmg also put red or white flash over their portrait
