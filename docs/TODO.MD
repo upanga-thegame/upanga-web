@@ -38,6 +38,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Text on bottom of message display is truncated
 - [X] Fix Aziza healthbar after sprite rescale for animation
 - [X] Fix sprite shadow effect not showing again
+- [~] Fix target boxes for npcs too low
 
 ## Polish
 
@@ -48,8 +49,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Refactor select animation for Aziza
 - [X] Refactor select animation for Osa
 - [X] Refactor select animation for Kishi
-- [ ] Refactor select animation for Kishi W form
-- [ ] Refactor select animation for Nganga
+- [X] Refactor select animation for Kishi W form
+- [X] Refactor select animation for Nganga
 - [ ] When character takes dmg also put red or white flash over their portrait
 - [ ] Create graphic for End button placeholder
 
