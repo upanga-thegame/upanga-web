@@ -64,6 +64,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Ideas
 
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
+- [ ] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
 
 ## Notes
  
