@@ -7,6 +7,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
 - [ ] Work on the main travel map. Design, create party member travel logo  
 - [X] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
+- [ ] After all tasks for CryptBattleMap is polished, build & export first Android
+      apk. Check how game looks & plays on mobile. 
 
 ## Features
 
@@ -31,10 +33,10 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Fixes
 
-- [~] Aziza AP missing # for Trap skill
-- [~] Turn before Kishi starts before his attack is finished
-- [~] Text on bottom of message display is truncated
-- [~] Fix Aziza healthbar after sprite rescale for animation
+- [X] Aziza AP missing # for Trap skill
+- [X] Turn before Kishi starts before his attack is finished. The next turn begins before Kishi Wolf is finished with animation.
+- [X] Text on bottom of message display is truncated
+- [X] Fix Aziza healthbar after sprite rescale for animation
 - [X] Fix sprite shadow effect not showing again
 
 ## Polish
@@ -45,7 +47,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Change Osa Shield bash sound
 - [X] Refactor select animation for Aziza
 - [X] Refactor select animation for Osa
-- [ ] Refactor select animation for Kishi
+- [X] Refactor select animation for Kishi
 - [ ] Refactor select animation for Kishi W form
 - [ ] Refactor select animation for Nganga
 - [ ] When character takes dmg also put red or white flash over their portrait
