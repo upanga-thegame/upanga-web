@@ -28,8 +28,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After RuinsBattleMap
 - [ ] Create cinematic cutscene: After PyramidBattleMap
 - [ ] Create cinematic cutscene: After LaplassBattleMap
-- [~] Create leg animation frames for movement.
-- [ ] Create audio dialogue for characters action like: I can't go that way, no target available etc
+- [X] Create leg animation frames for movement.
+- [X] Create audio dialogue for each characters action
 
 ## Fixes
 
