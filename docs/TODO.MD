@@ -30,6 +30,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After LaplassBattleMap
 - [X] Create leg animation frames for movement.
 - [X] Create audio dialogue for each characters action
+- [~] Create walking animation for all NPCs
+- [~] Create character audio effects for failed actions
 
 ## Fixes
 
@@ -38,7 +40,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Text on bottom of message display is truncated
 - [X] Fix Aziza healthbar after sprite rescale for animation
 - [X] Fix sprite shadow effect not showing again
-- [~] Fix target boxes for npcs too low
+- [X] Fix target boxes for npcs too low
+- [~] Fix Nganga idle animation bounces around, pixel foot off
 
 ## Polish
 
