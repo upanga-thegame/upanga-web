@@ -34,6 +34,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Create character audio effects for failed actions
 - [ ] Create party icon for TravelMap
 - [ ] Create fading footprints effect for movement on TravelMap
+- [~] Add choose icons menu pre-game. Import Sprite icon sheet create frames
 
 ## Fixes
 
