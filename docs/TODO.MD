@@ -32,9 +32,10 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Create audio dialogue for each characters action
 - [~] Create walking animation for all NPCs
 - [X] Create character audio effects for failed actions
-- [ ] Create party icon for TravelMap
+- [X] Create party icon for TravelMap
 - [ ] Create fading footprints effect for movement on TravelMap
 - [~] Add choose icons menu pre-game. Import Sprite icon sheet create frames
+- [ ] Add random encounter(s) on Travelmap
 
 ## Fixes
 
