@@ -5,7 +5,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Priorities
 - [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
-- [ ] Work on the main travel map. Design, create party member travel logo  
+- [~] Work on the main travel map. Design, create party member travel logo  
 - [X] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
 - [ ] After all tasks for CryptBattleMap is polished, build & export first Android
       apk. Check how game looks & plays on mobile. 
@@ -31,7 +31,9 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Create leg animation frames for movement.
 - [X] Create audio dialogue for each characters action
 - [~] Create walking animation for all NPCs
-- [~] Create character audio effects for failed actions
+- [X] Create character audio effects for failed actions
+- [ ] Create party icon for TravelMap
+- [ ] Create fading footprints effect for movement on TravelMap
 
 ## Fixes
 
@@ -41,7 +43,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Fix Aziza healthbar after sprite rescale for animation
 - [X] Fix sprite shadow effect not showing again
 - [X] Fix target boxes for npcs too low
-- [~] Fix Nganga idle animation bounces around, pixel foot off
+- [X] Fix Nganga idle animation bounces around, pixel foot off
 
 ## Polish
 
@@ -54,8 +56,6 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Refactor select animation for Kishi
 - [X] Refactor select animation for Kishi W form
 - [X] Refactor select animation for Nganga
-- [ ] When character takes dmg also put red or white flash over their portrait
-- [ ] Create graphic for End button placeholder
 
 ## Testing
 
