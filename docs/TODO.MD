@@ -1,77 +1,59 @@
-# TODO
+# TODO - CH.1
 
 Upanga: The Soul Blade - TODO + Dev Tracker
 
 
-## Priorities
-- [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
+## Priorities CH.1
+
 - [~] Work on the main travel map. Design, create party member travel logo  
-- [X] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
-- [ ] After all tasks for CryptBattleMap is polished, build & export first Android
-      apk. Check how game looks & plays on mobile. 
-
-## Features
-
-- [X] Add music to cutscene dialogues.
-- [X] Add music to main menu.
-- [X] Add character turn sound effects for all characters
-- [X] Create Skeleton Mage dmg effects animation on target
-- [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
-      save the current game state.
 - [ ] Design JungleBattleMap. New NPCs: Bokors Zombies (melee cause disease), Cursed Soul 
 - [ ] Design RuinsBattleMap. New NPCs: Wraith (ability: turns invis 1 turn, teleports melee)
 - [ ] Design PyramidBattleMap. New NPCs: Mummies
 - [ ] Design Final Boss LaplassBattleMap. Boss: The Laplass (melee + special ability) 
+- [~] Design 2nd Map for CryptBattleMap. New NPC: unamed miniboss
+- [ ] Create a tutorial map after New Game cinematic cutscene
+- [ ] Investigate charging .99 to unlock Ch.1 after tutorial map(s) 
+
+
+
+## Features CH.1
+
+- [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
+      save the current game state.
 - [ ] Create cinematic cutscene: Game launch
 - [ ] Create cinematic cutscene: New game
+- [ ] Create cinematic cutscene: After CryptBattleMap
 - [ ] Create cinematic cutscene: After JungleBattleMap
 - [ ] Create cinematic cutscene: After RuinsBattleMap
 - [ ] Create cinematic cutscene: After PyramidBattleMap
 - [ ] Create cinematic cutscene: After LaplassBattleMap
-- [X] Create leg animation frames for movement.
-- [X] Create audio dialogue for each characters action
 - [~] Create walking animation for all NPCs
-- [X] Create character audio effects for failed actions
-- [X] Create party icon for TravelMap
-- [ ] Create fading footprints effect for movement on TravelMap
-- [~] Add choose icons menu pre-game. Import Sprite icon sheet create frames
 - [ ] Add random encounter(s) on Travelmap
 
-## Fixes
 
-- [X] Aziza AP missing # for Trap skill
-- [X] Turn before Kishi starts before his attack is finished. The next turn begins before Kishi Wolf is finished with animation.
-- [X] Text on bottom of message display is truncated
-- [X] Fix Aziza healthbar after sprite rescale for animation
-- [X] Fix sprite shadow effect not showing again
-- [X] Fix target boxes for npcs too low
-- [X] Fix Nganga idle animation bounces around, pixel foot off
+## Fixes CH.1
 
-## Polish
 
-- [X] Re-do graphic animations in main menu, flames look unrealistic
-- [X] Add eye glow animation to Main Menu background when player clicks Begin
-- [X] Speed up Aziza projectile
-- [X] Change Osa Shield bash sound
-- [X] Refactor select animation for Aziza
-- [X] Refactor select animation for Osa
-- [X] Refactor select animation for Kishi
-- [X] Refactor select animation for Kishi W form
-- [X] Refactor select animation for Nganga
+## Polish CH.1
 
-## Testing
+
+## Testing CH.1
 
 - [~] Test core gameplay loop.
 - [~] Test scene transitions.
 - [~] Test save/load or persistence behavior, if applicable.
 - [ ] Test export/build flow.
+- [ ] Build & export first Android apk. Check how game looks & plays on mobile. 
 
-## Ideas
+
+## Ideas CH.1
 
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
 - [ ] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
+- [ ] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
+      HP to scale difficulty. 
 
-## Notes
+## Notes CH.1
  
 
 ## ############################# COMPLETED #############################
@@ -81,6 +63,9 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Priorities: Create turn based system no manual selection of heroes
 - [X] Priorities: Balance out attack, hp, damage, scales
 - [X] Priorities: Create Victory Scenario + place holder for cutscene cinematic..
+- [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
+- [X] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
+
 
 ## Features
 
@@ -107,6 +92,18 @@ Upanga: The Soul Blade - TODO + Dev Tracker
       with portrait and text being printed across. maybe have their mouth moving like they are talking. 
 - [X] Finished addding new attack/skill button features
 - [X] Add new portrait image in player status for kishi in wolf form
+- [X] Add music to cutscene dialogues.
+- [X] Add music to main menu.
+- [X] Add character turn sound effects for all characters
+- [X] Create Skeleton Mage dmg effects animation on target
+- [X] Create leg animation frames for movement.
+- [X] Create audio dialogue for each characters action
+- [X] Create character audio effects for failed actions
+- [X] Create party icon for TravelMap
+- [X] Create fading footprints effect for movement on TravelMap
+- [X] Add choose icons menu pre-game. Import Sprite icon sheet create frames
+
+
 
 ## Fixes
 
@@ -123,6 +120,14 @@ Upanga: The Soul Blade - TODO + Dev Tracker
       Other skills for missing messages.
 - [X] Skeletonwarrior 2 name shows up, should just be displayed in target box as Skeleton Warrior     
 - [X] Check Skip button mechanic
+- [X] Aziza AP missing # for Trap skill
+- [X] Turn before Kishi starts before his attack is finished. The next turn begins before Kishi Wolf is finished with animation.
+- [X] Text on bottom of message display is truncated
+- [X] Fix Aziza healthbar after sprite rescale for animation
+- [X] Fix sprite shadow effect not showing again
+- [X] Fix target boxes for npcs too low
+- [X] Fix Nganga idle animation bounces around, pixel foot off
+
 
 ## Polish
 
@@ -133,3 +138,15 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Adjust output box frame not even.
 - [X] Rework healthbar meters replace red with green. change color based on %
 - [X] Skeleton Archer scale needs to be increased
+- [X] Re-do graphic animations in main menu, flames look unrealistic
+- [X] Add eye glow animation to Main Menu background when player clicks Begin
+- [X] Speed up Aziza projectile
+- [X] Change Osa Shield bash sound
+- [X] Refactor select animation for Aziza
+- [X] Refactor select animation for Osa
+- [X] Refactor select animation for Kishi
+- [X] Refactor select animation for Kishi W form
+- [X] Refactor select animation for Nganga
+
+
+
