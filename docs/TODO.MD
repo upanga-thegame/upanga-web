@@ -7,11 +7,10 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [~] Work on the main travel map. Design, create party member travel logo  
 - [ ] Design JungleBattleMap.
-- [ ] Design CryptBattleMap. 
+- [~] Design CryptBattleMap. 
 - [ ] Design PyramidBattleMap.
 - [ ] Design SwampBattleMap. 
 - [ ] Design LaplassBattleMap. 
-- [~] Design 2nd Map for CryptBattleMap. New NPC miniboss: Bess
 - [ ] Investigate charging .99 to unlock entire map after completion of CryptBattleMap 
 
 
@@ -38,7 +37,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Polish CH.1
 
-- [ ] Revisit the entire combat system. Have it based on closeness to the
+- [+] Revisit the entire combat system. Have it based on closeness to the
       the target instead of cell location. if the spites are close enough
       allow combat for melee.
 
@@ -55,8 +54,9 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
 - [ ] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
-- [ ] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
+- [~] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
       HP to scale difficulty. 
+- [~] Add day cycles to the TravelMap, Day timer to game.
 
 ## Notes CH.1
 
