@@ -11,11 +11,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Design PyramidBattleMap.
 - [ ] Design SwampBattleMap. 
 - [ ] Design LaplassBattleMap. 
-<<<<<<< HEAD
 - [ ] Design Kraal map(s)
 - [~] Design 2nd Map for CryptBattleMap. New NPC miniboss: Bess
-=======
->>>>>>> 43d49a5a44d9b416575c8282da7ef31de9da2951
 - [ ] Investigate charging .99 to unlock entire map after completion of CryptBattleMap 
 
 
@@ -61,12 +58,9 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
 - [~] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
       HP to scale difficulty. 
-<<<<<<< HEAD
 - [ ] Create an indicator over region with status completion 
 - [ ] Add a day cycle 1hr real world 24 game time, cycle tints of the map
-=======
 - [~] Add day cycles to the TravelMap, Day timer to game.
->>>>>>> 43d49a5a44d9b416575c8282da7ef31de9da2951
 
 ## Notes CH.1
 
