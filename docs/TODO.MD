@@ -5,21 +5,21 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Priorities CH.1
 
-- [~] Work on the main travel map. Design, create party member travel logo  
-- [ ] Design JungleBattleMap.
-- [~] Design CryptBattleMap. 
-- [ ] Design PyramidBattleMap.
-- [ ] Design SwampBattleMap. 
-- [ ] Design LaplassBattleMap. 
-- [ ] Design Kraal map(s)
-- [~] Design 2nd Map for CryptBattleMap. New NPC miniboss: Bess
+- [X] Work on the main travel map. Design, create party member travel logo  
+- [ ] Design JungleBattleMaps
+- [~] Design CryptBattleMaps (3). 
+- [ ] Design PyramidBattleMaps
+- [ ] Design SwampBattleMaps
+- [ ] Design LaplassBattleMap (1) 
+- [X] Design Kraal map (1)
+- [~] Design 2nd & 3rd Map for CryptBattleMap. New NPC miniboss: Bess
 - [ ] Investigate charging .99 to unlock entire map after completion of CryptBattleMap 
 
 
 
 ## Features CH.1
 
-- [ ] Implement autosave functions. Display message "Saving..." whenever switching screens
+- [~] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
 - [ ] Create cinematic cutscene: Game launch
 - [ ] Create cinematic cutscene: New game
@@ -32,6 +32,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Add random encounter(s) on Travelmap
 - [ ] Create Soul Blade graphic to display on TravelMap. Starts out
       transparent. Fills as parts of the blade are completed.
+- [ ] Sketch out storyboards, hero origin stories
 
 
 ## Fixes CH.1
@@ -39,7 +40,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 ## Polish CH.1
 
-- [+] Revisit the entire combat system. Have it based on closeness to the
+- [X] Revisit the entire combat system. Have it based on closeness to the
       the target instead of cell location. if the spites are close enough
       allow combat for melee.
 
@@ -55,12 +56,13 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Ideas CH.1
 
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
-- [ ] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
-- [~] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
+- [X] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
+- [X] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
       HP to scale difficulty. 
 - [ ] Create an indicator over region with status completion 
 - [ ] Add a day cycle 1hr real world 24 game time, cycle tints of the map
-- [~] Add day cycles to the TravelMap, Day timer to game.
+- [ ] Add day cycles to the TravelMap, Day timer to game.
+- [ ] Create new portrait pics for different emotions for story cards. 
 
 ## Notes CH.1
 
@@ -69,8 +71,8 @@ Upanga: The Soul Blade - TODO + Dev Tracker
    another map that has building locations the party can travel to. One location will
    be the Chief of the province. He will give out the quests for the party. First quest
    will have the party obtain a part of the soul blade from Bes the guardian of the Akan
-   crypt of Ancients. Bes was once a good spirit but he has been corrupted by Bakor
-   magical powers. After Bes is defeated the party must return to the Chief. At that
+   crypt of Ancients. Bess was once a good spirit but he has been corrupted by Bakor
+   magical powers. After Bess is defeated the party must return to the Chief. At that
    point the game will say thank you for playing the tutorial free play portion of Upanga.
    If you wish to continue to the journey for .99 click here. otherwise the players can
    just exit the Kraal and go nowhere but to the crypt but will say already cleared.
