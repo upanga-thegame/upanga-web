@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // FAQ
     loadFaq();
+
+    // DevBlog
+    loadDevBlog();
 });
 
 async function loadDevTracker() {
@@ -122,6 +125,61 @@ function addCollapsibleListeners() {
                 content.style.maxHeight = null;
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+}
+
+async function loadDevBlog() {
+    const devBlogContainer = document.getElementById('devblog-list');
+    if (!devBlogContainer) return;
+
+    try {
+        const response = await fetch('./data/blog.json');
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        const data = await response.json();
+
+        renderDevBlog(data.entries, devBlogContainer);
+        addDevBlogListeners();
+
+    } catch (error) {
+        console.error("Failed to load DevBlog data:", error);
+        devBlogContainer.innerHTML = `<p class="devblog-error">DevBlog data could not be loaded. Please check back later.</p>`;
+    }
+}
+
+function renderDevBlog(entries, container) {
+    let html = '';
+    entries.forEach((entry, index) => {
+        html += `
+            <div class="devblog-entry">
+                <button class="devblog-title" aria-expanded="false" aria-controls="devblog-content-${index}">
+                    ${escapeHtml(entry.title)}
+                </button>
+                <div id="devblog-content-${index}" class="devblog-content">
+                    <div class="devblog-content-wrapper">
+                        <p>${escapeHtml(entry.content).replace(/\n/g, '<br>')}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
+function addDevBlogListeners() {
+    const titles = document.querySelectorAll('.devblog-title');
+    titles.forEach(title => {
+        title.addEventListener('click', () => {
+            const content = title.nextElementSibling;
+            const isExpanded = title.getAttribute('aria-expanded') === 'true';
+
+            title.setAttribute('aria-expanded', !isExpanded);
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
             }
         });
     });

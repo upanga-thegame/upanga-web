@@ -10,6 +10,7 @@ on:
       - "script.js"
       - "docs/TODO.MD"
       - "docs/FAQ.MD"
+      - "docs/BLOG.MD"
       - "scripts/**"
       - "assets/**"
       - "images/**"
@@ -47,6 +48,7 @@ jobs:
         run: |
           node scripts/generate-dev-tracker.mjs
           node scripts/generate-faq.mjs
+          node scripts/generate-blog.mjs
 
       - name: Prepare Deployment Artifact
         run: |
