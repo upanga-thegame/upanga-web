@@ -15,7 +15,7 @@ Upanga is currently in pre-alpha development. Core systems such as movement, tur
 
 
 ### Will the game be free?
-Yes. The game will be launched as a free game on the Google Play store with limited ads. Future chapters may be unlocked for a small price with no ads. 
+The game will be free to download. The first level, if you will, of the game will be playable. After completing the first objectives you may unlock the full Chapter 1 for a small price.
 
 
 ## Gameplay
