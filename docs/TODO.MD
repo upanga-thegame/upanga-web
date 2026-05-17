@@ -3,21 +3,17 @@
 Upanga: The Soul Blade - TODO + Dev Tracker
 
 
-## Priorities CH.1
+## Ch.1 Priorities (v0.1.0 Pre-Alpha)
 
-- [X] Work on the main travel map. Design, create party member travel logo  
 - [ ] Design JungleBattleMaps
-- [~] Design CryptBattleMaps (3). 
 - [ ] Design PyramidBattleMaps
 - [ ] Design SwampBattleMaps
 - [ ] Design LaplassBattleMap (1) 
-- [X] Design Kraal map (1)
-- [~] Design 2nd & 3rd Map for CryptBattleMap. New NPC miniboss: Bess
-- [ ] Investigate charging .99 to unlock entire map after completion of CryptBattleMap 
+- [~] Paywall after completion of the Crypt. 
 
 
 
-## Features CH.1
+## Ch.1 Features (v0.1.0 Pre-Alpha)
 
 - [~] Implement autosave functions. Display message "Saving..." whenever switching screens
       save the current game state.
@@ -28,23 +24,19 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After RuinsBattleMap
 - [ ] Create cinematic cutscene: After PyramidBattleMap
 - [ ] Create cinematic cutscene: After LaplassBattleMap
-- [~] Create walking animation for all NPCs
 - [ ] Add random encounter(s) on Travelmap
 - [ ] Create Soul Blade graphic to display on TravelMap. Starts out
       transparent. Fills as parts of the blade are completed.
 - [ ] Sketch out storyboards, hero origin stories
 
 
-## Fixes CH.1
+## Ch.1 Fixes (v0.1.0 Pre-Alpha)
 
 
-## Polish CH.1
+## Ch.1 Polish (v0.1.0 Pre-Alpha)
 
-- [X] Revisit the entire combat system. Have it based on closeness to the
-      the target instead of cell location. if the spites are close enough
-      allow combat for melee.
 
-## Testing CH.1
+## Ch.1 Testing (v0.1.0 Pre-Alpha)
 
 - [~] Test core gameplay loop.
 - [~] Test scene transitions.
@@ -53,20 +45,16 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Build & export first Android apk. Check how game looks & plays on mobile. 
 
 
-## Ideas CH.1
+## Ch.1 Ideas (v0.1.0 Pre-Alpha)
 
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
-- [X] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
-- [X] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
-      HP to scale difficulty. 
 - [ ] Create an indicator over region with status completion 
 - [ ] Add a day cycle 1hr real world 24 game time, cycle tints of the map
-- [ ] Add day cycles to the TravelMap, Day timer to game.
 - [ ] Create new portrait pics for different emotions for story cards. 
 
-## Notes CH.1
+## Ch.1 Notes (v0.1.0 Pre-Alpha)
 
- * TravelMap will have a name like Province Kinshasha. When the game begins players will
+ ~ TravelMap will have a name like Province Kinshasha. When the game begins players will
    only be allowed to travel to the Kraal in the center. Inside the Kraal will be 
    another map that has building locations the party can travel to. One location will
    be the Chief of the province. He will give out the quests for the party. First quest
@@ -80,7 +68,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
    scene where the party can ask questions about the game and lore. No sprites will be
    needed the Kraal will only be backgrounds and dialogue box screens. 
 
- * The mountain location, fortress, will be the home of The Laplass. He is a sub boss
+ ~ The mountain location, fortress, will be the home of The Laplass. He is a sub boss
    to Chapter 1. His path is only unlocked once a segment of the soul blade has
    been unlocked in each region of the map by defeating the mini-bosses. Once that
    is completed the chief will give the segments to the village shaman who will
@@ -90,41 +78,45 @@ Upanga: The Soul Blade - TODO + Dev Tracker
    Add a message thanks for playing Chapter 1. Stay tuned for updates for the release
    of Chapter 2. Add a final cinematic cutscene for the defeat sequence.
  
- * LapLassBattleMap: 1 map (for now) New NPC: The LapLass 2 ranged attacks
+ ~ LapLassBattleMap: 1 map (for now) New NPC: The LapLass 2 ranged attacks
    one of them being an AOE. Some type of Royal throne room where the battle
    takes place. Strategic battle with environment attacks like falling boulders
    or something. Have cinematic cutscene of the fortress falling around from
    the weakened magical forces. 
 
- * Jungle Biome: 2 Maps. New NPCs: Bokors Zombies (melee cause disease), Cursed Soul
+ ~ Jungle Biome: 2 Maps. New NPCs: Bokors Zombies (melee cause disease), Cursed Soul
    may change this to some type of corrupted beasts since it is a Jungle Biome. The
    mini-boss can be some lion/half human corrupted soul of the jungle. Guardian of
    the jungle corrupted by Bokor. 
 
- * CryptBattleMap: 2 Maps. New NPCs: Wraith (ability: turns invis 1 turn, teleports melee)
+ ~ CryptBattleMap: 2 Maps. New NPCs: Wraith (ability: turns invis 1 turn, teleports melee)
    Rework the enemies considering replacing the skeletons with zombies as the
    default npc mob. Include a cursed Wraith to replace the Mage. Mini-Boss is Bess has
    a melee attack and a curse ability to stun a target and lose a turn.
 
- * PyramidBattleMap: 2 Maps. New NPCs: Mummies (ability: cause disease on target)
+ ~ PyramidBattleMap: 2 Maps. New NPCs: Mummies (ability: cause disease on target)
    This map will take place inside a pyramid with the second map having a mini-boss
    Need to flush out ideas for mini-boss and special attack. 
 
- * SwampBattleMap: 2 Maps. New NPCs: TBD This map will take place in a swamp
+ ~ SwampBattleMap: 2 Maps. New NPCs: TBD This map will take place in a swamp
    of Wandering Souls. Add a mini-boss based on some Guardian of the dead lore TBD.
 
-## ############################# COMPLETED #############################
+## ####COMPLETED####
 
-## Priorities
+## Ch.1 Priorities (v0.1.0 Pre-Alpha)
 
 - [X] Priorities: Create turn based system no manual selection of heroes
 - [X] Priorities: Balance out attack, hp, damage, scales
 - [X] Priorities: Create Victory Scenario + place holder for cutscene cinematic..
 - [X] Begin work on main menu framework. Continue, New Game, Settings, Credits
 - [X] Rename BattleMap.gd to CryptBattleMap.gd & update all code references
+- [X] Work on the main travel map. Design, create party member travel logo  
+- [X] Design CryptBattleMaps (3). 
+- [X] Design Kraal map (1)
+- [X] Design 2nd & 3rd Map for CryptBattleMap. New NPC miniboss: Bess
 
 
-## Features
+## Ch.1 Features (v0.1.0 Pre-Alpha)
 
 - [X] Create trap animation for Aziza and update code.
 - [X] Create shield bash animation for Osa and update code.
@@ -159,10 +151,15 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Create party icon for TravelMap
 - [X] Create fading footprints effect for movement on TravelMap
 - [X] Add choose icons menu pre-game. Import Sprite icon sheet create frames
+- [X] Create walking animation for all NPCs
+- [X] Add day cycles to the TravelMap, Day timer to game.
+- [X] Improve combat mechanics. Maybe add an interupt system based off of avail AP.
+- [X] Add Difficulty level to the game, add to settings. Easy, Med, Hard. Increase npc 
+      HP to scale difficulty. 
 
 
 
-## Fixes
+## Ch.1 Fixes (v0.1.0 Pre-Alpha)
 
 - [X] Fix bug: Nganga cannot cast disease twice on same target
 - [X] Fix bug: Nganga Disease and Heal skill cost 2 AP 
@@ -186,7 +183,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Fix Nganga idle animation bounces around, pixel foot off
 
 
-## Polish
+## Ch.1 Polish (v0.1.0 Pre-Alpha)
 
 - [X] Add shadow effects under all character sprites.
 - [X] Update character status field with a graphic or texture map.
@@ -204,6 +201,10 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [X] Refactor select animation for Kishi
 - [X] Refactor select animation for Kishi W form
 - [X] Refactor select animation for Nganga
+- [X] Revisit the entire combat system. Have it based on closeness to the
+      the target instead of cell location. if the spites are close enough
+      allow combat for melee.
 
 
+## Ch.1 Ideas (v0.1.0 Pre-Alpha)
 
