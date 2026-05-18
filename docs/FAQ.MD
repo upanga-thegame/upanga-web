@@ -3,7 +3,7 @@
 ## Game
 
 ### What is Upanga: The Soul-Blade?
-Upanga: The Soul-Blade is a tactical, turn-based fantasy RPG for Android where four heroes battle evil forces through the land of Azuma.
+Upanga: The Soul-Blade is a tactical, turn-based fantasy RPG for Android where four heroes battle evil forces through the land of Azumi.
 
 
 ### What platform is Upanga being developed for?
