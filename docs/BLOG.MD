@@ -17,3 +17,13 @@ the other regions should be completed more rapidly as they will follow
 a similar format for objectives, with a few wrinkles thrown in. Today I
 added a day/night cycle system. Purely for aesthetics has no impact on
 game mechanics. This only takes place on the Travel Map scene. - Upanga Dev team
+
+## 2026-05-18 11:00 AM - Todays updates
+
+Today I implemented a Battle time tracking system. It keeps track of how long
+it takes to complete a mission battle & tracks their Best scored time. I am
+also revamping how the message frame boxes look. My plan is to get rid of the
+sprite images and use godot Layered PanelContainer / ColorRect nodes for the outer 
+frame, inner groove, and inset content area. StyleBoxFlat borders for the thick 
+pixel frame and dark interior. This should hopefully also improve performance
+with less assets being loaded on the screen. 

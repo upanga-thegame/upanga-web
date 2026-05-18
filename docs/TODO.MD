@@ -26,15 +26,27 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After LaplassBattleMap
 - [ ] Create Soul Blade graphic to display on TravelMap. Starts out
       transparent. Fills as parts of the blade are completed.
-- [ ] Sketch out storyboards, hero origin stories
+- [ ] Work on storyboards, hero origin stories
 - [~] Implement flash encounter on TravelMap. Bandit attack. New NPCs: Bandit, Bandit Leader
+- [~] Revamp how box frames are used, remove sprite frames use native godot systems will
+      help improve performance.
 
 
 ## Ch.1 Fixes (v0.1.0 Pre-Alpha)
 
+- [ ] After leaving Chief hut on Kraal map, cant click right in front of hut to move
+- [ ] On TravelMap after leaving Kraal box confirming entry pops up, should not.
+- [ ] Pre&Post Crypt Dialogue boxes need text adjustments, runs into frame.
+- [ ] Add Zombie profile picture to npc status bar
+- [ ] Update thanks for playing box with more info.
 
 ## Ch.1 Polish (v0.1.0 Pre-Alpha)
 
+- [ ] Redo Kishi voiceovers, don't like how they sound. Kishi werehyena is ok.
+- [ ] Do something with end button either skin it or make it bigger.
+- [ ] Make sure game autosaves in between CryptBattle maps
+- [ ] Create an indicator over region with status completion
+- [ ] Add a time based system for map completion, keep track of best time.
 
 ## Ch.1 Testing (v0.1.0 Pre-Alpha)
 
