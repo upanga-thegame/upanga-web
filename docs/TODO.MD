@@ -24,10 +24,10 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 - [ ] Create cinematic cutscene: After RuinsBattleMap
 - [ ] Create cinematic cutscene: After PyramidBattleMap
 - [ ] Create cinematic cutscene: After LaplassBattleMap
-- [ ] Add random encounter(s) on Travelmap
 - [ ] Create Soul Blade graphic to display on TravelMap. Starts out
       transparent. Fills as parts of the blade are completed.
 - [ ] Sketch out storyboards, hero origin stories
+- [~] Implement flash encounter on TravelMap. Bandit attack. New NPCs: Bandit, Bandit Leader
 
 
 ## Ch.1 Fixes (v0.1.0 Pre-Alpha)
@@ -49,7 +49,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 
 - [ ] Work on a web demo version of a BattleMap to showcase the gameplay.
 - [ ] Create an indicator over region with status completion 
-- [ ] Add a day cycle 1hr real world 24 game time, cycle tints of the map
+- [X] Add a day cycle 1hr real world 24 game time, cycle tints of the map
 - [ ] Create new portrait pics for different emotions for story cards. 
 
 ## Ch.1 Notes (v0.1.0 Pre-Alpha)
