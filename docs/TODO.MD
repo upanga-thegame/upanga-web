@@ -13,6 +13,7 @@ Upanga: The Soul Blade - TODO + Dev Tracker
 ## Ch.1 Priorities (v0.4.0 Alpha)
 
 - [~] Paywall after completion of the Crypt. 
+- [ ] Social media bot automate posts
 
 ## Ch.1 Features (v0.4.0 Alpha)
 

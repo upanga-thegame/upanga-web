@@ -2,20 +2,20 @@
 
 ## Game
 
-### What is Upanga: The Soul-Blade?
-Upanga: The Soul-Blade is a tactical, turn-based fantasy RPG for Android where four heroes battle evil forces through the land of Azumi.
+### What is Upanga: The Soul Blade?
+Upanga: The Soul Blade is a tactical, turn-based fantasy RPG where four heroes battle evil forces through the land of Bomende.
 
 
 ### What platform is Upanga being developed for?
-Upanga is being developed for Android mobile devices.
+Upanga is being developed for Android, Apple, and Steam. 
 
 
 ### What stage of development is the game in?
-Upanga is currently in pre-alpha development. Core systems such as movement, turn order, combat, UI, and save/load are still being built and tested.
+Upanga is currently in Beta & currently going through internal tests. 
 
 
 ### Will the game be free?
-The game will be free to download. The first level, if you will, of the game will be playable. After completing the first objectives you may unlock the full Chapter 1 for a small price.
+No decision has been made around the pricing of the game. 
 
 
 ## Gameplay
@@ -39,11 +39,11 @@ There is no final release date yet. The game is currently in development but tar
 
 
 ### Will there be a playtest?
-A playtest may be offered later when the game reaches a more stable alpha or beta stage.
+A playtest may be offered later when the game is ready.
 
 
 ### How can I get updates?
-You can follow the website, social media, or join the newsletter once it is connected.
+You can follow this website for updates and our social media accounts.
 
 
 ## Contact
