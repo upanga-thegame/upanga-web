@@ -485,7 +485,7 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
     .regions-atlas-card-index { top: 13px; left: 14px; }
     .regions-atlas-intro { top: 15%; left: 0; width: 100%; }
     .regions-atlas-intro h2 { margin-bottom: 10px; font-size: 46px; }
-    .regions-atlas-route { top: 31%; left: 0; right: 0; width: calc(100% + 32px); margin-left: -16px; display: flex; gap: 6px; padding: 0 16px 8px; overflow-x: auto; scrollbar-width: none; }
+    .regions-atlas-route { top: max(31%, 280px); left: 0; right: 0; width: calc(100% + 32px); margin-left: -16px; display: flex; gap: 6px; padding: 0 16px 8px; overflow-x: auto; scrollbar-width: none; }
     .regions-atlas-route::-webkit-scrollbar { display: none; }
     .regions-atlas-route-line { display: none; }
     .regions-atlas-stop, .regions-atlas-stop:hover, .regions-atlas-stop:focus-visible, .regions-atlas-stop.is-active { min-width: 92px; min-height: 43px; display: block; padding: 8px 9px; background: rgba(7,16,12,.58); border: 1px solid rgba(238,240,232,.16); transform: none; }

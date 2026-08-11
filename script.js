@@ -507,6 +507,7 @@
     const regionCards = regionsAtlas ? [...regionsAtlas.querySelectorAll('[data-region-card]')] : [];
     const regionSteps = regionsAtlas ? [...regionsAtlas.querySelectorAll('[data-region-step]')] : [];
     const regionStops = regionsAtlas ? [...regionsAtlas.querySelectorAll('[data-region-stop]')] : [];
+    const regionRoute = regionsAtlas?.querySelector('.regions-atlas-route');
     const regionProgress = regionsAtlas?.querySelector('.regions-atlas-progress span');
     const regionCounter = regionsAtlas?.querySelector('.regions-atlas-counter strong');
     let activeRegionStep = -1;
@@ -616,7 +617,11 @@
         if (!regionsAtlas || regionSteps.length < 2) return;
         const start = regionsAtlas.offsetTop;
         const end = start + regionsAtlas.offsetHeight - window.innerHeight;
-        const target = start + ((end - start) * (index / (regionSteps.length - 1)));
+        // Each region owns one equal interval of the scroll sequence. Land just
+        // inside that interval so the selected card is shown at its resting pose
+        // instead of midway through its transition to the following region.
+        const intervalProgress = index / regionSteps.length;
+        const target = start + ((end - start) * intervalProgress) + (index === 0 ? 0 : 2);
         window.scrollTo({ top: target, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     };
 
@@ -625,6 +630,10 @@
         updateRegionsFromProgress(0);
         regionStops.forEach((stop, index) => {
             stop.addEventListener('click', () => {
+                if (regionRoute && window.innerWidth <= 560) {
+                    const left = stop.offsetLeft - ((regionRoute.clientWidth - stop.offsetWidth) / 2);
+                    regionRoute.scrollTo({ left, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+                }
                 scrollToRegion(index);
             });
             stop.addEventListener('keydown', (event) => {
