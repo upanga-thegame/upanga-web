@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-11T16:32:00.689Z",
+  "generatedAt": "2026-08-11T17:19:57.668Z",
   "categories": [
     {
       "title": "Game",
       "items": [
         {
           "question": "What is Upanga: The Soul Blade?",
-          "answer": "Upanga: The Soul Blade is a tactical, turn-based fantasy RPG where four heroes battle evil forces through the land of Bomende."
+          "answer": "Upanga: The Soul Blade is a tactical, turn-based fantasy RPG set in Bomende, a land whose kingdoms have been divided by the return of an ancient power."
         },
         {
-          "question": "What platform is Upanga being developed for?",
-          "answer": "Upanga is being developed for Android, Apple, and Steam."
+          "question": "Who do I play as?",
+          "answer": "You command four heroes: Osa the Warrior, Aziza the Scout, Nganga the Shaman, and Kishi the Shapeshifter. Each hero brings a different way to approach an isometric battle."
         },
         {
-          "question": "What stage of development is the game in?",
-          "answer": "Upanga is currently in Beta & currently going through internal tests."
+          "question": "What stage of development is Upanga in?",
+          "answer": "Upanga is currently in beta and undergoing internal testing."
         },
         {
-          "question": "Will the game be free?",
-          "answer": "No decision has been made around the pricing of the game."
+          "question": "Will Upanga be free?",
+          "answer": "No final decision has been made about the game’s pricing."
         }
       ]
     },
@@ -27,15 +27,15 @@
       "items": [
         {
           "question": "What kind of combat does Upanga use?",
-          "answer": "Upanga uses initiative, tactical turn-based combat on an isometric grid. Players command heroes, move across tiles, spend action points, and fight enemies."
-        },
-        {
-          "question": "Can I save the game?",
-          "answer": "The game is planned to support local, non-cloud saving using one save file. The goal is to allow players to save and load their current game state. Future state Google Cloud saves."
+          "answer": "Upanga uses initiative-based, tactical turn-based combat on an isometric grid. Players command heroes, move across tiles, spend action points, and choose when to attack, defend, heal, or reposition."
         },
         {
           "question": "Is Upanga online or offline?",
-          "answer": "Upanga is planned as a single-player game. Online features are not required at this stage."
+          "answer": "Upanga is planned as a single-player game. Online features are not required for the core experience."
+        },
+        {
+          "question": "What is the Soul Blade?",
+          "answer": "The Soul Blade was forged by the kingdoms of Bomende as a symbol of their shared alliance. It shattered while imprisoning Bida, and its four pieces are now guarded across the Crypt, Swamp, Kwae, and Pyramid."
         }
       ]
     },
@@ -44,21 +44,25 @@
       "items": [
         {
           "question": "When will Upanga be released?",
-          "answer": "There is no final release date yet. The game is currently in development but targeting Fall of 2026."
+          "answer": "Upanga is targeting Fall of 2026."
+        },
+        {
+          "question": "What platforms are planned?",
+          "answer": "The current release plan includes Android, Apple devices, and Steam."
         },
         {
           "question": "Will there be a playtest?",
-          "answer": "A playtest may be offered later when the game is ready."
-        },
-        {
-          "question": "How can I get updates?",
-          "answer": "You can follow this website for updates and our social media accounts."
+          "answer": "A playtest may be offered when the game is ready. Follow the project on social media for announcements."
         }
       ]
     },
     {
       "title": "Contact",
       "items": [
+        {
+          "question": "How can I get updates?",
+          "answer": "Follow @upangadev on X for development notes, captures, and release news."
+        },
         {
           "question": "How can I contact the developer?",
           "answer": "You can contact the Upanga team at upangadev@zohomail.com."

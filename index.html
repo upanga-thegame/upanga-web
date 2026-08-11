@@ -1,282 +1,402 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-page="home">
 <head>
-    <!-- GitHub Pages branch publishing enabled. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0d0c">
+    <meta name="description" content="Upanga: The Soul Blade — a tactical turn-based RPG set in the fractured kingdoms of Bomende.">
     <title>Upanga: The Soul Blade</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=social-x-1">
 </head>
-<body>
+<body class="home-page">
+    <div class="site-grain" aria-hidden="true"></div>
+    <canvas id="scene-canvas" class="scene-canvas" aria-hidden="true"></canvas>
 
-    <!-- =================================================== -->
-    <!-- ============== HEADER & NAVIGATION ============== -->
-    <!-- =================================================== -->
-    <header class="header">
-        <nav class="navbar">
-            <a href="#home" class="nav-logo">Upanga: The Soul Blade</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="index.html#story" class="nav-link">Story</a></li>
-                <li class="nav-item"><a href="index.html#heroes" class="nav-link">Heroes</a></li>
-                <li class="nav-item"><a href="index.html#screenshots" class="nav-link">Screenshots</a></li>
-                <li class="nav-item"><a href="index.html#dev-tracker" class="nav-link">Dev Tracker</a></li>
-                <li class="nav-item"><a href="index.html#devblog" class="nav-link">DevBlog</a></li>
-                <li class="nav-item"><a href="index.html#faq" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+    <header class="site-header">
+        <a class="brand-lockup" href="index.html" aria-label="Upanga home"><span class="brand-mark">U</span><span class="brand-name">UPANGA</span></a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="index.html" data-nav="home">Home</a><a href="index.html#gallery" data-nav="gallery">Gallery</a><a href="index.html#trailer" data-nav="trailer">Trailer</a><a href="changelog.html" data-nav="changelog">Changelog</a><a href="faq.html" data-nav="faq">FAQ</a></nav>
+        <a class="header-social" href="https://x.com/upangadev" target="_blank" rel="noreferrer">Follow <span>↗</span></a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">Toggle menu</span></button>
     </header>
 
     <main>
-        <!-- =================================================== -->
-        <!-- ================== HERO SECTION =================== -->
-        <!-- =================================================== -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">Upanga<span class="hero-title-sub">The Soul Blade</span></h1>
-                <p class="hero-subtitle">A tactical turn-based RPG inspired by the early classics. Battle foes & unite the kingdom! </p>
-                <p class="hero-description">Command four heroes across isometric battlefields, restore the broken Soul Blade, and face Bokor the Corrupted.</p>
-                <div class="hero-cta">
-                    <a href="#dev-tracker" class="btn btn-primary">View Dev Tracker</a>
-                    <a href="#screenshots" class="btn btn-secondary">See Screenshots</a>
+        <section class="hero-section" id="home">
+            <div class="hero-media" aria-hidden="true"><video autoplay muted loop playsinline poster="images/hero-poster.png"><source src="media/hero-preview.mp4" type="video/mp4"></video><div class="hero-media-wash"></div></div>
+            <div class="hero-frame section-frame">
+                <div class="hero-kicker reveal">A tactical turn-based RPG / Fall 2026</div>
+                <div class="hero-copy reveal"><h1><span>Restore the</span><em>Soul Blade</em></h1><p class="hero-lede">A land and its people, once unified by the Soul Blade, now stand divided. Lead four heroes to restore the shattered Blade and reunite the Kingdoms of Bomende.</p><div class="hero-actions"><a class="button button-primary" href="#gallery">Enter the world <span>↓</span></a><a class="text-link" href="https://x.com/upangadev" target="_blank" rel="noreferrer">Follow the journey <span>↗</span></a></div></div>
+                <div class="hero-footer reveal"><div class="release-line"><span class="status-dot"></span> Coming Fall 2026</div><div class="platforms" id="release" aria-label="Planned platforms"><div class="platform-chip"><svg class="platform-mark platform-mark-android" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9.5a5 5 0 0 1 10 0v6.2a1 1 0 0 1-1 1h-1.1v3a1 1 0 0 1-2 0v-3h-1.8v3a1 1 0 0 1-2 0V16.7H8a1 1 0 0 1-1-1V9.5Zm1.2-1.9h7.6a3.9 3.9 0 0 0-1.7-2.4l.9-1.6-.8-.4-.9 1.6a5 5 0 0 0-2.4 0L10 3.2l-.8.4.9 1.6a3.9 3.9 0 0 0-1.9 2.4ZM5 9.5a1 1 0 0 1 1 1v4.7a1 1 0 0 1-2 0v-4.7a1 1 0 0 1 1-1Zm14 0a1 1 0 0 1 1 1v4.7a1 1 0 0 1-2 0v-4.7a1 1 0 0 1 1-1Z"/></svg><span>Android</span></div><div class="platform-chip"><svg class="platform-mark platform-mark-apple" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.33 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.46 4.09ZM12.03 7.25C11.88 5.02 13.69 3.18 15.82 3c.29 2.58-2.32 4.5-3.79 4.25Z"/></svg><span>Apple</span></div><div class="platform-chip"><svg class="platform-mark platform-mark-steam" viewBox="0 0 24 24" aria-hidden="true"><circle cx="17.1" cy="7.2" r="3.2"/><circle cx="7.1" cy="16.3" r="2.7"/><path d="m9.4 14.9 4.8-4.1m-11 4.2 4.2 1.3"/></svg><span>Steam</span></div></div></div>
+            </div>
+            <a class="scroll-cue" href="#signal"><span>Scroll to explore</span><i></i></a>
+        </section>
+
+        <section class="scroll-journey section-dark" id="journey">
+            <div class="journey-sticky">
+                <div class="journey-scene" aria-hidden="true">
+                    <div class="journey-backdrop"></div>
+                    <div class="journey-backdrop journey-backdrop-next"></div>
+                    <div class="journey-backdrop-wash"></div>
+                    <div class="journey-grid-lines"></div>
+                    <div class="journey-media-track">
+                        <article class="journey-card is-active" data-journey-card="0" data-backdrop="images/swamp-poster.png">
+                            <img class="journey-card-poster" src="images/swamp-poster.png" alt="">
+                            <video class="journey-video" data-journey-video="0" muted loop playsinline preload="metadata" poster="images/swamp-poster.png"><source src="media/swamp-select.mp4" type="video/mp4"></video>
+                            <span class="journey-card-index">01 / 05</span>
+                        </article>
+                        <article class="journey-card" data-journey-card="1" data-backdrop="images/crypt-poster.png">
+                            <img class="journey-card-poster" src="images/crypt-poster.png" alt="">
+                            <video class="journey-video" data-journey-video="1" muted loop playsinline preload="metadata" poster="images/crypt-poster.png"><source src="media/crypt-select.mp4" type="video/mp4"></video>
+                            <span class="journey-card-index">02 / 05</span>
+                        </article>
+                        <article class="journey-card" data-journey-card="2" data-backdrop="images/jungle-poster.png">
+                            <img class="journey-card-poster" src="images/jungle-poster.png" alt="">
+                            <video class="journey-video" data-journey-video="2" muted loop playsinline preload="metadata" poster="images/jungle-poster.png"><source src="media/jungle-select.mp4" type="video/mp4"></video>
+                            <span class="journey-card-index">03 / 05</span>
+                        </article>
+                        <article class="journey-card" data-journey-card="3" data-backdrop="images/pyramid-poster.png">
+                            <img class="journey-card-poster" src="images/pyramid-poster.png" alt="">
+                            <video class="journey-video" data-journey-video="3" muted loop playsinline preload="metadata" poster="images/pyramid-poster.png"><source src="media/pyramid-select.mp4" type="video/mp4"></video>
+                            <span class="journey-card-index">04 / 05</span>
+                        </article>
+                        <article class="journey-card" data-journey-card="4" data-backdrop="images/fortress-poster.png">
+                            <img class="journey-card-poster" src="images/fortress-poster.png" alt="">
+                            <video class="journey-video" data-journey-video="4" muted loop playsinline preload="metadata" poster="images/fortress-poster.png"><source src="media/fortress-select.mp4" type="video/mp4"></video>
+                            <span class="journey-card-index">05 / 05</span>
+                        </article>
+                    </div>
                 </div>
-                <span class="release-badge">Coming to Android: Fall 2026</span>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- ================== STORY SECTION ================== -->
-        <!-- =================================================== -->
-        <section id="story" class="content-section bg-dark">
-            <div class="container">
-                <h2>The Shattered Soul Blade</h2>
-                <p class="section-intro">Upanga, the Soul Blade, is a mystical blade forged by ancestral spirits at the beginning of time. It has been shattered by the evil witchdoctor - Bokor the Corrupted and split into four fragments. The fragments are corrupting the land and dividing the once united Kingdoms of Azuma. You must gather the fragments, reforge the blade and unite the Kingdoms.</p>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- ================ FEATURES SECTION ================= -->
-        <!-- =================================================== -->
-        <section id="features" class="features-section">
-            <div class="container">
-                <h2>Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Turn-Based Tactical Combat</h3>
-                        <p>Engage in strategic battles on an isometric grid. Every decision matters.</p>
+                <div class="section-frame journey-frame">
+                    <div class="journey-topline"><span>The journey</span><span>Scroll to move through Bomende</span></div>
+                    <div class="journey-intro"><p class="eyebrow">The road is the story</p><h2>Explore the<br><span>regions of<br>Bomende</span></h2></div>
+                    <div class="journey-steps">
+                        <article class="journey-step is-active" data-journey-step="0"><span>01 / The Swamp</span><h3>The Water Road</h3><p>Where movement is survival and the lower blade waits beneath the flood.</p></article>
+                        <article class="journey-step" data-journey-step="1"><span>02 / The Crypt</span><h3>The Ancestral Road</h3><p>Where Amokye keeps the hilt with the dead, and the dead remember the kingdoms.</p></article>
+                        <article class="journey-step" data-journey-step="2"><span>03 / The Kwae</span><h3>The Forest Road</h3><p>Where the canopy hides medicine, old grievances, and the upper blade.</p></article>
+                        <article class="journey-step" data-journey-step="3"><span>04 / The Pyramid</span><h3>The Royal Road</h3><p>Where the Soul Core and the truth of the old agreement wait in the dark.</p></article>
+                        <article class="journey-step" data-journey-step="4"><span>05 / The Fortress</span><h3>Bida's Lair</h3><p>Where the restored blade finally reaches the barrier and the old agreement ends.</p></article>
                     </div>
-                    <div class="feature-card">
-                        <h3>Four Hero Party</h3>
-                        <p>Control a party of four unique heroes, each with their own abilities and playstyle.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>African Diaspora Fantasy Style</h3>
-                        <p>An aesthetic inspired by African mythical, spiritual & mystic traditions</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Unique Enemies & Boss Battles</h3>
-                        <p>Face a variety of enemies and challenging bosses, led by the necromancer Bokor.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Throwback RPG Style</h3>
-                        <p>Experience a throwback RPG style game with simple but challenging mechanics.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Exciting Rich Story</h3>
-                        <p>A classic story of good vs evil. Compelling dialogue sequences, enjoyment for the entire family.</p>
-                    </div>
+                    <div class="journey-footer"><div class="journey-progress"><span></span></div><div class="journey-counter"><strong>01</strong><span>/ 05</span></div></div>
                 </div>
             </div>
         </section>
 
-        <div class="section-divider"></div>
+        <section class="trailer-section section-pad section-dark" id="trailer" aria-label="Cinematic trailer">
+            <div class="section-frame">
+                <div class="section-label trailer-section-label reveal"><span>06</span><span>The cinematic trailer</span></div>
+                <figure class="trailer-frame reveal">
+                    <video class="trailer-video" controls playsinline preload="metadata" poster="images/upanga-cinematic-trailer-poster.png" aria-label="Upanga: The Soul Blade cinematic trailer" aria-describedby="trailer-description">
+                        <source src="images/upanga-cinematic-trailer-web.mp4?v=scene07-v2" type="video/mp4">
+                        Your browser does not support HTML video. <a href="images/upanga-cinematic-trailer-web.mp4?v=scene07-v2">Open the trailer directly</a>.
+                    </video>
+                    <figcaption id="trailer-description" class="trailer-caption"><span>56.6 seconds / 16:9 / 854×480</span><span>Coming Fall 2026 / Android / Apple / Steam</span></figcaption>
+                </figure>
+                <p class="trailer-fallback">Video not playing? <a href="images/upanga-cinematic-trailer-web.mp4?v=scene07-v2">Open the trailer directly</a>.</p>
+            </div>
+        </section>
 
-        <!-- =================================================== -->
-        <!-- ================== HEROES SECTION ================= -->
-        <!-- =================================================== -->
-        <section id="heroes" class="content-section bg-dark">
-            <div class="container">
-                <h2>The Four Heroes</h2>
-                <p class="section-intro">Four heroes, bound by fate, are all that stand against Bokor's corruption.</p>
-                <div class="heroes-grid">
-                    <div class="hero-card" data-bio="Osa is the last of the royal guard, a warrior whose spirit is as unbreakable as his shield. He seeks to restore his honor by reforging the Soul Blade. Abilities: Sword Slash & Shield Bash">
-                        <div class="hero-title-container">
-                            <h3>Osa</h3>
-                            <h4>The Warrior</h4>
+        <section class="signal-section section-pad" id="signal" aria-labelledby="signal-heading">
+            <div class="section-frame">
+                <div class="section-label signal-section-label reveal"><span>01</span><span>The signal</span></div>
+                <div class="signal-platform-bar reveal" aria-label="Planned release platforms: Google Play, Apple App Store, and Steam">
+                    <div class="signal-platform">
+                        <img src="images/platform-icons/google-play.svg" alt="" aria-hidden="true">
+                        <span><small>Coming to</small>Google Play</span>
+                    </div>
+                    <div class="signal-platform">
+                        <img src="images/platform-icons/apple.svg" alt="" aria-hidden="true">
+                        <span><small>Coming to the</small>App Store</span>
+                    </div>
+                    <div class="signal-platform">
+                        <img src="images/platform-icons/steam.svg" alt="" aria-hidden="true">
+                        <span><small>Coming to</small>Steam</span>
+                    </div>
+                </div>
+                <div class="signal-layout">
+                    <div class="signal-copy reveal">
+                        <p class="eyebrow">A kingdom split along old roads</p>
+                        <h2 id="signal-heading">Prosperity had a price. <span>Unity has one now.</span></h2>
+                        <p>Bomende was once joined by four roads and one council. When the Soul Blade shattered, the roads closed with it. The dead rose. The guardians turned. Every kingdom started to blame the next.</p>
+                        <p class="muted-copy">Upanga is a compact, story-led RPG about tactics, consequence, and what it takes to share power again.</p>
+                    </div>
+                    <div class="signal-memory-wall reveal" aria-label="Scenes from the Kraal and its council">
+                        <figure class="signal-memory signal-memory-kraal">
+                            <img src="images/signal/kraal.webp" alt="The Kraal village captured in-game" loading="lazy" decoding="async">
+                            <figcaption><span>01</span><strong>The Kraal</strong><small>The living center</small></figcaption>
+                        </figure>
+                        <figure class="signal-memory signal-memory-abena">
+                            <img src="images/signal/abena.webp" alt="Abena in her Kraal chamber" loading="lazy" decoding="async">
+                            <figcaption><span>02</span><strong>Abena</strong><small>Shaman of the Kraal</small></figcaption>
+                        </figure>
+                        <figure class="signal-memory signal-memory-chief">
+                            <img src="images/signal/chief.webp" alt="Chief Akende addressing the party" loading="lazy" decoding="async">
+                            <figcaption><span>03</span><strong>Chief Akende</strong><small>The council chamber</small></figcaption>
+                        </figure>
+                        <figure class="signal-memory signal-memory-griot">
+                            <img src="images/signal/griot.webp" alt="Balla the Griot speaking with the party" loading="lazy" decoding="async">
+                            <figcaption><span>04</span><strong>Balla</strong><small>Village Griot</small></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blade-section section-pad section-dark" id="relic"><div class="section-frame blade-grid"><div class="blade-art relic-app-shell" data-relic-app><img class="relic-app-fallback" src="images/soul-blade.png" alt="" aria-hidden="true"><canvas class="relic-canvas" data-relic-canvas role="img" aria-label="The restored Soul Blade surrounded by rotating energy rings, drifting mist, and animated highlights">The restored Soul Blade surrounded by rotating energy rings and mist.</canvas><span class="blade-coordinate">04° / 13° / 26°</span></div><div class="blade-copy reveal"><div class="section-label"><span>02</span><span>The relic</span></div><h2>It was a symbol of their shared unity that bound the Kingdoms together</h2><p>The Soul Blade was forged by the kingdoms together, then broken under the force of imprisoning Bida. Its four pieces are guarded across the Crypt, Swamp, Kwae, and Pyramid.</p><a class="text-link" href="#gallery">See the regions <span>↓</span></a></div></div></section>
+
+        <section class="regions-atlas section-dark" id="gallery" data-regions-atlas>
+            <div class="regions-atlas-sticky">
+                <div class="regions-atlas-scene" aria-hidden="true">
+                    <div class="regions-atlas-backdrop"></div>
+                    <div class="regions-atlas-backdrop regions-atlas-backdrop-next"></div>
+                    <div class="regions-atlas-wash"></div>
+                    <div class="regions-atlas-grid"></div>
+                    <div class="regions-atlas-media">
+                        <article class="regions-atlas-card is-active" data-region-card="0" data-backdrop="images/swamp-poster.png">
+                            <img src="images/swamp-poster.png" alt="">
+                            <span class="regions-atlas-card-index">01 / 05</span>
+                        </article>
+                        <article class="regions-atlas-card" data-region-card="1" data-backdrop="images/crypt-poster.png">
+                            <img src="images/crypt-poster.png" alt="">
+                            <span class="regions-atlas-card-index">02 / 05</span>
+                        </article>
+                        <article class="regions-atlas-card" data-region-card="2" data-backdrop="images/jungle-poster.png">
+                            <img src="images/jungle-poster.png" alt="">
+                            <span class="regions-atlas-card-index">03 / 05</span>
+                        </article>
+                        <article class="regions-atlas-card" data-region-card="3" data-backdrop="images/pyramid-poster.png">
+                            <img src="images/pyramid-poster.png" alt="">
+                            <span class="regions-atlas-card-index">04 / 05</span>
+                        </article>
+                        <article class="regions-atlas-card" data-region-card="4" data-backdrop="images/fortress-poster.png">
+                            <img src="images/fortress-poster.png" alt="">
+                            <span class="regions-atlas-card-index">05 / 05</span>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="section-frame regions-atlas-frame">
+                    <div class="regions-atlas-topline"><span>03 / The regions</span><span>Scroll the route</span></div>
+                    <div class="regions-atlas-intro">
+                        <p class="eyebrow">Bomende / the route map</p>
+                        <h2>Four roads.<br><span>One way through.</span></h2>
+                    </div>
+
+                    <nav class="regions-atlas-route" aria-label="Choose a region">
+                        <span class="regions-atlas-route-line" aria-hidden="true"></span>
+                        <button class="regions-atlas-stop is-active" type="button" data-region-stop="0" aria-current="step">
+                            <span class="regions-atlas-stop-number">01</span><span class="regions-atlas-stop-copy"><strong>The Swamp</strong><small>The Water Road</small></span><i></i>
+                        </button>
+                        <button class="regions-atlas-stop" type="button" data-region-stop="1" aria-current="false">
+                            <span class="regions-atlas-stop-number">02</span><span class="regions-atlas-stop-copy"><strong>The Crypt</strong><small>The Ancestral Road</small></span><i></i>
+                        </button>
+                        <button class="regions-atlas-stop" type="button" data-region-stop="2" aria-current="false">
+                            <span class="regions-atlas-stop-number">03</span><span class="regions-atlas-stop-copy"><strong>The Kwae</strong><small>The Forest Road</small></span><i></i>
+                        </button>
+                        <button class="regions-atlas-stop" type="button" data-region-stop="3" aria-current="false">
+                            <span class="regions-atlas-stop-number">04</span><span class="regions-atlas-stop-copy"><strong>The Pyramid</strong><small>The Royal Road</small></span><i></i>
+                        </button>
+                        <button class="regions-atlas-stop" type="button" data-region-stop="4" aria-current="false">
+                            <span class="regions-atlas-stop-number">05</span><span class="regions-atlas-stop-copy"><strong>Bida's Lair</strong><small>The End of the Road</small></span><i></i>
+                        </button>
+                    </nav>
+
+                    <div class="regions-atlas-copy" aria-live="polite">
+                        <article class="regions-atlas-step is-active" data-region-step="0"><span>01 / The Swamp</span><h3>The Water Road</h3><p>Recover the lower blade from Sobekus and reopen the route used by food, people, and trade.</p><div><small>Guardian</small><strong>Sobekus</strong><small>Fragment</small><strong>Lower blade</strong></div></article>
+                        <article class="regions-atlas-step" data-region-step="1"><span>02 / The Crypt</span><h3>The Ancestral Road</h3><p>Amokye guards the hilt beneath a city of restless ancestors.</p><div><small>Guardian</small><strong>Amokye</strong><small>Fragment</small><strong>The hilt</strong></div></article>
+                        <article class="regions-atlas-step" data-region-step="2"><span>03 / The Kwae</span><h3>The Forest Road</h3><p>Medicine, timber, and old grievances wait beneath the canopy.</p><div><small>Guardian</small><strong>The canopy</strong><small>Fragment</small><strong>Upper blade</strong></div></article>
+                        <article class="regions-atlas-step" data-region-step="3"><span>04 / The Pyramid</span><h3>The Royal Road</h3><p>The Soul Core and the original record of the old agreement are sealed inside.</p><div><small>Guardian</small><strong>The old agreement</strong><small>Fragment</small><strong>Soul Core</strong></div></article>
+                        <article class="regions-atlas-step" data-region-step="4"><span>05 / The Fortress</span><h3>The End of the Road</h3><p>When the blade is reforged, the road leads to the barrier's other side.</p><div><small>Guardian</small><strong>Bida</strong><small>Destination</small><strong>The barrier</strong></div></article>
+                    </div>
+
+                    <div class="regions-atlas-footer"><div class="regions-atlas-progress"><span></span></div><div class="regions-atlas-counter"><strong>01</strong><span>/ 05</span></div><span class="regions-atlas-note">Image atlas / scroll motion</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="heroes-gallery hero-archive-section section-pad" id="heroes" aria-labelledby="heroes-heading">
+            <div class="section-frame">
+                <div class="section-heading hero-section-heading reveal">
+                    <div class="section-label" id="heroes-heading"><span>04</span><span>The party</span></div>
+                </div>
+
+                <div class="hero-archive reveal" data-hero-archive>
+                    <nav class="hero-archive-rail" aria-label="Choose a hero">
+                        <p class="hero-archive-rail-label">The party</p>
+                        <button class="hero-archive-select is-active" type="button" data-hero-archive-select="osa" aria-pressed="true">
+                            <span class="hero-archive-number">01</span><span class="hero-archive-thumb"><img src="images/osa.png" alt=""></span><span class="hero-archive-select-copy"><strong>Osa</strong><small>Warrior</small></span>
+                        </button>
+                        <button class="hero-archive-select" type="button" data-hero-archive-select="aziza" aria-pressed="false">
+                            <span class="hero-archive-number">02</span><span class="hero-archive-thumb"><img src="images/aziza.png" alt=""></span><span class="hero-archive-select-copy"><strong>Aziza</strong><small>Scout</small></span>
+                        </button>
+                        <button class="hero-archive-select" type="button" data-hero-archive-select="nganga" aria-pressed="false">
+                            <span class="hero-archive-number">03</span><span class="hero-archive-thumb"><img src="images/nganga.png" alt=""></span><span class="hero-archive-select-copy"><strong>Nganga</strong><small>Shaman</small></span>
+                        </button>
+                        <button class="hero-archive-select" type="button" data-hero-archive-select="kishi" aria-pressed="false">
+                            <span class="hero-archive-number">04</span><span class="hero-archive-thumb"><img src="images/kishi.png" alt=""></span><span class="hero-archive-select-copy"><strong>Kishi</strong><small>Shapeshifter</small></span>
+                        </button>
+                    </nav>
+
+                    <div class="hero-archive-stage-wrap">
+                        <div class="hero-archive-stage" data-hero-archive-stage aria-live="polite">
+                            <video class="hero-archive-video is-visible" data-hero-archive-video autoplay muted loop playsinline preload="metadata" poster="images/osa.png" src="images/hero-videos/osa.mp4" aria-hidden="true"></video>
+                            <div class="hero-archive-video-wash" aria-hidden="true"></div>
+                            <img class="hero-archive-image" data-hero-archive-image src="images/osa.png" alt="Osa, the Warrior">
+                            <div class="hero-archive-grain" aria-hidden="true"></div>
+                            <div class="hero-archive-vignette" aria-hidden="true"></div>
+                            <div class="hero-archive-topline"><span data-hero-archive-index>01 / 04</span><span><i></i> Active dossier</span></div>
+                            <div class="hero-archive-bottom"><div><p data-hero-archive-role>THE WARRIOR</p><h3 data-hero-archive-name>Osa</h3><span data-hero-archive-title>Duty is a blade that cuts both ways.</span></div><span class="hero-archive-coordinate">BOMENDE / 01</span></div>
                         </div>
-                        <div class="hero-placeholder"><img src="images/osa.png" alt="Osa the Warrior"></div>
-                        <p>A stalwart defender whose duty is to protect the innocent. He is bound by honor. </p>
-                        <p class="details-text">Press for details</p>
+                        <p class="hero-archive-hint"><span>Scroll</span> to move through the party <b>↓</b></p>
                     </div>
-                    <div class="hero-card" data-bio="Cursed with an insatiable hunger, Kishi is an outcast who has learned to control his shapeshifting abilities. He sees the Soul-Blade as his only path to redemption. Abilities: Shapeshift">
-                        <div class="hero-title-container">
-                            <h3>Kishi</h3>
-                            <h4>The Shapeshifter</h4>
+
+                    <div class="hero-archive-track" aria-label="Hero dossiers">
+                        <article class="hero-archive-chapter is-active" data-hero-archive-chapter="osa">
+                            <p class="hero-archive-chapter-index">01 / 04</p><p class="hero-archive-chapter-role">The Warrior</p><h3>Osa</h3>
+                            <p class="hero-archive-copy">The last of the royal guard carries his shield like a promise. He will restore his honor by reforging the Soul Blade.</p>
+                            <div class="hero-archive-specs"><span>Frontline</span><span>Guard</span><span>Shield</span></div>
+                            <div class="hero-archive-stats"><span>Force <b>86</b></span><i style="--stat:86%"></i><span>Guard <b>90</b></span><i style="--stat:90%"></i></div>
+                            <div class="hero-archive-abilities"><small>Abilities</small><span>Sword Slash</span><span>Shield Bash</span></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-hero-archive-chapter="aziza">
+                            <p class="hero-archive-chapter-index">02 / 04</p><p class="hero-archive-chapter-role">The Scout</p><h3>Aziza</h3>
+                            <p class="hero-archive-copy">A shadow between heartbeats. Aziza moves through danger with an ancient sling and a truth that was stolen from her people.</p>
+                            <div class="hero-archive-specs"><span>Skirmish</span><span>Stealth</span><span>Trap</span></div>
+                            <div class="hero-archive-stats"><span>Range <b>88</b></span><i style="--stat:88%"></i><span>Focus <b>72</b></span><i style="--stat:72%"></i></div>
+                            <div class="hero-archive-abilities"><small>Abilities</small><span>Trap</span><span>Shadow Step</span></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-hero-archive-chapter="nganga">
+                            <p class="hero-archive-chapter-index">03 / 04</p><p class="hero-archive-chapter-role">The Shaman</p><h3>Nganga</h3>
+                            <p class="hero-archive-copy">He listens where others only see silence. Nganga communes with ancestral spirits to heal the living and protect the spirit world.</p>
+                            <div class="hero-archive-specs"><span>Support</span><span>Spirit</span><span>Ritual</span></div>
+                            <div class="hero-archive-stats"><span>Focus <b>94</b></span><i style="--stat:94%"></i><span>Range <b>76</b></span><i style="--stat:76%"></i></div>
+                            <div class="hero-archive-abilities"><small>Abilities</small><span>Disease</span><span>Heal</span></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-hero-archive-chapter="kishi">
+                            <p class="hero-archive-chapter-index">04 / 04</p><p class="hero-archive-chapter-role">The Shapeshifter</p><h3>Kishi</h3>
+                            <p class="hero-archive-copy">An outcast with an insatiable hunger, Kishi fights to control the beast inside him—and find a path back to the people he lost.</p>
+                            <div class="hero-archive-specs"><span>Power</span><span>Wild</span><span>Change</span></div>
+                            <div class="hero-archive-stats"><span>Force <b>78</b></span><i style="--stat:78%"></i><span>Focus <b>83</b></span><i style="--stat:83%"></i></div>
+                            <div class="hero-archive-abilities"><small>Abilities</small><span>Shapeshift</span><span>Rend</span></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="npc-field-guide section-pad section-dark" id="npcs" aria-labelledby="npc-heading">
+            <div class="section-frame">
+                <div class="section-heading npc-guide-heading npc-section-heading reveal">
+                    <div class="section-label" id="npc-heading"><span>05</span><span>The opposition</span></div>
+                </div>
+
+                <div class="npc-guide reveal" data-npc-guide>
+                    <div class="npc-guide-toolbar"><p>Enemy roster / compact field guide</p><span class="npc-guide-count"><strong data-npc-count>01</strong> / <span data-npc-total>20</span></span></div>
+                    <div class="npc-guide-filters" role="tablist" aria-label="Filter NPC enemies">
+                        <button class="npc-guide-filter is-active" type="button" role="tab" aria-selected="true" data-npc-filter="all">All</button>
+                        <button class="npc-guide-filter" type="button" role="tab" aria-selected="false" data-npc-filter="swamp">Swamp</button>
+                        <button class="npc-guide-filter" type="button" role="tab" aria-selected="false" data-npc-filter="crypt">Crypt</button>
+                        <button class="npc-guide-filter" type="button" role="tab" aria-selected="false" data-npc-filter="kwae">Kwae</button>
+                        <button class="npc-guide-filter" type="button" role="tab" aria-selected="false" data-npc-filter="pyramid">Pyramid</button>
+                    </div>
+
+                    <div class="npc-guide-rail-wrap"><div class="npc-guide-rail" role="list" aria-label="Enemy NPC portraits">
+                        <button class="npc-card is-active" type="button" role="listitem" data-npc-id="bandit" data-npc-name="Bandit" data-npc-role="Melee" data-npc-description="A hardened fighter built for close-quarters pressure."><span class="npc-card-index">01 / 20</span><img src="images/npcs/bandit.png" alt="Bandit portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Bandit</strong><small>Melee</small><em>A hardened fighter built for close-quarters pressure.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="bandit-leader" data-npc-name="Bandit Leader" data-npc-role="Ranged" data-npc-description="A tactical marksman who commands the fight from a distance."><span class="npc-card-index">02 / 20</span><img src="images/npcs/bandit_leader.png" alt="Bandit Leader portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Bandit Leader</strong><small>Ranged</small><em>A tactical marksman who commands the fight from a distance.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="canopic-priest" data-npc-region="pyramid" data-npc-name="Canopic Priest" data-npc-role="Ranged" data-npc-description="A support caster who keeps Pyramid defenders standing."><span class="npc-card-index">03 / 20</span><img src="images/npcs/canopic_priest_portrait.png" alt="Canopic Priest portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Canopic Priest</strong><small>Ranged</small><em>A support caster who keeps Pyramid defenders standing.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="dustbow-sentinel" data-npc-region="pyramid" data-npc-name="Dustbow Sentinel" data-npc-role="Ranged" data-npc-description="A long-range archer built for the Pyramid’s open sightlines."><span class="npc-card-index">04 / 20</span><img src="images/npcs/dustbow_sentinel_portrait.png" alt="Dustbow Sentinel portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Dustbow Sentinel</strong><small>Ranged</small><em>A long-range archer built for the Pyramid’s open sightlines.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="ghost" data-npc-region="crypt" data-npc-name="Restless Soul" data-npc-role="Melee" data-npc-description="A crypt deadwalker whose touch carries a freezing curse."><span class="npc-card-index">05 / 20</span><img src="images/npcs/ghost.png" alt="Restless Soul portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Restless Soul</strong><small>Melee</small><em>A crypt deadwalker whose touch carries a freezing curse.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="kamappa" data-npc-region="swamp" data-npc-name="Kamappa" data-npc-role="Ranged" data-npc-description="A swamp caster that attacks through fog and tangled water."><span class="npc-card-index">06 / 20</span><img src="images/npcs/kamappa_portrait.png" alt="Kamappa portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Kamappa</strong><small>Ranged</small><em>A swamp caster that attacks through fog and tangled water.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="mmoatia" data-npc-region="kwae" data-npc-name="Mmoatia" data-npc-role="Melee" data-npc-description="A fast Kwae skirmisher that closes from the canopy."><span class="npc-card-index">07 / 20</span><img src="images/npcs/mmoatia_portrait.png" alt="Mmoatia portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Mmoatia</strong><small>Melee</small><em>A fast Kwae skirmisher that closes from the canopy.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="mvumbi" data-npc-region="crypt" data-npc-name="Mvumbi" data-npc-role="Melee" data-npc-description="A reanimated crypt corpse carrying a diseased melee attack."><span class="npc-card-index">08 / 20</span><img src="images/npcs/mvumbi_portrait.png" alt="Mvumbi portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Mvumbi</strong><small>Melee</small><em>A reanimated crypt corpse carrying a diseased melee attack.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="obambo-guard" data-npc-region="crypt" data-npc-name="Obambo Guard" data-npc-role="Melee" data-npc-description="A baseline Obambo fighter who advances on the nearest hero."><span class="npc-card-index">09 / 20</span><img src="images/npcs/obambo_guard.png" alt="Obambo Guard portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Obambo Guard</strong><small>Melee</small><em>A baseline Obambo fighter who advances on the nearest hero.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="obambo-hunter" data-npc-region="crypt" data-npc-name="Obambo Hunter" data-npc-role="Ranged" data-npc-description="A patient ranged hunter with a punishing shot."><span class="npc-card-index">10 / 20</span><img src="images/npcs/obambo_hunter.png" alt="Obambo Hunter portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Obambo Hunter</strong><small>Ranged</small><em>A patient ranged hunter with a punishing shot.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="obambo-spiritcaller" data-npc-region="crypt" data-npc-name="Obambo Spiritcaller" data-npc-role="Ranged" data-npc-description="An Obambo spirit-caster who turns the crypt against intruders."><span class="npc-card-index">11 / 20</span><img src="images/npcs/obambo_spiritcaller.png" alt="Obambo Spiritcaller portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Obambo Spiritcaller</strong><small>Ranged</small><em>An Obambo spirit-caster who turns the crypt against intruders.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="osebo" data-npc-region="kwae" data-npc-name="Osebo" data-npc-role="Melee" data-npc-description="A leopard elite that pounces from the Kwae canopy."><span class="npc-card-index">12 / 20</span><img src="images/npcs/osebo_portrait.png" alt="Osebo portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Osebo</strong><small>Melee</small><em>A leopard elite that pounces from the Kwae canopy.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="sandstone-colossus" data-npc-region="pyramid" data-npc-name="Sandstone Colossus" data-npc-role="Melee" data-npc-description="A slow Pyramid bruiser built to absorb punishment."><span class="npc-card-index">13 / 20</span><img src="images/npcs/sandstone_colossus_portrait.png" alt="Sandstone Colossus portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Sandstone Colossus</strong><small>Melee</small><em>A slow Pyramid bruiser built to absorb punishment.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="scarab-host" data-npc-region="pyramid" data-npc-name="Scarab Host" data-npc-role="Melee" data-npc-description="A fragile, fast pressure unit carrying a living swarm."><span class="npc-card-index">14 / 20</span><img src="images/npcs/scarab_host_portrait.png" alt="Scarab Host portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Scarab Host</strong><small>Melee</small><em>A fragile, fast pressure unit carrying a living swarm.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="simbi" data-npc-region="swamp" data-npc-name="Simbi" data-npc-role="Ranged" data-npc-description="A four-armed swamp caster with reach and ritual."><span class="npc-card-index">15 / 20</span><img src="images/npcs/simbi_portrait.png" alt="Simbi portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Simbi</strong><small>Ranged</small><em>A four-armed swamp caster with reach and ritual.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="sunbound-guardian" data-npc-region="pyramid" data-npc-name="Sunbound Guardian" data-npc-role="Melee" data-npc-description="A durable Pyramid frontline guardian."><span class="npc-card-index">16 / 20</span><img src="images/npcs/sunbound_guardian_portrait.png" alt="Sunbound Guardian portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Sunbound Guardian</strong><small>Melee</small><em>A durable Pyramid frontline guardian.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="tomb-stalker" data-npc-region="pyramid" data-npc-name="Tomb Stalker" data-npc-role="Melee" data-npc-description="A fast Pyramid flanker with a heavy single strike."><span class="npc-card-index">17 / 20</span><img src="images/npcs/tomb_stalker_portrait.png" alt="Tomb Stalker portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Tomb Stalker</strong><small>Melee</small><em>A fast Pyramid flanker with a heavy single strike.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="weaver" data-npc-region="kwae" data-npc-name="Weaver" data-npc-role="Ranged" data-npc-description="A Kwae curse caster who binds movement with thread and hex."><span class="npc-card-index">18 / 20</span><img src="images/npcs/weaver_portrait.png" alt="Weaver portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Weaver</strong><small>Ranged</small><em>A Kwae curse caster who binds movement with thread and hex.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="webkin" data-npc-region="kwae" data-npc-name="Webkin" data-npc-role="Melee" data-npc-description="A forest hunter who snares enemies before they can escape."><span class="npc-card-index">19 / 20</span><img src="images/npcs/webkin_portrait.png" alt="Webkin portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Webkin</strong><small>Melee</small><em>A forest hunter who snares enemies before they can escape.</em></span></button>
+                        <button class="npc-card" type="button" role="listitem" data-npc-id="zonbi" data-npc-region="swamp" data-npc-name="Zonbi" data-npc-role="Melee" data-npc-description="A swamp melee combatant that keeps moving after the grave."><span class="npc-card-index">20 / 20</span><img src="images/npcs/zonbi_portrait.png" alt="Zonbi portrait"><span class="npc-card-wash" aria-hidden="true"></span><span class="npc-card-copy"><strong>Zonbi</strong><small>Melee</small><em>A swamp melee combatant that keeps moving after the grave.</em></span></button>
+                    </div></div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="guardian-archive-section hero-archive-section section-pad section-dark" id="guardians" aria-labelledby="guardians-heading">
+            <div class="section-frame">
+                <div class="section-heading guardian-section-heading reveal">
+                    <div class="section-label" id="guardians-heading"><span>06</span><span>The guardians / boss archive</span></div>
+                </div>
+                <div class="hero-archive guardian-archive reveal" data-guardian-archive>
+                    <nav class="hero-archive-rail" aria-label="Choose a Guardian">
+                        <p class="hero-archive-rail-label">The guardians</p>
+                        <button class="hero-archive-select is-active" type="button" data-guardian-select="amokye" aria-pressed="true"><span class="hero-archive-number">01</span><span class="hero-archive-thumb"><img src="images/guardians/amokye.png" alt=""></span><span class="hero-archive-select-copy"><strong>Amokye</strong><small>Bone Warden</small></span></button>
+                        <button class="hero-archive-select" type="button" data-guardian-select="sobekus" aria-pressed="false"><span class="hero-archive-number">02</span><span class="hero-archive-thumb"><img src="images/guardians/sobekus.png" alt=""></span><span class="hero-archive-select-copy"><strong>Sobekus</strong><small>Drowned Gate</small></span></button>
+                        <button class="hero-archive-select" type="button" data-guardian-select="aker" aria-pressed="false"><span class="hero-archive-number">03</span><span class="hero-archive-thumb"><img src="images/guardians/aker.png" alt=""></span><span class="hero-archive-select-copy"><strong>Aker</strong><small>Seal Warden</small></span></button>
+                        <button class="hero-archive-select" type="button" data-guardian-select="sasabonsam" aria-pressed="false"><span class="hero-archive-number">04</span><span class="hero-archive-thumb"><img src="images/guardians/sasabonsam.png" alt=""></span><span class="hero-archive-select-copy"><strong>Sasabonsam</strong><small>Rootbound</small></span></button>
+                        <button class="hero-archive-select" type="button" data-guardian-select="bida" aria-pressed="false"><span class="hero-archive-number">05</span><span class="hero-archive-thumb"><img src="images/guardians/bida.png?v=bida-flux-1" alt=""></span><span class="hero-archive-select-copy"><strong>Bida</strong><small>Threefold Coil</small></span></button>
+                    </nav>
+                    <div class="hero-archive-stage-wrap">
+                        <div class="hero-archive-stage" data-guardian-stage aria-live="polite">
+                            <img class="hero-archive-image" data-guardian-image src="images/guardians/amokye.png" alt="Amokye, the Bone Warden">
+                            <div class="hero-archive-grain" aria-hidden="true"></div><div class="hero-archive-vignette" aria-hidden="true"></div>
+                            <div class="hero-archive-topline"><span data-guardian-index>01 / 05</span><span><i></i> Active guardian</span></div>
+                            <div class="hero-archive-bottom"><div><p data-guardian-role>THE BONE WARDEN</p><h3 data-guardian-name>Amokye</h3><span data-guardian-title>The dead answer when he calls.</span></div><span class="hero-archive-coordinate">BOMENDE / 01</span></div>
                         </div>
-                        <div class="hero-placeholder"><img src="images/kishi.png" alt="Kishi the Shapeshifter"></div>
-                        <p>A mysterious being who has the ability to transform into a fearsome Werehyena</p>
-                        <p class="details-text">Press for details</p>
+                        <p class="hero-archive-hint"><span>Scroll</span> to move through the guardians <b>↓</b></p>
                     </div>
-                    <div class="hero-card" data-bio="Aziza moves like a shadow, a master of traps and secrets. She believes the shattered Soul Blade holds the key to a truth that was stolen from her people. Abilities: Trap">
-                        <div class="hero-title-container">
-                            <h3>Aziza</h3>
-                            <h4>The Scout</h4>
-                        </div>
-                        <div class="hero-placeholder"><img src="images/aziza.png" alt="Aziza the Scout"></div>
-                        <p>A nimble skirmisher who wields an ancient sling & moves through shadows to strike at the heart of the enemy.</p>
-                        <p class="details-text">Press for details</p>
-                    </div>
-                    <div class="hero-card" data-bio="Nganga is a wise shaman who communes with ancestral spirits of Azuma. He joins the quest to prevent Bokor from corrupting the spirit world permanently. Abilities: Disease & Heal">
-                        <div class="hero-title-container">
-                            <h3>Nganga</h3>
-                            <h4>The Shaman</h4>
-                        </div>
-                        <div class="hero-placeholder"><img src="images/nganga.png" alt="Nganga the Shaman"></div>
-                        <p>A powerful mystic who communes with spirits to heal allies and curse enemies.</p>
-                        <p class="details-text">Press for details</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- =============== DEV TRACKER SECTION =============== -->
-        <!-- =================================================== -->
-        <section id="dev-tracker" class="dev-tracker-section">
-            <div class="container">
-                <h2>Dev Tracker</h2>
-                <p class="dev-build-version">Development Build: v0.2.0 Pre-Alpha</p>
-                <p class="last-updated" id="dev-tracker-last-updated"></p>
-                <div id="dev-tracker-summary"></div>
-                <div id="dev-tracker-list">
-                    <p class="tracker-loading">Loading Dev Tracker Data...</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- ================= DEVBLOG SECTION ================= -->
-        <!-- =================================================== -->
-        <section id="devblog" class="devblog-section bg-dark">
-            <div class="container">
-                <h2>DevBlog</h2>
-                <p class="section-intro">Updates on the development of Upanga: The Soul-Blade.</p>
-                <div id="devblog-list">
-                    <p class="devblog-loading">Loading DevBlog...</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- =============== SCREENSHOTS SECTION =============== -->
-        <!-- =================================================== -->
-        <section id="screenshots" class="screenshots-section bg-dark">
-            <div class="container">
-                <h2>Screenshots</h2>
-                <div class="screenshot-grid">
-                    <div class="screenshot-card"><img src="images/splash_prototype.png" alt="Splash screen prototype"></div>
-                    <div class="screenshot-card"><img src="images/main_map.png" alt="Main map screen"></div>
-                    <div class="screenshot-card"><img src="images/battle_map.png" alt="Battle map screen"></div>
-                    <div class="screenshot-card"><img src="images/bess.png" alt="Bess character screenshot"></div>
-                    <div class="screenshot-card"><img src="images/kraal.png" alt="Kraal screenshot"></div>
-                    <div class="screenshot-card"><img src="images/chooseparty.png" alt="Choose party screen"></div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- =================== FAQ SECTION =================== -->
-        <!-- =================================================== -->
-        <section id="faq" class="faq-section">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <p class="section-intro">Answers about Upanga: The Soul-Blade, development progress, gameplay, release plans, and support.</p>
-                <div id="faq-list">
-                    <p class="faq-loading">Loading FAQ...</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- =================================================== -->
-        <!-- ================= CONTACT SECTION ================= -->
-        <!-- =================================================== -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <p>For inquiries, please reach out via email or follow the project on GitHub.</p>
-                        <p><strong>Email:</strong> <a href="mailto:upangadev@zohomail.com">upangadev@zohomail.com</a></p>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/upanga-thegame/upanga-web" target="_blank">https://github.com/upanga-thegame/upanga-web</a></p>
-                        <p><a href="https://x.com/upangadev" target="_blank" class="social-link"><img src="images/xbadge.png" alt="X Profile" class="social-icon"> @upangadev</a></p>
+                    <div class="hero-archive-track" aria-label="Guardian dossiers">
+                        <article class="hero-archive-chapter is-active" data-guardian-chapter="amokye">
+                            <p class="hero-archive-chapter-index">01 / 05</p><p class="hero-archive-chapter-role">The Bone Warden</p><h3>Amokye</h3>
+                            <p class="hero-archive-copy">The crypt answers when Amokye calls. His encounter alternates between direct pressure, summons, a chamber-wide pulse, and escalating bone fury.</p>
+                            <div class="hero-archive-specs"><span>Melee</span><span>Summoner</span><span>Phase boss</span></div>
+                            <div class="hero-archive-stats"><span>Vitality <b>32</b></span><i style="--stat:58%"></i><span>Enrage <b>25%</b></span><i style="--stat:25%"></i></div>
+                            <div class="hero-archive-abilities guardian-abilities"><small>Special abilities</small><div class="guardian-ability"><strong>Bone Call</strong><span>Opens by summoning Obambo Hunters; at half health, calls an Obambo Guard. The encounter caps active summons at two.</span></div><div class="guardian-ability"><strong>Crypt Pulse</strong><span>Every third turn, the crypt shakes for 3 damage to every living hero. It can also answer incoming damage.</span></div><div class="guardian-ability"><strong>Damage Interrupt</strong><span>After taking damage, Amokye can answer with a melee strike, pulse, summon, or reposition.</span></div><div class="guardian-ability"><strong>Bone Fury</strong><span>At 25% health, his basic attack rises from 2 to 3 damage.</span></div></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-guardian-chapter="sobekus">
+                            <p class="hero-archive-chapter-index">02 / 05</p><p class="hero-archive-chapter-role">The Drowned Gate</p><h3>Sobekus</h3>
+                            <p class="hero-archive-copy">Sobekus makes the arena itself hostile. Cracks warn where the water will rise, while the crocodile’s control tools punish anyone who loses an escape route.</p>
+                            <div class="hero-archive-specs"><span>Melee</span><span>Flood hazards</span><span>Final phase</span></div>
+                            <div class="hero-archive-stats"><span>Vitality <b>48</b></span><i style="--stat:68%"></i><span>Flood tiles <b>2 → 3</b></span><i style="--stat:78%"></i></div>
+                            <div class="hero-archive-abilities guardian-abilities"><small>Special abilities</small><div class="guardian-ability"><strong>Drowned Gate</strong><span>Telegraphs cracked tiles one turn before they flood; standing water deals 2 damage at turn end and lasts for two boss turns.</span></div><div class="guardian-ability"><strong>Death Roll</strong><span>In the Keeper phase, seizes an adjacent hero, deals repeated 2-damage hits, and drags them into nearby flooded ground when possible.</span></div><div class="guardian-ability"><strong>Tail Whip</strong><span>Deals 5 damage and knocks an adjacent hero away. It can also retaliate immediately after a melee hit, with a higher chance on harder difficulties.</span></div><div class="guardian-ability"><strong>Keeper’s Roar</strong><span>In the final phase, Sobekus becomes more aggressive and floods three tiles instead of two; the mire can restore his health when he moves through it.</span></div></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-guardian-chapter="aker">
+                            <p class="hero-archive-chapter-index">03 / 05</p><p class="hero-archive-chapter-role">The Seal Warden</p><h3>Aker</h3>
+                            <p class="hero-archive-copy">Aker’s defense is a living puzzle. Two cleanseable seal anchors absorb part of incoming damage while priests can restore the Warden or charge the seal.</p>
+                            <div class="hero-archive-specs"><span>Melee / pulse</span><span>2 seal anchors</span><span>Half-health phase</span></div>
+                            <div class="hero-archive-stats"><span>Vitality <b>52</b></span><i style="--stat:72%"></i><span>Anchors <b>2</b></span><i style="--stat:50%"></i></div>
+                            <div class="hero-archive-abilities guardian-abilities"><small>Special abilities</small><div class="guardian-ability"><strong>Seal Anchors</strong><span>Two active anchors reduce incoming damage. Cleanse them to weaken Aker’s armor; priests can rebuild the seal charge.</span></div><div class="guardian-ability"><strong>Seal Eruption</strong><span>Marks tiles before they erupt, damaging heroes who remain on the warning pattern. Below half health, the pattern expands.</span></div><div class="guardian-ability"><strong>Soul Lance</strong><span>A targeted seal cast that consumes 1 AP and strikes a hero for 4 base damage, increasing with seal charge.</span></div><div class="guardian-ability"><strong>Fractured Burst</strong><span>After the seal fractures, Aker can burst around a clustered hero group; higher seal charge increases its reach and damage.</span></div></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-guardian-chapter="sasabonsam">
+                            <p class="hero-archive-chapter-index">04 / 05</p><p class="hero-archive-chapter-role">The Rootbound</p><h3>Sasabonsam</h3>
+                            <p class="hero-archive-copy">Sasabonsam turns speed into pressure. His opening howl establishes the fight, then health thresholds unlock roots and a sudden charge into the frontline.</p>
+                            <div class="hero-archive-specs"><span>Melee</span><span>Fast turns</span><span>Phase boss</span></div>
+                            <div class="hero-archive-stats"><span>Vitality <b>52</b></span><i style="--stat:72%"></i><span>Speed <b>16</b></span><i style="--stat:100%"></i></div>
+                            <div class="hero-archive-abilities guardian-abilities"><small>Special abilities</small><div class="guardian-ability"><strong>Howl of the Deep Kwae</strong><span>Opens the battle, then returns every other turn; recurring howls leave every living hero Snared.</span></div><div class="guardian-ability"><strong>Rootbound Call</strong><span>At 50% health, targets the weakest living hero for 5 damage and Jungle Snare, costing that hero 1 AP on their turn.</span></div><div class="guardian-ability"><strong>Treefall Lunge</strong><span>At 25% health, charges beside a nearby hero and crashes down for 8 damage before continuing the pressure.</span></div><div class="guardian-ability"><strong>Rapid Cadence</strong><span>Speed 16 gives Sasabonsam roughly twice the normal turn frequency.</span></div></div>
+                        </article>
+                        <article class="hero-archive-chapter" data-guardian-chapter="bida">
+                            <p class="hero-archive-chapter-index">05 / 05</p><p class="hero-archive-chapter-role">The Threefold Coil</p><h3>Bida</h3>
+                            <p class="hero-archive-copy">One coiled body, three independently targetable heads. The head anchors are part of one Guardian encounter, so Bida appears here as a single entry rather than a duplicate head card.</p>
+                            <div class="hero-archive-specs"><span>Melee / ranged</span><span>3 head anchors</span><span>Phase boss</span></div>
+                            <div class="hero-archive-stats"><span>Vitality <b>88</b></span><i style="--stat:100%"></i><span>Heads <b>3</b></span><i style="--stat:75%"></i></div>
+                            <div class="hero-archive-abilities guardian-abilities"><small>Special abilities</small><div class="guardian-ability"><strong>Threefold Vitality</strong><span>Three head anchors can be targeted independently; the protected center anchor controls the group’s movement.</span></div><div class="guardian-ability"><strong>Group Slither</strong><span>The body stays rooted while the three-head group repositions as a unit to close angles and pressure the party.</span></div><div class="guardian-ability"><strong>Venom Bite</strong><span>Heads can attack with a close bite or switch to a ranged venom projectile when distance calls for it.</span></div><div class="guardian-ability"><strong>Hoard Echoes</strong><span>Each outer-head defeat advances the phase and summons a Hoard Echo, up to two phase transitions.</span></div></div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="release-section section-pad section-accent"><div class="section-frame release-grid"><div class="section-label reveal"><span>06</span><span>The horizon</span></div><div class="release-copy reveal"><p class="eyebrow">The first road opens in</p><h2>Fall<br><span>2026</span></h2><p>Upanga: The Soul Blade is a solo developed game planned for the Android, Apple, and Steam platforms. Follow our social media for new captures, changelogs, and release news.</p><div class="release-platforms" aria-label="Planned release platforms and social media"><span class="release-platform"><img class="release-platform-icon release-platform-icon-play" src="images/platform-icons/google-play.svg" alt="" aria-hidden="true">Google Play</span><span class="release-platform"><img class="release-platform-icon" src="images/platform-icons/apple.svg" alt="" aria-hidden="true">App Store</span><span class="release-platform"><img class="release-platform-icon" src="images/platform-icons/steam.svg" alt="" aria-hidden="true">Steam</span><a class="button button-dark button-social-x" href="https://x.com/upangadev" target="_blank" rel="noreferrer" aria-label="Follow Upanga on X">Follow us on <span class="x-mark" aria-hidden="true"></span></a></div></div></div></section>
+
     </main>
 
-    <!-- =================================================== -->
-    <!-- ===================== FOOTER ====================== -->
-    <!-- =================================================== -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="#dev-tracker">Dev Tracker</a>
-                <a href="index.html#devblog">DevBlog</a>
-                <a href="#screenshots">Screenshots</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="data-deletion.html">Data Deletion</a>
-            </div>
-            <div class="footer-contact">
-                <p>Support/Contact: <a href="mailto:upangadev@zohomail.com">upangadev@zohomail.com</a></p>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2026 Upanga: The Soul Blade</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- =================================================== -->
-    <!-- =================== HERO MODAL ==================== -->
-    <!-- =================================================== -->
-    <div id="hero-modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h3 id="modal-hero-name"></h3>
-            <p id="modal-hero-bio"></p>
-        </div>
-    </div>
-
-    <!-- Screenshot Modal -->
-    <div id="screenshot-modal" class="modal">
-        <span class="modal-close screenshot-close">&times;</span>
-        <img class="modal-content" id="screenshot-modal-img">
-    </div>
-
-    <script src="script.js"></script>
+    <footer class="site-footer"><div class="section-frame footer-grid"><a class="brand-lockup" href="index.html"><span class="brand-mark">U</span><span class="brand-name">UPANGA</span></a><p>© <span data-year></span> Upanga: The Soul Blade</p><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="data-deletion.html">Data deletion</a></div><a class="footer-social" href="mailto:upangadev@zohomail.com">upangadev@zohomail.com <span>↗</span></a></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script><script src="script.js?v=guardian-order-1"></script><script type="module" src="scripts/relic-app.js?v=1"></script><script type="module" src="scripts/scene.js"></script>
 </body>
 </html>
