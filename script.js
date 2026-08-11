@@ -172,25 +172,19 @@
         const chapters = [...heroArchive.querySelectorAll('[data-hero-archive-chapter]')];
         const stage = heroArchive.querySelector('[data-hero-archive-stage]');
         const stageImage = heroArchive.querySelector('[data-hero-archive-image]');
-        const stageVideo = heroArchive.querySelector('[data-hero-archive-video]');
         const stageIndex = heroArchive.querySelector('[data-hero-archive-index]');
         const stageName = heroArchive.querySelector('[data-hero-archive-name]');
         const stageRole = heroArchive.querySelector('[data-hero-archive-role]');
         const stageTitle = heroArchive.querySelector('[data-hero-archive-title]');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const compactArchive = window.matchMedia('(max-width: 760px)');
         let activeHeroId = '';
 
         const heroData = {
-            osa: { name: 'Osa', role: 'THE WARRIOR', title: 'Duty is a blade that cuts both ways.', image: 'images/osa.png', video: 'images/hero-videos/osa.mp4', tint: '#c9f36a' },
-            aziza: { name: 'Aziza', role: 'THE SCOUT', title: 'Move like a shadow. Strike like a secret.', image: 'images/aziza.png', video: 'images/hero-videos/aziza.mp4', tint: '#a8bd62' },
-            nganga: { name: 'Nganga', role: 'THE SHAMAN', title: 'The living are never far from the spirits.', image: 'images/nganga.png', video: 'images/hero-videos/nganga.mp4', tint: '#7be3b2' },
-            kishi: { name: 'Kishi', role: 'THE SHAPESHIFTER', title: 'The beast is not the end of the story.', image: 'images/kishi.png', video: 'images/hero-videos/kishi.mp4', tint: '#db8062' }
-        };
-
-        const playArchiveVideo = () => {
-            if (!stageVideo || reducedMotion) return;
-            stageVideo.muted = true;
-            stageVideo.play().catch(() => {});
+            osa: { name: 'Osa', role: 'THE WARRIOR', title: 'Duty is a blade that cuts both ways.', image: 'images/osa.png', tint: '#c9f36a' },
+            aziza: { name: 'Aziza', role: 'THE SCOUT', title: 'Move like a shadow. Strike like a secret.', image: 'images/aziza.png', tint: '#a8bd62' },
+            nganga: { name: 'Nganga', role: 'THE SHAMAN', title: 'The living are never far from the spirits.', image: 'images/nganga.png', tint: '#7be3b2' },
+            kishi: { name: 'Kishi', role: 'THE SHAPESHIFTER', title: 'The beast is not the end of the story.', image: 'images/kishi.png', tint: '#db8062' }
         };
 
         const activateArchiveHero = (heroId) => {
@@ -217,23 +211,6 @@
             if (stageRole) stageRole.textContent = data.role;
             if (stageTitle) stageTitle.textContent = data.title;
 
-            if (stageVideo && stageVideo.dataset.source !== data.video) {
-                stageVideo.classList.remove('is-visible');
-                stageVideo.pause();
-                stageVideo.src = data.video;
-                stageVideo.dataset.source = data.video;
-                stageVideo.load();
-                stageVideo.addEventListener('loadeddata', () => {
-                    if (activeHeroId === heroId) {
-                        stageVideo.classList.add('is-visible');
-                        playArchiveVideo();
-                    }
-                }, { once: true });
-            } else {
-                stageVideo?.classList.add('is-visible');
-                playArchiveVideo();
-            }
-
             window.setTimeout(() => stage?.classList.remove('is-changing'), 260);
         };
 
@@ -243,7 +220,7 @@
             selector.addEventListener('focus', () => activateArchiveHero(heroId));
             selector.addEventListener('click', () => {
                 activateArchiveHero(heroId);
-                chapters[index]?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
+                if (!compactArchive.matches) chapters[index]?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
             });
             selector.addEventListener('keydown', (event) => {
                 if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
@@ -259,7 +236,7 @@
             if (visible) activateArchiveHero(visible.target.dataset.heroArchiveChapter);
         }, { threshold: [0.35, 0.6], rootMargin: '-18% 0px -24% 0px' });
 
-        chapters.forEach((chapter) => archiveObserver.observe(chapter));
+        if (!compactArchive.matches) chapters.forEach((chapter) => archiveObserver.observe(chapter));
         activateArchiveHero('osa');
     }
 
@@ -274,6 +251,7 @@
         const stageRole = guardianArchive.querySelector('[data-guardian-role]');
         const stageTitle = guardianArchive.querySelector('[data-guardian-title]');
         const stageCoordinate = guardianArchive.querySelector('.hero-archive-coordinate');
+        const compactArchive = window.matchMedia('(max-width: 760px)');
         let activeGuardianId = '';
 
         const guardianData = {
@@ -315,7 +293,7 @@
             selector.addEventListener('focus', () => activateGuardian(guardianId));
             selector.addEventListener('click', () => {
                 activateGuardian(guardianId);
-                chapters.find((chapter) => chapter.dataset.guardianChapter === guardianId)?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
+                if (!compactArchive.matches) chapters.find((chapter) => chapter.dataset.guardianChapter === guardianId)?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
             });
             selector.addEventListener('keydown', (event) => {
                 if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
@@ -331,7 +309,7 @@
             if (visible) activateGuardian(visible.target.dataset.guardianChapter);
         }, { threshold: [0.35, 0.6], rootMargin: '-18% 0px -24% 0px' });
 
-        chapters.forEach((chapter) => guardianObserver.observe(chapter));
+        if (!compactArchive.matches) chapters.forEach((chapter) => guardianObserver.observe(chapter));
         activateGuardian('amokye');
     }
 
