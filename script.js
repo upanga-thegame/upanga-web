@@ -664,12 +664,19 @@
                 ease: 'none',
                 scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
             });
-            window.gsap.to(hero.querySelector('.hero-copy'), {
-                yPercent: -16,
-                opacity: .45,
-                ease: 'none',
-                scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
-            });
+            const heroCopy = hero.querySelector('.hero-copy');
+            if (heroCopy && window.matchMedia('(min-width: 561px)').matches) {
+                window.gsap.fromTo(heroCopy,
+                    { yPercent: 0, opacity: 1 },
+                    {
+                        yPercent: -16,
+                        opacity: .45,
+                        ease: 'none',
+                        immediateRender: true,
+                        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
+                    }
+                );
+            }
         }
 
         if (journey && journeyCards.length && journeySteps.length) {
