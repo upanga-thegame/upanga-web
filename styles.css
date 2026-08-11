@@ -686,10 +686,14 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
     .hero-archive-track { width: 100%; padding: 0; }
     .hero-archive-chapter { display: none; min-height: 0; padding: 26px 18px 30px; opacity: 1; transform: none; border: 1px solid rgba(238,240,232,.14); background: linear-gradient(145deg, rgba(201,243,106,.07), rgba(8,16,12,.9)); }
     .hero-archive-chapter.is-active { display: flex; }
-    .hero-archive-chapter-index { margin-bottom: 16px; }
+    .hero-archive-chapter-index { margin-bottom: 12px; }
+    .hero-archive-chapter > .hero-archive-chapter-role,
+    .hero-archive-chapter > h3,
+    .hero-archive-chapter > .hero-archive-copy { display: none; }
     .hero-archive-chapter h3 { font-size: clamp(46px, 15vw, 64px); }
     .hero-archive-copy, .guardian-archive .hero-archive-copy { max-width: none; margin: 18px 0; }
-    .hero-archive-stats { max-width: none; }
+    .hero-archive-stats { max-width: none; margin-top: 18px; }
+    .hero-archive-abilities { margin-top: 18px; }
     .guardian-archive .hero-archive-chapter { min-height: 0; padding: 26px 18px 30px; }
     .guardian-archive .hero-archive-copy { margin-top: 16px; }
 }
