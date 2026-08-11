@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-10T13:51:06.612Z",
+  "generatedAt": "2026-08-11T16:32:00.689Z",
   "categories": [
     {
       "title": "Game",
       "items": [
         {
-          "question": "What is Upanga: The Soul-Blade?",
-          "answer": "Upanga: The Soul-Blade is a tactical, turn-based fantasy RPG for Android where four heroes battle evil forces through the land of Azumi."
+          "question": "What is Upanga: The Soul Blade?",
+          "answer": "Upanga: The Soul Blade is a tactical, turn-based fantasy RPG where four heroes battle evil forces through the land of Bomende."
         },
         {
           "question": "What platform is Upanga being developed for?",
-          "answer": "Upanga is being developed for Android mobile devices."
+          "answer": "Upanga is being developed for Android, Apple, and Steam."
         },
         {
           "question": "What stage of development is the game in?",
-          "answer": "Upanga is currently in pre-alpha development. Core systems such as movement, turn order, combat, UI, and save/load are still being built and tested."
+          "answer": "Upanga is currently in Beta & currently going through internal tests."
         },
         {
           "question": "Will the game be free?",
-          "answer": "The game will be free to download. The first level, if you will, of the game will be playable. After completing the first objectives you may unlock the full Chapter 1 for a small price."
+          "answer": "No decision has been made around the pricing of the game."
         }
       ]
     },
@@ -48,11 +48,11 @@
         },
         {
           "question": "Will there be a playtest?",
-          "answer": "A playtest may be offered later when the game reaches a more stable alpha or beta stage."
+          "answer": "A playtest may be offered later when the game is ready."
         },
         {
           "question": "How can I get updates?",
-          "answer": "You can follow the website, social media, or join the newsletter once it is connected."
+          "answer": "You can follow this website for updates and our social media accounts."
         }
       ]
     },
