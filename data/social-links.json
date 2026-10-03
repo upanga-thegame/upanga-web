@@ -1,0 +1,10 @@
+[
+  { "id": "x", "name": "X", "url": "https://x.com/upangadev" },
+  { "id": "bluesky", "name": "Bluesky", "url": "https://bsky.app/profile/upangadev.bsky.social" },
+  { "id": "mastodon", "name": "Mastodon", "url": "https://mastodon.social/@upangadev" },
+  { "id": "threads", "name": "Threads", "url": "https://www.threads.com/@upangadev" },
+  { "id": "instagram", "name": "Instagram", "url": "https://www.instagram.com/upangadev/" },
+  { "id": "facebook", "name": "Facebook", "url": "https://www.facebook.com/profile.php?id=61595151567254" },
+  { "id": "tiktok", "name": "TikTok", "url": "https://www.tiktok.com/@upanga.the.game" },
+  { "id": "youtube", "name": "YouTube", "url": "https://www.youtube.com/@UpangatheGame" }
+]

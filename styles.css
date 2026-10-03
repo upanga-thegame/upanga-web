@@ -265,6 +265,42 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
 .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
 .footer-links a:hover, .footer-social:hover { color: var(--acid); }
 .footer-social { justify-self: end; }
+
+/* Follow Upanga: static links, shared with every page footer. */
+.follow-section { position: relative; padding: 72px 0; background: #0e1411; scroll-margin-top: 100px; }
+.follow-banner { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 48px; padding: clamp(28px, 4vw, 56px); border: 1px solid rgba(201,243,106,.25); background: linear-gradient(90deg, #0a100d 18%, rgba(10,16,13,.92) 52%, rgba(10,16,13,.78)), url("images/jungle-poster.png") right center / cover; }
+.follow-banner::before, .follow-banner::after { content: ""; position: absolute; width: 24px; height: 24px; pointer-events: none; border-color: var(--acid); border-style: solid; }
+.follow-banner::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.follow-banner::after { right: -1px; bottom: -1px; border-width: 0 2px 2px 0; }
+.follow-copy .eyebrow { margin-bottom: 20px; }
+.follow-copy h2 { font-size: clamp(40px, 4.6vw, 66px); line-height: 1.05; letter-spacing: -.055em; margin-bottom: 20px; }
+.follow-copy > p:not(.eyebrow) { max-width: 340px; margin-bottom: 26px; color: var(--muted); font-size: 15px; }
+.follow-note { display: block; max-width: 360px; color: var(--muted); font: 10px/1.8 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.follow-note span { color: var(--acid); }
+.follow-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.social-link { color: var(--paper); display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--line); background: rgba(10,16,13,.64); transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
+.social-link svg { flex: 0 0 auto; width: 22px; height: 22px; fill: currentColor; }
+.follow-links .social-link { flex-direction: column; gap: 13px; padding: 20px 6px 16px; font: 10px/1.2 var(--mono); }
+.social-link:hover { color: var(--acid); border-color: var(--acid); background: #182315; transform: translateY(-2px); }
+.social-link:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; color: var(--acid); background: #182315; }
+.footer-social-links { grid-column: 1 / -1; display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; border-top: 1px solid var(--line); padding-top: 24px; margin-top: 6px; }
+.footer-social-label { font: 10px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+.footer-social-icons { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer-social-icons .social-link { width: 44px; height: 44px; }
+.footer-social-icons .social-link svg { width: 18px; height: 18px; }
+@media (max-width: 900px) {
+    .follow-banner { grid-template-columns: 1fr; gap: 32px; }
+    .follow-copy > p:not(.eyebrow) { max-width: 440px; }
+    .follow-note { max-width: none; }
+}
+@media (max-width: 560px) {
+    .follow-section { padding: 40px 0; }
+    .follow-banner { padding: 28px 20px; gap: 28px; }
+    .follow-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .follow-links .social-link { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 15px 12px; min-height: 56px; }
+    .follow-links .social-link svg { width: 20px; height: 20px; }
+    .footer-social-links { align-items: flex-start; flex-direction: column; }
+}
 .inner-page { background: #0e1411; color: var(--paper); }
 .inner-page .site-header { color: var(--paper); }
 .inner-page .site-grain { opacity: .08; }
