@@ -36,7 +36,6 @@ ${renderLinks(false)}
     </div>
 </section>`,
     footer: `<nav class="footer-social-links" aria-label="Upanga social media">
-    <span class="footer-social-label">Follow Upanga</span>
     <div class="footer-social-icons">
 ${renderLinks(true)}
     </div>
