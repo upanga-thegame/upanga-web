@@ -1,4 +1,5 @@
 [
+  { "id": "discord", "name": "Discord", "url": "https://discord.gg/DTdfhCV7te" },
   { "id": "x", "name": "X", "url": "https://x.com/upangadev" },
   { "id": "bluesky", "name": "Bluesky", "url": "https://bsky.app/profile/upangadev.bsky.social" },
   { "id": "mastodon", "name": "Mastodon", "url": "https://mastodon.social/@upangadev" },

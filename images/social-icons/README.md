@@ -1,4 +1,4 @@
-These eight local SVG brand icons are from Simple Icons 16.0.0 (CC0-1.0):
+These nine local SVG brand icons are from Simple Icons 16.0.0 (CC0-1.0):
 https://github.com/simple-icons/simple-icons/tree/16.0.0
 
 Source: https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/[id].svg
