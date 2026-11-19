@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T20:48:09.987Z",
+  "generatedAt": "2026-11-19T16:13:44.627Z",
   "categories": [
     {
       "title": "Game",
@@ -11,14 +11,6 @@
         {
           "question": "Who do I play as?",
           "answer": "You command four heroes: Osa the Warrior, Aziza the Scout, Nganga the Shaman, and Kishi the Shapeshifter. Each hero brings a different way to approach an isometric battle."
-        },
-        {
-          "question": "What stage of development is Upanga in?",
-          "answer": "Upanga is currently in beta and undergoing internal testing."
-        },
-        {
-          "question": "Will Upanga be free?",
-          "answer": "No final decision has been made about the game’s pricing."
         }
       ]
     },
@@ -36,36 +28,6 @@
         {
           "question": "What is the Soul Blade?",
           "answer": "The Soul Blade was forged by the kingdoms of Bomende as a symbol of their shared alliance. It shattered while imprisoning Bida, and its four pieces are now guarded across the Crypt, Swamp, Kwae, and Pyramid."
-        }
-      ]
-    },
-    {
-      "title": "Release",
-      "items": [
-        {
-          "question": "When will Upanga be released?",
-          "answer": "Upanga is targeting Fall of 2026."
-        },
-        {
-          "question": "What platforms are planned?",
-          "answer": "The current release plan includes Android, Apple devices, and Steam."
-        },
-        {
-          "question": "Will there be a playtest?",
-          "answer": "A playtest may be offered when the game is ready. Follow the project on social media for announcements."
-        }
-      ]
-    },
-    {
-      "title": "Contact",
-      "items": [
-        {
-          "question": "How can I get updates?",
-          "answer": "Follow @upangadev on X for development notes, captures, and release news."
-        },
-        {
-          "question": "How can I contact the developer?",
-          "answer": "You can contact the Upanga team at upangadev@zohomail.com."
         }
       ]
     }
