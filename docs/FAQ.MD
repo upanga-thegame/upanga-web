@@ -5,6 +5,9 @@
 ### Where can I download Upanga on Android?
 Download Upanga: The Soul Blade from [Google Play](https://play.google.com/store/apps/details?id=com.upangadev.upanga).
 
+### Is Upanga free?
+The opening Crypt region is free to play. A one-time purchase unlocks the full game.
+
 ### When will Upanga be available on iOS and Steam?
 The iOS and Steam versions are in development. We plan to release them soon.
 
