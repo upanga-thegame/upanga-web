@@ -714,10 +714,13 @@
         }
     }
 
+    const renderChangelogContent = (content) => escapeHtml(content)
+        .replace(/\[([^\]\n]+)\]\((https:\/\/[^\s)]+)\)/gi, '<a href="$2">$1</a>');
+
     const renderChangelog = (data) => {
         const root = document.querySelector('[data-changelog]');
         if (!root || !data?.entries) return;
-        root.innerHTML = data.entries.map((entry) => `<article class="changelog-entry"><div class="changelog-date">${escapeHtml(entry.date)}</div><div><h3>${escapeHtml(entry.title)}</h3><p>${escapeHtml(entry.content)}</p></div></article>`).join('');
+        root.innerHTML = data.entries.map((entry) => `<article class="changelog-entry"><div class="changelog-date">${escapeHtml(entry.date)}</div><div><h3>${escapeHtml(entry.title)}</h3><p>${renderChangelogContent(entry.content)}</p></div></article>`).join('');
         root.querySelectorAll('.changelog-entry').forEach((node) => revealObserver.observe(node));
     };
 

@@ -1,5 +1,13 @@
 # Upanga Changelog
 
+## 2026-11-20
+
+### Upanga is out now on Android
+
+Upanga: The Soul Blade is live on [Google Play](https://play.google.com/store/apps/details?id=com.upangadev.upanga). Download it to play the opening Crypt region for free, with an optional one-time unlock for the full game.
+
+The iOS and Steam versions are in development, and we plan to release them soon.
+
 ## 2026-07-28
 
 ### A clearer road ahead
