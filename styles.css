@@ -401,8 +401,8 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
 .changelog-date { color: var(--acid); font: 11px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
 .changelog-entry h3 { font: 500 clamp(25px, 3.5vw, 48px)/1.05 var(--display); letter-spacing: -.05em; margin-bottom: 18px; }
 .changelog-entry p { color: var(--muted); max-width: 640px; white-space: pre-line; }
-.changelog-entry a { color: var(--acid); text-decoration: underline; text-underline-offset: 3px; }
-.changelog-entry a:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
+.changelog-entry a, .faq-answer a { color: var(--acid); text-decoration: underline; text-underline-offset: 3px; }
+.changelog-entry a:focus-visible, .faq-answer a:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
 .faq-groups { max-width: 900px; margin-left: auto; }
 .faq-category { margin-bottom: 80px; }
 .faq-category h2 { font-size: clamp(40px, 5vw, 72px); color: var(--paper); margin-bottom: 26px; }

@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-11-20T20:00:08.781Z",
+  "generatedAt": "2026-11-20T20:05:25.702Z",
   "categories": [
+    {
+      "title": "Availability",
+      "items": [
+        {
+          "question": "Where can I download Upanga on Android?",
+          "answer": "Download Upanga: The Soul Blade from [Google Play](https://play.google.com/store/apps/details?id=com.upangadev.upanga)."
+        },
+        {
+          "question": "When will Upanga be available on iOS and Steam?",
+          "answer": "The iOS and Steam versions are in development. We plan to release them soon."
+        }
+      ]
+    },
     {
       "title": "Game",
       "items": [
