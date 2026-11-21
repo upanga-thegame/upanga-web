@@ -20,13 +20,21 @@ const renderLinks = (compact) => links.map(({ url, name, id, icon, label }) =>
 ).join('\n');
 
 const blocks = {
-    banner: `<nav class="follow-section" id="follow" aria-label="Follow Upanga on social media">
-    <div class="section-frame follow-layout">
-        <div class="follow-links">
+    banner: `<section class="follow-section" id="follow" aria-labelledby="follow-heading">
+    <div class="section-frame">
+        <div class="follow-banner">
+            <div class="follow-copy">
+                <p class="eyebrow">The journey continues</p>
+                <h2 id="follow-heading">Follow <em>Upanga</em></h2>
+                <p>Discover battles, new artwork and development updates.</p>
+                <span class="follow-note">From the kingdoms of Bomende to your feed <span aria-hidden="true">↗</span></span>
+            </div>
+            <nav class="follow-links" aria-label="Follow Upanga on social media">
 ${renderLinks(false)}
+            </nav>
         </div>
     </div>
-</nav>`,
+</section>`,
     footer: `<nav class="footer-social-links" aria-label="Upanga social media">
     <div class="footer-social-icons">
 ${renderLinks(true)}
@@ -43,10 +51,9 @@ for (const page of ['index.html', 'changelog.html', 'faq.html', 'privacy.html', 
         const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
         if (!pattern.test(html)) throw new Error(`Missing ${kind} markers in ${page}`);
         const newline = html.includes('\r\n') ? '\r\n' : '\n';
-        const markup = page === 'index.html' && kind === 'footer' ? '' : blocks[kind];
-        const block = [start, markup, end].filter(Boolean).join('\n').replaceAll('\n', newline);
+        const block = `${start}\n${blocks[kind]}\n${end}`.replaceAll('\n', newline);
         html = html.replace(pattern, () => block);
     }
     await writeFile(file, html);
 }
-console.log('Generated the home-page social buttons and five page footers.');
+console.log('Generated the Follow Upanga banner and six page footers.');
