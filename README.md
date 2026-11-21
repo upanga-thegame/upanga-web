@@ -5,8 +5,8 @@ published at [upanga-game.com](https://upanga-game.com).
 
 The site uses a low-dependency static setup: root HTML pages, shared CSS and
 JavaScript, generated JSON content, local game media, and a `CNAME` for the
-production domain. GSAP and Lenis are loaded from pinned browser CDN URLs for
-the immersive scrolling. The Follow section's globe uses Canvas 2D.
+production domain. GSAP, Lenis, and Three.js are loaded from pinned browser CDN
+URLs for the immersive scrolling and animated presentation.
 
 ## Pages
 

@@ -21,7 +21,6 @@ const renderLinks = (compact) => links.map(({ url, name, id, icon, label }) =>
 
 const blocks = {
     banner: `<nav class="follow-section" id="follow" aria-label="Follow Upanga on social media">
-    <canvas id="scene-canvas" class="scene-canvas" aria-hidden="true"></canvas>
     <div class="section-frame follow-layout">
         <div class="follow-links">
 ${renderLinks(false)}
