@@ -288,8 +288,8 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
 .footer-social { justify-self: end; }
 
 /* Follow Upanga: static links, shared with every page footer. */
-.follow-section { position: relative; padding: 72px 0; background: #0e1411; scroll-margin-top: 100px; }
-.follow-banner { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 48px; padding: clamp(28px, 4vw, 56px); border: 1px solid rgba(201,243,106,.25); background: linear-gradient(90deg, #0a100d 18%, rgba(10,16,13,.92) 52%, rgba(10,16,13,.78)), url("images/jungle-poster.png") right center / cover; }
+.follow-section { position: relative; padding: 72px 0; scroll-margin-top: 100px; }
+.follow-banner { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 48px; padding: clamp(28px, 4vw, 56px); border: 1px solid rgba(201,243,106,.25); }
 .follow-banner::before, .follow-banner::after { content: ""; position: absolute; width: 24px; height: 24px; pointer-events: none; border-color: var(--acid); border-style: solid; }
 .follow-banner::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
 .follow-banner::after { right: -1px; bottom: -1px; border-width: 0 2px 2px 0; }
