@@ -279,7 +279,7 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
 }
 .site-footer { background: #070908; border-top: 1px solid var(--line); padding: 38px 0; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr 1.5fr; gap: 22px; align-items: center; font: 10px var(--mono); color: var(--muted); }
-.footer-grid .brand-lockup { color: var(--paper); }
+.footer-grid .brand-lockup { justify-self: start; color: var(--paper); }
 .footer-grid p { margin: 0; }
 .footer-publisher { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
 .footer-publisher:hover, .footer-publisher:focus-visible { color: var(--acid); }
