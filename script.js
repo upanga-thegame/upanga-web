@@ -713,31 +713,4 @@
             window.addEventListener('scroll', updateNativeRegions, { passive: true });
         }
     }
-
-    const renderLinkedText = (content) => escapeHtml(content)
-        .replace(/\[([^\]\n]+)\]\((https:\/\/[^\s)]+)\)/gi, '<a href="$2">$1</a>');
-
-    const renderChangelog = (data) => {
-        const root = document.querySelector('[data-changelog]');
-        if (!root || !data?.entries) return;
-        root.innerHTML = data.entries.map((entry) => `<article class="changelog-entry"><div class="changelog-date">${escapeHtml(entry.date)}</div><div><h3>${escapeHtml(entry.title)}</h3><p>${renderLinkedText(entry.content)}</p></div></article>`).join('');
-        root.querySelectorAll('.changelog-entry').forEach((node) => revealObserver.observe(node));
-    };
-
-    const renderFaq = (data) => {
-        const root = document.querySelector('[data-faq]');
-        if (!root || !data?.categories) return;
-        root.innerHTML = data.categories.map((category) => `<section class="faq-category"><h2>${escapeHtml(category.title)}</h2>${category.items.map((item) => `<div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>${escapeHtml(item.question)}</span><span>+</span></button><div class="faq-answer" inert><div><p>${renderLinkedText(item.answer)}</p></div></div></div>`).join('')}</section>`).join('');
-        root.querySelectorAll('.faq-question').forEach((button) => button.addEventListener('click', () => {
-            const item = button.closest('.faq-item');
-            const open = item.classList.toggle('open');
-            button.setAttribute('aria-expanded', String(open));
-            item.querySelector('.faq-answer').inert = !open;
-        }));
-    };
-
-    const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
-
-    if (document.querySelector('[data-changelog]')) fetch('data/changelog.json').then((response) => response.json()).then(renderChangelog).catch(() => {});
-    if (document.querySelector('[data-faq]')) fetch('data/faq.json').then((response) => response.json()).then(renderFaq).catch(() => {});
 })();

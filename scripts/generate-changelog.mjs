@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { escapeHtml, renderLinkedText, writeGeneratedHtml, writeGeneratedJson } from './generated-content.mjs';
 
 const sourcePath = path.join(process.cwd(), 'docs', 'CHANGELOG.MD');
 const outputPath = path.join(process.cwd(), 'data', 'changelog.json');
@@ -29,6 +30,14 @@ for (const line of lines) {
 }
 
 if (currentEntry) entries.push(currentEntry);
-fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, JSON.stringify({ generatedAt: new Date().toISOString(), entries }, null, 2));
-console.log(`Successfully generated ${outputPath}`);
+const markup = entries.map(({ date, title, content }) => `<article class="changelog-entry">
+    <time class="changelog-date" datetime="${escapeHtml(date)}">${escapeHtml(date)}</time>
+    <div>
+        <h3>${escapeHtml(title)}</h3>
+        <p>${renderLinkedText(content)}</p>
+    </div>
+</article>`).join('\n');
+
+writeGeneratedHtml(path.join(process.cwd(), 'changelog.html'), 'changelog', markup);
+writeGeneratedJson(outputPath, { entries });
+console.log('Generated the changelog page and JSON.');

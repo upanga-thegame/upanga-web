@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { escapeHtml, renderLinkedText, writeGeneratedHtml, writeGeneratedJson } from './generated-content.mjs';
 
 const faqPath = path.join(process.cwd(), 'docs', 'FAQ.MD');
 const outputPath = path.join(process.cwd(), 'data', 'faq.json');
@@ -13,7 +14,6 @@ const markdown = fs.readFileSync(faqPath, 'utf-8');
 const lines = markdown.split('\n');
 
 const faqData = {
-    generatedAt: new Date().toISOString(),
     categories: [],
 };
 
@@ -55,11 +55,17 @@ if (currentCategory) {
     faqData.categories.push(currentCategory);
 }
 
-const outputDir = path.dirname(outputPath);
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
+const markup = faqData.categories.map(({ title, items }) => {
+    const questions = items.map(({ question, answer }) => `    <details class="faq-item">
+        <summary class="faq-question"><span>${escapeHtml(question)}</span><span aria-hidden="true">+</span></summary>
+        <div class="faq-answer"><p>${renderLinkedText(answer)}</p></div>
+    </details>`).join('\n');
+    return `<section class="faq-category">
+    <h2>${escapeHtml(title)}</h2>
+${questions}
+</section>`;
+}).join('\n');
 
-fs.writeFileSync(outputPath, JSON.stringify(faqData, null, 2));
-
-console.log(`Successfully generated ${outputPath}`);
+writeGeneratedHtml(path.join(process.cwd(), 'faq.html'), 'faq', markup);
+writeGeneratedJson(outputPath, faqData);
+console.log('Generated the FAQ page and JSON.');

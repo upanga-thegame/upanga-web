@@ -20,7 +20,12 @@ URLs for the immersive scrolling and animated presentation.
 
 - Edit `docs/CHANGELOG.MD` and `docs/FAQ.MD`.
 - Run `node scripts/generate-changelog.mjs` and `node scripts/generate-faq.mjs`.
-- GitHub Actions regenerates `data/*.json` when the source documents change.
+- The generators update the marked content blocks in `changelog.html` and
+  `faq.html`, plus their JSON files under `data/`. Edit the Markdown sources
+  to change the content.
+- Commit the rendered HTML and JSON together with the Markdown changes so they
+  publish in the same push. GitHub Actions also regenerates and tests the files
+  when a source changes. Run `node --test tests/generated-content.test.mjs` locally.
 
 Only website-ready, cleared game assets are stored in this repository. Source
 game media remains in the separate `upanga-game` project.
