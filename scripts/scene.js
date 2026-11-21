@@ -31,7 +31,7 @@ if (context) {
     const particles = Array.from({ length: 125 }, () => ({
         x: Math.random(),
         y: Math.random(),
-        size: 0.65 + Math.random() * 1.5,
+        size: 0.85 + Math.random() * 1.8,
         depth: 0.25 + Math.random() * 0.75,
     }));
     let width = 0;
@@ -48,20 +48,22 @@ if (context) {
     const draw = () => {
         context.clearRect(0, 0, width, height);
         context.fillStyle = '#c9f36a';
+        const particleShiftX = offsetX * Math.min(width * 0.16, 105);
+        const particleShiftY = offsetY * Math.min(height * 0.18, 66);
         for (const particle of particles) {
             const drift = Math.sin(elapsed * 0.35 + particle.x * 14) * 8;
-            const x = particle.x * width + offsetX * 24 * particle.depth + drift;
-            const y = particle.y * height + offsetY * 16 * particle.depth;
-            context.globalAlpha = particle.depth * 0.55;
+            const x = particle.x * width + particleShiftX * particle.depth + drift;
+            const y = particle.y * height + particleShiftY * particle.depth;
+            context.globalAlpha = particle.depth * 0.7;
             context.fillRect(x, y, particle.size, particle.size);
         }
         context.globalAlpha = 1;
 
-        const centerX = width * (stacked.matches ? 0.5 : 0.26) + offsetX * 36;
-        const centerY = height / 2 + offsetY * 24;
+        const centerX = width * (stacked.matches ? 0.5 : 0.26) + offsetX * Math.min(width * 0.12, 66);
+        const centerY = height / 2 + offsetY * Math.min(height * 0.12, 44);
         const radius = Math.min(height * 0.42, width * (stacked.matches ? 0.44 : 0.19), 220);
-        const angle = elapsed * 0.16 + offsetX * 0.28;
-        const pitch = 0.23 + offsetY * 0.24;
+        const angle = elapsed * 0.16 + offsetX * 0.68;
+        const pitch = 0.23 + offsetY * 0.5;
         const cosAngle = Math.cos(angle);
         const sinAngle = Math.sin(angle);
         const cosPitch = Math.cos(pitch);
@@ -122,18 +124,17 @@ if (context) {
         }
     };
 
-    section.addEventListener('pointermove', (event) => {
+    window.addEventListener('pointermove', (event) => {
         if (motion.matches || event.pointerType === 'touch') return;
-        const bounds = section.getBoundingClientRect();
-        mouseX = 2 * (event.clientX - bounds.left) / bounds.width - 1;
-        mouseY = 2 * (event.clientY - bounds.top) / bounds.height - 1;
+        mouseX = 2 * event.clientX / window.innerWidth - 1;
+        mouseY = 2 * event.clientY / window.innerHeight - 1;
     }, { passive: true });
     const resetPointer = () => {
         mouseX = 0;
         mouseY = 0;
     };
-    section.addEventListener('pointerleave', resetPointer);
-    section.addEventListener('pointercancel', resetPointer);
+    document.documentElement.addEventListener('pointerleave', resetPointer);
+    window.addEventListener('pointercancel', resetPointer);
     window.addEventListener('blur', resetPointer);
     motion.addEventListener('change', () => {
         if (motion.matches) {
