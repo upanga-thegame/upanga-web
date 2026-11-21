@@ -20,7 +20,7 @@ img, video { display: block; max-width: 100%; }
 button { font: inherit; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .site-grain { position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: .11; mix-blend-mode: soft-light; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0, rgba(255,255,255,.02) 1px, transparent 1px, transparent 5px); }
-.scene-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .45; mix-blend-mode: screen; }
+.scene-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .section-frame { width: min(1240px, calc(100% - 64px)); margin: 0 auto; position: relative; z-index: 1; }
 .section-pad { padding: 140px 0; position: relative; overflow: hidden; }
 .section-dark { background: #0e1411; }
@@ -287,22 +287,28 @@ h1 em, h2 em { color: var(--acid); font-style: normal; }
 .footer-links a:hover, .footer-social:hover { color: var(--acid); }
 .footer-social { justify-self: end; }
 
-/* Keep the scene canvas visible around the home-page links. */
-.follow-section { position: relative; padding: clamp(72px, 12vh, 120px) 0; scroll-margin-top: 100px; }
-.follow-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+/* The globe sits behind the original Follow button grid. */
+.follow-section { position: relative; padding: 72px 0; overflow: hidden; scroll-margin-top: 100px; }
+.follow-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; padding: clamp(28px, 4vw, 56px); }
+.follow-links { grid-column: 2; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .social-link { color: var(--paper); display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--line); background: rgba(10,16,13,.64); transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
 .social-link svg { flex: 0 0 auto; width: 22px; height: 22px; fill: currentColor; }
-.follow-links .social-link { flex: 0 0 96px; flex-direction: column; gap: 12px; padding: 17px 6px; font: 10px/1.2 var(--mono); }
+.follow-links .social-link { flex-direction: column; gap: 13px; padding: 20px 6px 16px; background: rgba(10,16,13,.47); font: 10px/1.2 var(--mono); }
 .social-link:hover { color: var(--acid); border-color: var(--acid); background: #182315; transform: translateY(-2px); }
 .social-link:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; color: var(--acid); background: #182315; }
 .footer-social-links { grid-column: 1 / -1; display: flex; justify-content: center; border-top: 1px solid var(--line); padding-top: 24px; margin-top: 6px; }
 .footer-social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
 .footer-social-icons .social-link { width: 44px; height: 44px; }
 .footer-social-icons .social-link svg { width: 18px; height: 18px; }
+@media (max-width: 900px) {
+    .follow-layout { grid-template-columns: 1fr; }
+    .follow-links { grid-column: 1; }
+}
 @media (max-width: 560px) {
-    .follow-section { padding: 56px 0; }
-    .follow-links { gap: 8px; }
-    .follow-links .social-link { flex-basis: 86px; gap: 10px; padding: 14px 5px; }
+    .follow-section { padding: 40px 0; }
+    .follow-layout { padding: 28px 20px; }
+    .follow-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .follow-links .social-link { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 15px 12px; min-height: 56px; }
     .follow-links .social-link svg { width: 20px; height: 20px; }
 }
 .inner-page { background: #0e1411; color: var(--paper); }

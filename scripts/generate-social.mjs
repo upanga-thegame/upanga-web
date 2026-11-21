@@ -21,8 +21,11 @@ const renderLinks = (compact) => links.map(({ url, name, id, icon, label }) =>
 
 const blocks = {
     banner: `<nav class="follow-section" id="follow" aria-label="Follow Upanga on social media">
-    <div class="section-frame follow-links">
+    <canvas id="scene-canvas" class="scene-canvas" aria-hidden="true"></canvas>
+    <div class="section-frame follow-layout">
+        <div class="follow-links">
 ${renderLinks(false)}
+        </div>
     </div>
 </nav>`,
     footer: `<nav class="footer-social-links" aria-label="Upanga social media">
@@ -41,9 +44,10 @@ for (const page of ['index.html', 'changelog.html', 'faq.html', 'privacy.html', 
         const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
         if (!pattern.test(html)) throw new Error(`Missing ${kind} markers in ${page}`);
         const newline = html.includes('\r\n') ? '\r\n' : '\n';
-        const block = `${start}\n${blocks[kind]}\n${end}`.replaceAll('\n', newline);
+        const markup = page === 'index.html' && kind === 'footer' ? '' : blocks[kind];
+        const block = [start, markup, end].filter(Boolean).join('\n').replaceAll('\n', newline);
         html = html.replace(pattern, () => block);
     }
     await writeFile(file, html);
 }
-console.log('Generated the Follow Upanga banner and six page footers.');
+console.log('Generated the home-page social buttons and five page footers.');
