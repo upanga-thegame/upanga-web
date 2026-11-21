@@ -28,10 +28,10 @@ game media remains in the separate `upanga-game` project.
 ## Social links
 
 Edit `data/social-links.json`, then run `node scripts/generate-social.mjs` before
-committing. This generates the home-page banner and every page footer as static,
-accessible links, including when JavaScript is disabled. Do not edit the generated
-`social:*` blocks directly. Local SVG brand icons come from Simple Icons 16.0.0;
-see `images/social-icons/README.md`.
+committing. This generates the home-page banner and the other pages' footer
+links as static, accessible links, including when JavaScript is disabled. Do
+not edit the generated `social:*` blocks directly. Local SVG brand icons come
+from Simple Icons 16.0.0. See `images/social-icons/README.md`.
 
 Production uses GitHub Pages from the root of `main`. Push the reviewed generated
 HTML, configuration, icons, and styles together, then confirm the Pages build and

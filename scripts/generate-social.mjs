@@ -51,9 +51,10 @@ for (const page of ['index.html', 'changelog.html', 'faq.html', 'privacy.html', 
         const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
         if (!pattern.test(html)) throw new Error(`Missing ${kind} markers in ${page}`);
         const newline = html.includes('\r\n') ? '\r\n' : '\n';
-        const block = `${start}\n${blocks[kind]}\n${end}`.replaceAll('\n', newline);
+        const markup = page === 'index.html' && kind === 'footer' ? '' : blocks[kind];
+        const block = [start, markup, end].filter(Boolean).join('\n').replaceAll('\n', newline);
         html = html.replace(pattern, () => block);
     }
     await writeFile(file, html);
 }
-console.log('Generated the Follow Upanga banner and six page footers.');
+console.log('Generated the Follow Upanga banner and five page footers.');
